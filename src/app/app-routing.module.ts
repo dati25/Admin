@@ -11,6 +11,8 @@ import { RequestPageComponent } from './pages/request-page/request-page.componen
 import { GroupsPageComponent } from './pages/groups-page/groups-page.component';
 import { GroupAddPageComponent } from './pages/group-add-page/group-add-page.component';
 import { AddusersPageComponent } from './pages/addusers-page/addusers-page.component';
+import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
+import { AdminAddPageComponent } from './pages/admin-add-page/admin-add-page.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: MainDashboardComponent},
@@ -24,6 +26,9 @@ const routes: Routes = [
   { path: 'groups', component: GroupsPageComponent},
   { path : 'groups/add', component: GroupAddPageComponent},
   { path : 'configuration/add/user', component: AddusersPageComponent}
+  { path: 'groups/add', component: GroupAddPageComponent},
+  { path: 'settings', component: SettingsPageComponent},
+  { path: 'admin', component: AdminAddPageComponent},
 ];
 
 @NgModule({

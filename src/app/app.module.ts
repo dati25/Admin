@@ -17,6 +17,8 @@ import { GroupsPageComponent } from './pages/groups-page/groups-page.component';
 import { GroupAddPageComponent } from './pages/group-add-page/group-add-page.component';
 import { AddusersPageComponent } from './pages/addusers-page/addusers-page.component';
 import { AdmincreationPageComponent } from './admincreation-page/admincreation-page.component';
+import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
+import { AdminAddPageComponent } from './pages/admin-add-page/admin-add-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,9 @@ import { AdmincreationPageComponent } from './admincreation-page/admincreation-p
     GroupAddPageComponent,
     AddusersPageComponent,
     AdmincreationPageComponent
+    GroupAddPageComponent,
+    SettingsPageComponent,
+    AdminAddPageComponent
   ],
   imports: [
     BrowserModule,
