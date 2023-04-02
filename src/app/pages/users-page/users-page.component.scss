@@ -1,0 +1,147 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .Search {
+    display: flex;
+    width: 70%;
+    height: 10%;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .srch {
+      flex-basis: 30%;
+      display: flex;
+      padding: 10px;
+      align-items: center;
+      text-align: center;
+
+      .textboxsrch {
+        width: 70%;
+        height: 55%;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        margin: 6px 0px 12px 15px;
+      }
+    }
+    .srt {
+      flex-basis: 30%;
+      display: flex;
+      padding: 5px;
+      align-items: center;
+      text-align: center;
+
+      .textboxsrt {
+        width: 50%;
+        height: 55%;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        margin: 6px 0px 10px 15px;
+        text-align: right;
+
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .pclist {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+
+    td {
+      width: 30%;
+    }
+    .pc {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      height: 100%;
+      margin: 25px;
+
+      .pcinfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        border: 3px solid #ddd;
+        border-radius: 10px;
+        background-color: #ff5349;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+        .pcheader {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+          width: 100%;
+          height: 30%;
+
+          .pcname {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: left;
+            text-align: left;
+            width: 70%;
+            height: 20%;
+            padding: 12px;
+            font-weight: 600;
+          }
+
+          .pcstatus {
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            align-items: right;
+            text-align: right;
+            width: 100%;
+            height: 20%;
+            padding: 10px;
+
+            .checkboxclass {
+              height: 1.5rem;
+              width: 4rem;
+            }
+          }
+        }
+
+        .pcdesc {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 20%;
+          padding: 10px;
+        }
+
+        .editicon {
+          display: inline-block;
+          flex-direction: row;
+          justify-content: right;
+          align-items: right;
+          text-align: right;
+          width: 100%;
+          height: 20%;
+          padding: 10px;
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<div *ngIf="isLoggedIn()" class="wrapper">
+
+  <div  class="side-menu">
+    <ul>
+      <li>
+        <a routerLink="/dashboard">Dashboard</a>
+      </li>
+      <li>
+        <a routerLink="/users">Users</a>
+      </li>
+      <li>
+        <a routerLink="/requests">Requests</a>
+      </li>
+      <li>
+        <a routerLink="/groups">Groups</a>
+      </li>
+      <li>
+        <a routerLink="/configuration">Configuration</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class = "main">
+
+    <div  class="top-menu">
+      <div class="logo">
+        <a routerLink="/dashboard"><img src="assets/images/logo.png" alt="logo"/></a>
+      </div>
+      <p class = "innertext">Admin</p>
+      <a (click)="onLogout()" class="mygear"><i class="bi bi-gear" ></i></a>
+      
+      
+    </div>
+    
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<div *ngIf="!isLoggedIn()" class="logoutContent">
+  <router-outlet></router-outlet>
+</div>

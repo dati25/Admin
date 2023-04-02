@@ -1,0 +1,104 @@
+.wrapper {
+  display: flex;
+  height: 100%;
+
+  .side-menu {
+    flex: 0 0 250px;
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    ul {
+      border: solid 1px #555;
+      padding: 0px;
+      margin-top: 80px;
+
+      li {
+        //padding: 10px;
+        border-bottom: 1px solid #555;
+        color: white;
+
+        a {
+          display: block;
+          padding: 20px;
+          text-decoration: none;
+          color: white;
+          font-size: 20px;
+        }
+
+        a:hover {
+          background-color: #444;
+        }
+      }
+    }
+  }
+
+  .main {
+    display: rows;
+    height: calc(100% - 80px);
+    width: calc(100% - 250px);
+    position: absolute;
+    top: 80px;
+    left: 250px;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+
+    .top-menu {
+      height: 80px;
+      width: calc(100% - 250px);
+      border: solid 1px #555;
+      background-color: #333;
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      left: 250px;
+      right: 0;
+
+      .logo {
+        flex-basis: 90%;
+        padding: 5px;
+        color: white;
+
+        a {
+          img {
+            height: 60px;
+            width: 150px;
+          }
+        }
+      }
+
+      .mygear {
+        display: inline-block;
+        flex-basis: 5%;
+        color: white;
+        font-size: 2em;
+        margin-top: 15px;
+      }
+
+      .innertext {
+        margin-top: 20px;
+        flex-basis: 8%;
+        text-align: center;
+        background-color: #333;
+        color: white;
+        font-size: 1.5em;
+      }
+    }
+
+    .content {
+      padding: 15px;
+    }
+  }
+}
+
+.logoutContent {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,185 @@
+.wrapper {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  .form {
+    display: flex;
+    border: 2px solid #ddd;
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+    .formLeft {
+      width: 50%;
+      height: 100%;
+      padding: 10px;
+
+      .formLeftItem {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+
+        .formLeftItemLabel {
+          width: 40%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+
+        .formLeftItemInput {
+          width: 60%;
+          height: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          a {
+            color: blue;
+          }
+
+          .txtbox {
+            margin-left: 10px;
+          }
+        }
+      }
+      .addNew {
+        text-align: right;
+        color: blue;
+        padding: 10px;
+      }
+    }
+
+    .formRight {
+      width: 50%;
+      height: 100%;
+      padding: 10px;
+
+      .formRightItem {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        align-items: left;
+        padding: 10px;
+
+        .formRightItemLabel {
+          width: 40%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+        .formRightChoiceLabel {
+          width: 20%;
+          height: 100%;
+        }
+
+        .formRightItemInput {
+          width: 60%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .formRightSpecialInput {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .simple {
+            width: 60%;
+            margin-left: 100px;
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            .time {
+              font-size: large;
+              display: flex;
+
+              input {
+                width: 5rem;
+                font-size: large;
+                border-radius: 3px;
+                border-color: #ccc;
+                border-width: 1px;
+                margin-left: 10px;
+                text-align: center;
+              }
+            }
+            table {
+              margin: 10px;
+            }
+            tr {
+              border-bottom: none;
+              display: flex;
+            }
+            td {
+              margin: 10px;
+            }
+
+            span {
+              display: flex;
+              margin-left: 10px;
+              margin-bottom: 6px;
+              font-size: large;
+            }
+
+            input {
+              width: 1.5rem;
+              height: 1.7rem;
+            }
+          }
+        }
+        .advanced {
+          padding: 10px;
+          .advancedTable {
+            display: flex;
+            text-align: center;
+            padding: 5px;
+            input {
+              width: 6rem;
+              height: 3rem;
+              border-width: 2px;
+            }
+            td {
+              text-align: center;
+            }
+          }
+          a {
+            margin-left: 25%;
+          }
+        }
+      }
+    }
+  }
+
+  .buttons {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    display: flex;
+
+    .item {
+      width: 20%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 20px;
+    }
+  }
+}
