@@ -33,7 +33,7 @@ import { AdminAddPageComponent } from './pages/admin-add-page/admin-add-page.com
     GroupsPageComponent,
     GroupAddPageComponent,
     AddusersPageComponent,
-    AdmincreationPageComponent
+    AdmincreationPageComponent,
     GroupAddPageComponent,
     SettingsPageComponent,
     AdminAddPageComponent

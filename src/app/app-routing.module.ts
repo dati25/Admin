@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'requests', component: RequestPageComponent},
   { path: 'groups', component: GroupsPageComponent},
   { path : 'groups/add', component: GroupAddPageComponent},
-  { path : 'configuration/add/user', component: AddusersPageComponent}
+  { path : 'configuration/add/user', component: AddusersPageComponent},
   { path: 'groups/add', component: GroupAddPageComponent},
   { path: 'settings', component: SettingsPageComponent},
   { path: 'admin', component: AdminAddPageComponent},
