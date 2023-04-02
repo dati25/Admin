@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class ConfigAddEditComponent {
   selectedBackupType = 'Full';
   selectedPathType = 'Local';
+  selectedPathType2 = 'FTP';
   showBasic = true;
 
   updateButton(text: string) {
@@ -16,6 +17,9 @@ export class ConfigAddEditComponent {
 
   updatePathType(text: string) {
     this.selectedPathType = text;
+  }
+  updatePathType2(text: string) {
+    this.selectedPathType2 = text;
   }
   OnRadioClick(selectedValue: boolean){
     this.showBasic = selectedValue;

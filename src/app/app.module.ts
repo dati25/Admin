@@ -15,6 +15,8 @@ import { UserInfoComponent } from './pages/user-info/user-info.component';
 import { RequestPageComponent } from './pages/request-page/request-page.component';
 import { GroupsPageComponent } from './pages/groups-page/groups-page.component';
 import { GroupAddPageComponent } from './pages/group-add-page/group-add-page.component';
+import { AddusersPageComponent } from './pages/addusers-page/addusers-page.component';
+import { AdmincreationPageComponent } from './admincreation-page/admincreation-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,9 @@ import { GroupAddPageComponent } from './pages/group-add-page/group-add-page.com
     UserInfoComponent,
     RequestPageComponent,
     GroupsPageComponent,
-    GroupAddPageComponent
+    GroupAddPageComponent,
+    AddusersPageComponent,
+    AdmincreationPageComponent
   ],
   imports: [
     BrowserModule,

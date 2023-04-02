@@ -5,7 +5,7 @@
         <div class="formLeft">
             <div class="formLeftItem">
                 <div class="formLeftItemLabel">PC</div>
-                <div class="formLeftItemInput"><a routerlink="">Add users</a></div>
+                <div class="formLeftItemInput"><a routerLink="/configuration/add/user">Add users</a></div>
             </div>
 
             <div class="formLeftItem">
@@ -137,7 +137,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <a href="https://crontab.guru/" style="text-align:center;">Click here to see how cron works</a>
+                    <a href="https://crontab.guru/" style="text-align:center;" target="_blank" rel="noopener noreferrer">Click here to see how cron works</a>
                     
                   </div>
                 
@@ -149,25 +149,51 @@
            
         </div>
         <div class="formRightItem">
-        <div class="formRightItemLabel">Destination Path</div>
-        <div class="formRightItemInput">
+        <div class="formRightChoiceLabel">Destination Path</div>
+        </div>
+        <div class="formRightItem">
+        <div class="formRightItemLabel">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{selectedPathType}}
+                {{selectedPathType2}}
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" (click)="updatePathType('Local')">Local</a></li>
-                  <li><a class="dropdown-item" (click)="updatePathType('FTP')">FTP</a></li>
+                  <li><a class="dropdown-item" (click)="updatePathType2('Local')">Local</a></li>
+                  <li><a class="dropdown-item" (click)="updatePathType2('FTP')">FTP</a></li>
                 </ul>
             </div>
-            <input type="text" class="form-control txtbox"/>
+        </div>  
+        <div class="formRightItemInput">
+            <input type="text" class="form-control txtbox" placeholder="Path"/>
+            </div>  
         </div>
-    </div>  
+        <div class="formRightItem">
+            <div class="formRightIpandPort">
+                <div class="formRightItemIP">
+                    <input type="text" class="form-control txtbox" placeholder="IP Address"/>
+            </div>
+            <div class="formRightItemPort">
+                <input type="text" class="form-control txtbox" placeholder="Port"/>
+            </div>
+            </div>
+        </div>
+        <div class="formRightItem">
+            <div class="formRightUserandPass">
+                <div class="formRightItemUser">
+                    <input type="text" class="form-control txtbox" placeholder="Username"/>
+            </div>
+            <div class="formRightItemPass">
+                <input type="text" class="form-control txtbox" placeholder="Password"/>
+            </div>
+            </div>
+        </div>
+        <hr>
+        <div class="addNew">Add new</div>
     </div>
     </div>
 
     <div class="buttons">
-        <button type="button" class="btn btn-danger item">Cancel</button>
-        <button type="button" class="btn btn-success item">Save</button>
+        <button type="button" class="btn btn-danger item" routerLink="/configuration">Cancel</button>
+        <button type="button" class="btn btn-success item" routerLink="/configuration">Save</button>
     </div>
 </div>

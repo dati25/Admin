@@ -10,6 +10,7 @@ import { UserInfoComponent } from './pages/user-info/user-info.component';
 import { RequestPageComponent } from './pages/request-page/request-page.component';
 import { GroupsPageComponent } from './pages/groups-page/groups-page.component';
 import { GroupAddPageComponent } from './pages/group-add-page/group-add-page.component';
+import { AddusersPageComponent } from './pages/addusers-page/addusers-page.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: MainDashboardComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'users/info' , component: UserInfoComponent}, // potom tam bude users/:id
   { path: 'requests', component: RequestPageComponent},
   { path: 'groups', component: GroupsPageComponent},
-  { path : 'groups/add', component: GroupAddPageComponent}
+  { path : 'groups/add', component: GroupAddPageComponent},
+  { path : 'configuration/add/user', component: AddusersPageComponent}
 ];
 
 @NgModule({
