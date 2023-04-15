@@ -22,6 +22,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { ComputerComponent } from './components/computer/computer.component';
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { SwitchComponent } from './components/switch/switch.component';
+import { ConfigurationRecordComponent } from './components/configuration-record/configuration-record.component';
+import { GroupRecordComponent } from './components/group-record/group-record.component';
+import { RequestRecordComponent } from './components/request-record/request-record.component';
 
 @NgModule({
     declarations: [
@@ -44,6 +47,9 @@ import { SwitchComponent } from './components/switch/switch.component';
         ComputerComponent,
         InputTextComponent,
         SwitchComponent,
+        ConfigurationRecordComponent,
+        GroupRecordComponent,
+        RequestRecordComponent,
     ],
     imports: [BrowserModule, AppRoutingModule, NgOptimizedImage],
     providers: [],
