@@ -1,52 +1,13 @@
 <div *ngIf="isLoggedIn()" class="wrapper">
+    <app-sidebar></app-sidebar>
 
-  <div  class="side-menu">
-    <ul>
-      <li>
-        <a routerLink="/dashboard">Dashboard</a>
-      </li>
-      <li>
-        <a routerLink="/users">Users</a>
-      </li>
-      <li>
-        <a routerLink="/requests">Requests</a>
-      </li>
-      <li>
-        <a routerLink="/groups">Groups</a>
-      </li>
-      <li>
-        <a routerLink="/configuration">Configuration</a>
-      </li>
-    </ul>
-  </div>
+    <app-header></app-header>
 
-  <div class = "main">
-
-    <div  class="top-menu">
-      <div class="logo">
-        <a routerLink="/dashboard"><img src="assets/images/logo.png" alt="logo"/></a>
-      </div>
-      <p class = "innertext">Admin</p>
-      
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="bi bi-gear mygear" ></i>
-        </button>
-        
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" routerLink="/settings">Settings</a></li>
-          <li><a class="dropdown-item" (click)="onLogout()">Log out</a></li>
-        </ul>
-      </div>
-      
-      
-    </div>
-    
     <div class="content">
-      <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
     </div>
-  </div>
 </div>
+
 <div *ngIf="!isLoggedIn()" class="logoutContent">
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </div>

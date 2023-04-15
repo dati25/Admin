@@ -1,38 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsersEditPageComponent } from './pages/users-edit-page/users-edit-page.component';
-import { MainDashboardComponent } from './pages/main-dashboard/main-dashboard.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { ConfigurationPageComponent } from './pages/configuration-page/configuration-page.component';
-import { ConfigAddEditComponent } from './pages/config-add-edit/config-add-edit.component';
-import { UsersPageComponent } from './pages/users-page/users-page.component';
+import { AdminAddComponent } from './pages/admin-add/admin-add.component';
+import { ConfigurationEditComponent } from './pages/configuration-edit/configuration-edit.component';
+import { ConfigurationUsersEditComponent } from './pages/configuration-users-edit/configuration-users-edit.component';
+import { ConfigurationsComponent } from './pages/configurations/configurations.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { GroupEditComponent } from './pages/group-edit/group-edit.component';
+import { GroupsComponent } from './pages/groups/groups.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RequestsComponent } from './pages/requests/requests.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { UserEditComponent } from './pages/user-edit/user-edit.component';
 import { UserInfoComponent } from './pages/user-info/user-info.component';
-import { RequestPageComponent } from './pages/request-page/request-page.component';
-import { GroupsPageComponent } from './pages/groups-page/groups-page.component';
-import { GroupAddPageComponent } from './pages/group-add-page/group-add-page.component';
-import { AddusersPageComponent } from './pages/addusers-page/addusers-page.component';
-import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
-import { AdminAddPageComponent } from './pages/admin-add-page/admin-add-page.component';
+import { UsersComponent } from './pages/users/users.component';
 
 const routes: Routes = [
-  { path: 'dashboard', component: MainDashboardComponent},
-  { path: 'configuration', component: ConfigurationPageComponent},
-  { path: 'users/edit', component: UsersEditPageComponent },
-  { path: '', component: LoginPageComponent },
-  { path: 'configuration/add', component: ConfigAddEditComponent },
-  { path: 'users', component: UsersPageComponent },
-  { path: 'users/info' , component: UserInfoComponent}, // potom tam bude users/:id
-  { path: 'requests', component: RequestPageComponent},
-  { path: 'groups', component: GroupsPageComponent},
-  { path : 'groups/add', component: GroupAddPageComponent},
-  { path : 'configuration/add/user', component: AddusersPageComponent},
-  { path: 'groups/add', component: GroupAddPageComponent},
-  { path: 'settings', component: SettingsPageComponent},
-  { path: 'admin', component: AdminAddPageComponent},
+    { path: '', component: LoginComponent },
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'users', component: UsersComponent },
+    { path: 'user/edit', component: UserEditComponent },
+    { path: 'user/info', component: UserInfoComponent },
+    { path: 'requests', component: RequestsComponent },
+    { path: 'groups', component: GroupsComponent },
+    { path: 'group/edit', component: GroupEditComponent },
+    { path: 'configurations', component: ConfigurationsComponent },
+    { path: 'configurations/edit', component: ConfigurationEditComponent },
+    {
+        path: 'configuration/users',
+        component: ConfigurationUsersEditComponent,
+    },
+    { path: 'settings', component: SettingsComponent },
+    { path: 'admin/add', component: AdminAddComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,56 +1,8 @@
-
-<div class="wrapper">
-
-    <div class="form">
-        <div class="formLeft">
-            <div class="formLeftItem">
-                <div class="formLeftItemLabel">Name</div>
-                <div class="formLeftItemInput">
-                    <input type="text" class="form-control">
-                    </div>
-            </div>
-
-            <div class="formLeftItem">
-                <div class="formLeftItemLabel">Mac adress</div>
-                <div class="formLeftItemInput">
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            <div class="formLeftItem">
-                <div class="formLeftItemLabel">IP Address</div>
-                <div class="formLeftItemInput">
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            <div class="formLeftItem">
-                <div class="formLeftItemLabel">Status</div>
-                <div class="form-check form-switch">
-                    <input class="form-check-input checkboxclass" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                  </div>
-            </div>
-
-            <div class="formLeftItem">
-                <a routerLink="">Edit Configuration</a>
-            </div>
-
-            <hr>
-
-            <div class="formLeftItem">
-                <div class="formLeftItemLabel">Groups:</div>
-                <div class="formLeftGroupList">
-                    <div class="group"><i class="bi bi-x-circle-fill"></i>Group 1</div>
-                    <div class="group"><i class="bi bi-x-circle-fill"></i>Group 2</div>
-                </div>
-            </div>
-        <div class="addNew">Add new</div>
-    </div>     
-    <div class="formRight">
-        <div class="removeUser">Remove user</div>
-    </div>
-    </div>
-    
-    <div class="buttons">
-        <button type="button" class="btn btn-danger item" routerLink="/users">Cancel</button>
-        <button type="button" class="btn btn-success item" routerLink="/users">Save</button>
-    </div>
+<div id="wrapper">
+    <form action="POST">
+        <app-input-text label="Name"></app-input-text>
+        <app-input-text label="Mac Address"></app-input-text>
+        <app-input-text label="IP Address"></app-input-text>
+        <app-switch label="Status" text_left="Off" text_right="On"></app-switch>
+    </form>
 </div>

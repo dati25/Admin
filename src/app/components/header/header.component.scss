@@ -1,0 +1,87 @@
+.header {
+    height: 80px;
+    width: calc(100% - 250px);
+    border: solid 1px #555;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 250px;
+    right: 0;
+
+    .logo {
+        flex-basis: 90%;
+        padding: 5px;
+        color: white;
+
+        a {
+            img {
+                height: 60px;
+                width: 150px;
+            }
+        }
+    }
+
+    .dropdown-toggle {
+        background-color: #333;
+        border: none;
+    }
+    .dropdown-toggle::after {
+        display: none;
+    }
+
+    .dropdown-menu {
+        background-color: #333;
+        border: none;
+        color: white;
+        font-size: 1.5em;
+        align-items: center;
+        display: none;
+        right: 0;
+        left: auto;
+
+        .dropdown-item {
+            width: 100%;
+            color: white;
+            font-size: 1em;
+            margin-top: 10px;
+            user-select: none;
+            cursor: pointer;
+            background-color: #333;
+        }
+        .dropdown-item:hover {
+            background-color: #444;
+        }
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .my-gear {
+        display: inline-block;
+        flex-basis: 5%;
+        align-items: center;
+        text-align: center;
+        color: white;
+        border: none;
+        font-size: 2em;
+        margin-top: 10px;
+        padding-right: 10px;
+        transition: transform 0.3s ease-in-out;
+        transform-origin: 15px 23px;
+    }
+    .my-gear:hover {
+        transform: rotate(360deg);
+    }
+
+    .inner-text {
+        margin-top: 20px;
+        flex-basis: 8%;
+        text-align: right;
+        background-color: #333;
+        color: white;
+        font-size: 1.5em;
+    }
+}

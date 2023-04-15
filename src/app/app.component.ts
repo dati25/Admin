@@ -3,26 +3,24 @@ import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
 })
-
 export class AppComponent {
-  title = 'angular-tutorial';
+    title = 'admin';
 
-  constructor(private authService: AuthService, private router: Router) { }
+    constructor(private authService: AuthService, private router: Router) {}
 
-  isLoggedIn(): boolean {
-    return this.authService.isLoggedIn();
-  }
+    isLoggedIn(): boolean {
+        return this.authService.isLoggedIn();
+    }
 
-  onLogout() {
-    this.authService.logout();
-    this.navigateToLogin();
-  }
-  navigateToLogin() {
-    this.router.navigateByUrl('/');
-  }
+    onLogout() {
+        this.authService.logout();
+        this.navigateToLogin();
+    }
+    navigateToLogin() {
+        this.router.navigateByUrl('/');
+    }
 }
-

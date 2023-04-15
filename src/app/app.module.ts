@@ -1,48 +1,52 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgOptimizedImage } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UsersEditPageComponent } from './pages/users-edit-page/users-edit-page.component';
-import { MainDashboardComponent } from './pages/main-dashboard/main-dashboard.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { ConfigurationPageComponent } from './pages/configuration-page/configuration-page.component';
-import { ConfigAddEditComponent } from './pages/config-add-edit/config-add-edit.component';
-
-import { AuthService } from './auth.service';
-import { UsersPageComponent } from './pages/users-page/users-page.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { UsersComponent } from './pages/users/users.component';
+import { UserEditComponent } from './pages/user-edit/user-edit.component';
 import { UserInfoComponent } from './pages/user-info/user-info.component';
-import { RequestPageComponent } from './pages/request-page/request-page.component';
-import { GroupsPageComponent } from './pages/groups-page/groups-page.component';
-import { GroupAddPageComponent } from './pages/group-add-page/group-add-page.component';
-import { AddusersPageComponent } from './pages/addusers-page/addusers-page.component';
-import { AdmincreationPageComponent } from './admincreation-page/admincreation-page.component';
-import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
-import { AdminAddPageComponent } from './pages/admin-add-page/admin-add-page.component';
+import { RequestsComponent } from './pages/requests/requests.component';
+import { GroupsComponent } from './pages/groups/groups.component';
+import { GroupEditComponent } from './pages/group-edit/group-edit.component';
+import { ConfigurationsComponent } from './pages/configurations/configurations.component';
+import { ConfigurationEditComponent } from './pages/configuration-edit/configuration-edit.component';
+import { ConfigurationUsersEditComponent } from './pages/configuration-users-edit/configuration-users-edit.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { AdminAddComponent } from './pages/admin-add/admin-add.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ComputerComponent } from './components/computer/computer.component';
+import { InputTextComponent } from './components/input-text/input-text.component';
+import { SwitchComponent } from './components/switch/switch.component';
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    UsersEditPageComponent,
-    MainDashboardComponent,
-    LoginPageComponent,
-    ConfigurationPageComponent,
-    ConfigAddEditComponent,
-    UsersPageComponent,
-    UserInfoComponent,
-    RequestPageComponent,
-    GroupsPageComponent,
-    GroupAddPageComponent,
-    AddusersPageComponent,
-    AdmincreationPageComponent,
-    GroupAddPageComponent,
-    SettingsPageComponent,
-    AdminAddPageComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        DashboardComponent,
+        UsersComponent,
+        UserEditComponent,
+        UserInfoComponent,
+        RequestsComponent,
+        GroupsComponent,
+        GroupEditComponent,
+        ConfigurationsComponent,
+        ConfigurationEditComponent,
+        ConfigurationUsersEditComponent,
+        SettingsComponent,
+        AdminAddComponent,
+        LoginComponent,
+        SidebarComponent,
+        HeaderComponent,
+        ComputerComponent,
+        InputTextComponent,
+        SwitchComponent,
+    ],
+    imports: [BrowserModule, AppRoutingModule, NgOptimizedImage],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

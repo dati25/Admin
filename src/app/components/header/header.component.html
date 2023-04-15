@@ -1,0 +1,30 @@
+<div class="header">
+    <div class="logo">
+        <a routerLink="/dashboard"
+            ><img ngSrc="assets/images/logo.png" alt="logo"
+                  height="119" width="239"/></a>
+    </div>
+
+    <p class="inner-text">Admin</p>
+
+    <div class="dropdown">
+        <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+        >
+            <i class="bi bi-gear my-gear"></i>
+        </button>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li>
+                <a class="dropdown-item" routerLink="/settings">Settings</a>
+            </li>
+            <li>
+                <a class="dropdown-item" (click)="onLogout()">Log out</a>
+            </li>
+        </ul>
+    </div>
+</div>
