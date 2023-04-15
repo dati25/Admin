@@ -1,3 +1,44 @@
 #wrapper {
-    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 2rem;
+
+    form {
+        width: 50%;
+
+        #form {
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+            p {
+                margin: 1rem;
+                font-size: 1.05rem;
+            }
+
+            hr {
+                width: 97.5%;
+                margin-left: 1.25%;
+            }
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: space-around;
+
+            margin: 3rem;
+
+            button {
+                width: 10rem;
+                height: 3rem;
+                font-size: 1.2rem;
+                border-radius: 0.5rem;
+                border: 1px solid #ccc;
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
 }
