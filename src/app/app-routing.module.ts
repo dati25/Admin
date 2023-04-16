@@ -24,7 +24,7 @@ const routes: Routes = [
     { path: 'groups', component: GroupsComponent },
     { path: 'group/edit', component: GroupEditComponent },
     { path: 'configurations', component: ConfigurationsComponent },
-    { path: 'configurations/edit', component: ConfigurationEditComponent },
+    { path: 'configuration/edit', component: ConfigurationEditComponent },
     {
         path: 'configuration/users',
         component: ConfigurationUsersEditComponent,

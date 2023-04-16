@@ -1,1 +1,6 @@
-<p>configuration-edit works!</p>
+<div class="wrapper">
+    <app-configuration-form
+        [form]="form"
+        (saved)="saveConfig($event)"
+    ></app-configuration-form>
+</div>

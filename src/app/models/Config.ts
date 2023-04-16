@@ -3,7 +3,7 @@ export class Config {
     public name: string;
     public type: string;
     public repeatPeriod: string;
-    public expirationDate: Date;
+    public expirationDate: string;
     public compress: boolean;
     public retention: number;
     public packageSize: number;
@@ -14,7 +14,7 @@ export class Config {
         name: string,
         type: string,
         repeatPeriod: string,
-        expirationDate: Date,
+        expirationDate: string,
         compress: boolean,
         retention: number,
         packageSize: number,

@@ -1,11 +1,11 @@
-import { User } from './User';
+import { PC } from './PC';
 
 export class Group {
     public name: string;
-    public users: User[];
+    public pcs: PC[];
 
-    public constructor(name: string, users: User[]) {
+    public constructor(name: string, pcs: PC[]) {
         this.name = name;
-        this.users = users;
+        this.pcs = pcs;
     }
 }
