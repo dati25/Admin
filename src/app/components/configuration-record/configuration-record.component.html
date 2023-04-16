@@ -2,15 +2,13 @@
     <thead>
         <tr>
             <th scope="col">PC <i class="bi bi-filter"></i></th>
-            <th scope="col">Group <i class="bi bi-filter"></i></th>
             <th scope="col">Type <i class="bi bi-filter"></i></th>
-            <th scope="col">Repeat <i class="bi bi-filter"></i></th>
+            <th scope="col">Repeat Period <i class="bi bi-filter"></i></th>
             <th scope="col">Expiration <i class="bi bi-filter"></i></th>
-            <th scope="col">Source <i class="bi bi-filter"></i></th>
-            <th scope="col">Destination <i class="bi bi-filter"></i></th>
             <th scope="col">Compress <i class="bi bi-filter"></i></th>
             <th scope="col">Retention <i class="bi bi-filter"></i></th>
             <th scope="col">Package size <i class="bi bi-filter"></i></th>
+            <th scope="col">Status <i class="bi bi-filter"></i></th>
             <th></th>
             <th></th>
         </tr>
@@ -21,20 +19,25 @@
             <tr>
                 <td class="value">{{ config.pc }}</td>
                 <td class="value">{{ config.type }}</td>
-                <td class="value">{{ config.expiration }}</td>
-                <td class="value">{{ config.source }}</td>
-                <td class="value">{{ config.destination }}</td>
+                <td class="value">{{ config.repeatPeriod }}</td>
+                <td class="value">{{ config.expirationDate }}</td>
                 <td class="value">{{ config.compress }}</td>
                 <td class="value">{{ config.retention }}</td>
-                <td class="value">{{ config.packagesize }}</td>
-                <td class="value">{{ config.group }}</td>
+                <td class="value">{{ config.packageSize }}</td>
+                <td class="value">{{ config.status }}</td>
                 <td>
                     <a routerLink="/configuration/add" class="btn btn-warning"
                         >Edit</a
                     >
                 </td>
                 <td>
-                    <button type="button" class="btn btn-danger">Remove</button>
+                    <button
+                        type="button"
+                        class="btn btn-danger"
+                        (click)="deleteConfig(config)"
+                    >
+                        Remove
+                    </button>
                 </td>
             </tr>
         </ng-container>

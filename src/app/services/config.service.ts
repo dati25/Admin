@@ -10,6 +10,12 @@ export class configService {
     constructor(private http: HttpClient) {}
 
     public findAll(): Observable<Config[]> {
-        return this.http.get<Config[]>('http://localhost:5035/api/configs');
+        return this.http.get<Config[]>('http://localhost:5105/api/Config');
+    }
+
+    public delete(config: Config): Observable<Config> {
+        return this.http.delete<Config>(
+            'http://localhost:5035/api/Config/' + config.id
+        );
     }
 }

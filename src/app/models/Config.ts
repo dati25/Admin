@@ -1,36 +1,33 @@
 export class Config {
+    public id: number;
     public pc: string;
-    public group: string;
     public type: string;
-    public expiration: string;
-    public source: string;
-    public destination: string;
-    public compress: string;
-    public retention: string;
-    public packagesize: string;
-    public status: string;
+    public repeatPeriod: string;
+    public expirationDate: Date;
+    public compress: boolean;
+    public retention: number;
+    public packageSize: number;
+    public status: boolean;
 
     public constructor(
+        id: number,
         pc: string,
-        group: string,
         type: string,
-        expiration: string,
-        source: string,
-        destination: string,
-        compress: string,
-        retention: string,
-        packagesize: string,
-        status: string
+        repeatPeriod: string,
+        expirationDate: Date,
+        compress: boolean,
+        retention: number,
+        packageSize: number,
+        status: boolean
     ) {
+        this.id = id;
         this.pc = pc;
-        this.group = group;
         this.type = type;
-        this.expiration = expiration;
-        this.source = source;
-        this.destination = destination;
+        this.repeatPeriod = repeatPeriod;
+        this.expirationDate = expirationDate;
         this.compress = compress;
         this.retention = retention;
-        this.packagesize = packagesize;
+        this.packageSize = packageSize;
         this.status = status;
     }
 }

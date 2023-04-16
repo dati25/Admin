@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgOptimizedImage } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +27,7 @@ import { SwitchComponent } from './components/switch/switch.component';
 import { ConfigurationRecordComponent } from './components/configuration-record/configuration-record.component';
 import { GroupRecordComponent } from './components/group-record/group-record.component';
 import { RequestRecordComponent } from './components/request-record/request-record.component';
+import { ConfigurationFormComponent } from './components/configuration-form/configuration-form.component';
 
 @NgModule({
     declarations: [
@@ -50,8 +53,15 @@ import { RequestRecordComponent } from './components/request-record/request-reco
         ConfigurationRecordComponent,
         GroupRecordComponent,
         RequestRecordComponent,
+        ConfigurationFormComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule, NgOptimizedImage],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgOptimizedImage,
+        HttpClientModule,
+        ReactiveFormsModule,
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { configService } from '../../services/config.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { Config } from '../../models/Config';
+import { configService } from '../../services/config.service';
 
 @Component({
     selector: 'app-users-list-page',
@@ -8,11 +8,16 @@ import { Config } from '../../models/Config';
     styleUrls: ['./configuration-record.component.scss'],
 })
 export class ConfigurationRecordComponent implements OnInit {
-    public data: Config[];
+    @Input()
+    public configData: Config[] = [];
 
     public constructor(private service: configService) {}
 
-    public ngOnInit(): void {
-        this.service.findAll().subscribe((result) => (this.data = result));
+    public ngOnInit(): void {}
+
+    public deleteConfig(config: Config): void {
+        this.service.delete(config).subscribe();
+
+        location.reload();
     }
 }
