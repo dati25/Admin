@@ -1,0 +1,40 @@
+.mytable {
+    border: 2px solid #ddd;
+    height: 80%;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+    .tableLeft {
+        width: 30%;
+    }
+    .tableRight {
+        width: 50%;
+        border-left: 2px solid #ddd;
+    }
+    tbody {
+        justify-content: center;
+        align-items: center;
+    }
+    td:not(:first-child) {
+        border-left: 2px solid #ddd;
+    }
+    .mybtnrow {
+        border-left: none !important;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .btn-danger {
+        width: 70%;
+    }
+
+    .btn-warning {
+        width: 100%;
+    }
+
+    .mybtn {
+        border-left: 2px solid #ddd;
+    }
+}

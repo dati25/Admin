@@ -1,1 +1,24 @@
-<p>group-record works!</p>
+<table class="mytable table">
+    <thead>
+        <tr>
+            <th class="tableLeft">Name <i class="bi bi-filter"></i></th>
+            <th class="mybtn"></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let group of groupData">
+            <tr>
+                <td>{{ group.name }}</td>
+                <td>
+                    <a routerLink="/configuration/add" class="btn btn-warning"
+                        >Edit</a
+                    >
+                </td>
+                <td class="mybtnrow">
+                    <button type="button" class="btn btn-danger">Remove</button>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
