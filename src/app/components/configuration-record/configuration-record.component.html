@@ -1,7 +1,7 @@
-<table class="mytable table">
+<table id="table" class="table">
     <thead>
         <tr>
-            <th scope="col">PC <i class="bi bi-filter"></i></th>
+            <th scope="col">Name <i class="bi bi-filter"></i></th>
             <th scope="col">Type <i class="bi bi-filter"></i></th>
             <th scope="col">Repeat Period <i class="bi bi-filter"></i></th>
             <th scope="col">Expiration <i class="bi bi-filter"></i></th>
@@ -17,7 +17,7 @@
     <tbody>
         <ng-container *ngFor="let config of configData">
             <tr>
-                <td class="value">{{ config.pc }}</td>
+                <td class="value">{{ config.name }}</td>
                 <td class="value">{{ config.type }}</td>
                 <td class="value">{{ config.repeatPeriod }}</td>
                 <td class="value">{{ config.expirationDate }}</td>

@@ -1,6 +1,6 @@
 export class Config {
     public id: number;
-    public pc: string;
+    public name: string;
     public type: string;
     public repeatPeriod: string;
     public expirationDate: Date;
@@ -11,7 +11,7 @@ export class Config {
 
     public constructor(
         id: number,
-        pc: string,
+        name: string,
         type: string,
         repeatPeriod: string,
         expirationDate: Date,
@@ -21,7 +21,7 @@ export class Config {
         status: boolean
     ) {
         this.id = id;
-        this.pc = pc;
+        this.name = name;
         this.type = type;
         this.repeatPeriod = repeatPeriod;
         this.expirationDate = expirationDate;

@@ -1,27 +1,22 @@
-.mytable {
-    border-collapse: separate;
-    border-spacing: 0;
+#table {
     border: 2px solid #ddd;
-    height: 50%;
-    width: 100%;
     border-radius: 10px;
-    text-align: center;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
-    .tableLeft {
-        width: 30%;
-    }
-    .tableRight {
-        width: 50%;
-        border-left: 2px solid #ddd;
-    }
     tbody {
         justify-content: center;
         align-items: center;
+
+        .value {
+            text-align: center;
+            vertical-align: middle;
+        }
     }
+
     td:not(:first-child) {
         border-left: 2px solid #ddd;
     }
+
     .mybtnrow {
         border-left: none !important;
         padding-left: 0px;

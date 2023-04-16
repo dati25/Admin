@@ -22,7 +22,7 @@ export class ConfigurationFormComponent {
 
     public static createForm(fb: FormBuilder, config: Config): FormGroup {
         return fb.group({
-            pc: config.pc,
+            name: config.name,
             type: config.type,
             repeatPeriod: config.repeatPeriod,
             expirationDate: config.expirationDate,
