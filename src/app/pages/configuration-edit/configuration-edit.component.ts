@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { configService } from 'src/app/services/config.service';
+import { ConfigService } from 'src/app/services/config.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Config } from '../../models/Config';
 import { ConfigurationFormComponent } from '../../components/configuration-form/configuration-form.component';
@@ -10,29 +10,31 @@ import { ConfigurationFormComponent } from '../../components/configuration-form/
     templateUrl: './configuration-edit.component.html',
     styleUrls: ['./configuration-edit.component.scss'],
 })
-export class ConfigurationEditComponent {
+export class ConfigurationEditComponent implements OnInit {
     form: FormGroup;
 
     config: Config;
 
     public constructor(
         private fb: FormBuilder,
+        private route: ActivatedRoute,
         private router: Router,
-        private service: configService
+        private service: ConfigService
     ) {}
 
     public ngOnInit(): void {
-        this.form = ConfigurationFormComponent.createForm(
-            this.fb,
-            new Config(0, '', '', '', '', true, 10, 10, false)
-        );
-        console.log('AAAAAAA we are here');
+        const id = +this.route.snapshot.paramMap.get('id');
+
+        this.service.findById(id).subscribe((config) => {
+            this.config = config;
+            this.form = ConfigurationFormComponent.createForm(this.fb, config);
+        });
     }
 
     public saveConfig(values: any): void {
-        console.log('AABB meow');
+        Object.assign(this.config, values);
         this.service
-            .insert(values)
-            .subscribe(() => this.router.navigate(['/configuration']));
+            .update(this.config)
+            .subscribe(() => this.router.navigate(['/configurations']));
     }
 }

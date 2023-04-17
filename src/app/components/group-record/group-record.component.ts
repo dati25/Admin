@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Group } from '../../models/Group';
-import { groupService } from '../../services/group.service';
+import { GroupService } from '../../services/group.service';
 
 @Component({
     selector: 'app-group-record',
@@ -11,7 +11,7 @@ export class GroupRecordComponent implements OnInit {
     @Input()
     public groupData: Group[] = [];
 
-    public constructor(private service: groupService) {}
+    public constructor(private service: GroupService) {}
 
     public ngOnInit(): void {}
 }

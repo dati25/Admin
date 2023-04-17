@@ -15,18 +15,21 @@
     </thead>
 
     <tbody>
-        <ng-container *ngFor="let config of configData">
+        <ng-container *ngFor="let item of configs">
             <tr>
-                <td class="value">{{ config.name }}</td>
-                <td class="value">{{ config.type }}</td>
-                <td class="value">{{ config.repeatPeriod }}</td>
-                <td class="value">{{ config.expirationDate }}</td>
-                <td class="value">{{ config.compress }}</td>
-                <td class="value">{{ config.retention }}</td>
-                <td class="value">{{ config.packageSize }}</td>
-                <td class="value">{{ config.status }}</td>
+                <td class="value">{{ item.name }}</td>
+                <td class="value">{{ item.type }}</td>
+                <td class="value">{{ item.repeatPeriod }}</td>
+                <td class="value">{{ item.expirationDate }}</td>
+                <td class="value">{{ item.compress }}</td>
+                <td class="value">{{ item.retention }}</td>
+                <td class="value">{{ item.packageSize }}</td>
+                <td class="value">{{ item.status }}</td>
                 <td>
-                    <a routerLink="/configuration/add" class="btn btn-warning"
+                    <a
+                        routerLink="/configuration/add"
+                        class="btn btn-warning"
+                        (click)="edited.emit(item)"
                         >Edit</a
                     >
                 </td>
@@ -34,7 +37,7 @@
                     <button
                         type="button"
                         class="btn btn-danger"
-                        (click)="deleteConfig(config)"
+                        (click)="deleted.emit(item)"
                     >
                         Remove
                     </button>

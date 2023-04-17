@@ -8,13 +8,11 @@ import { Config } from '../../models/Config';
     styleUrls: ['./configuration-form.component.scss'],
 })
 export class ConfigurationFormComponent {
-    selectedBackupType = 'Full';
-    selectedPathType = 'Local';
-    selectedPathType2 = 'FTP';
-    showBasic = true;
-    RadioElement = document.getElementById('btnradio1');
+    backupType: string = 'full';
+    sourceType: string = '';
 
-    compress = '';
+    radioElementSimple = document.getElementById('simpleradio');
+    radioElementAdvanced = document.getElementById('advancedradio');
 
     @Input()
     form: FormGroup;
@@ -23,6 +21,8 @@ export class ConfigurationFormComponent {
     saved: EventEmitter<any> = new EventEmitter<any>();
 
     public static createForm(fb: FormBuilder, config: Config): FormGroup {
+        selectedBackupType: config.type;
+
         return fb.group({
             name: config.name,
             type: config.type,
@@ -36,32 +36,26 @@ export class ConfigurationFormComponent {
     }
 
     public save(): void {
-        this.form.value.compress = this.RadioElement?.ariaChecked;
-        this.form.value.type = this.selectedBackupType;
-        console.log('was here');
-        this.form.value.type = 'Full';
-        this.form.value.repeatPeriod = '* * * * *';
-        this.form.value.expirationDate = '2023-04-21T19:58:03';
-        this.form.value.retention = '1';
-        this.form.value.packageSize = '1';
-        this.form.value.status = 'true';
+        // this.form.value.type = 'full';
+        // this.form.value.repeatPeriod = '* * * * *';
+        // this.form.value.expirationDate = '2023-04-21T19:58:03';
+        // this.form.value.compress = false;
+        // this.form.value.retention = 1;
+        // this.form.value.packageSize = 1;
+        // this.form.value.status = false;
 
-        console.log(this.form);
+        // console.log(this.form.value);
 
         this.saved.emit(this.form.value);
     }
 
-    updateButton(text: string) {
-        this.selectedBackupType = text;
+    public updateButton(text: string) {
+        this.backupType = text;
     }
 
-    updatePathType(text: string) {
-        this.selectedPathType = text;
+    public updateSourceType(text: string) {
+        this.sourceType = text;
     }
-    updatePathType2(text: string) {
-        this.selectedPathType2 = text;
-    }
-    OnRadioClick(selectedValue: boolean) {
-        this.showBasic = selectedValue;
-    }
+
+    public getBackupType() {}
 }

@@ -28,27 +28,27 @@
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                         >
-                            {{ selectedBackupType }}
+                            {{ backupType }}
                         </button>
                         <ul class="dropdown-menu">
                             <li>
                                 <a
                                     class="dropdown-item"
-                                    (click)="updateButton('Full')"
+                                    (click)="updateButton('full')"
                                     >Full</a
                                 >
                             </li>
                             <li>
                                 <a
                                     class="dropdown-item"
-                                    (click)="updateButton('Differencial')"
-                                    >Differencial</a
+                                    (click)="updateButton('differential')"
+                                    >Differential</a
                                 >
                             </li>
                             <li>
                                 <a
                                     class="dropdown-item"
-                                    (click)="updateButton('Incremental')"
+                                    (click)="updateButton('incremental')"
                                     >Incremental</a
                                 >
                             </li>
@@ -97,7 +97,7 @@
                 </div>
             </div>
 
-            <div class="formLeftItem">
+            <!-- <div class="formLeftItem">
                 <div class="formLeftItemLabel">Source Path(s)</div>
                 <div class="formLeftItemInput">
                     <div class="dropdown">
@@ -107,20 +107,20 @@
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                         >
-                            {{ selectedPathType }}
+                            {{ sourceType }}
                         </button>
                         <ul class="dropdown-menu">
                             <li>
                                 <a
                                     class="dropdown-item"
-                                    (click)="updatePathType('Local')"
+                                    (click)="updateSourceType('local')"
                                     >Local</a
                                 >
                             </li>
                             <li>
                                 <a
                                     class="dropdown-item"
-                                    (click)="updatePathType('FTP')"
+                                    (click)="updateSourceType('ftp')"
                                     >FTP</a
                                 >
                             </li>
@@ -132,8 +132,8 @@
             <hr />
             <div class="addNew">Add new</div>
         </div>
-        <div class="formRight">
-            <div class="formRightItem">
+        <div class="formRight"> -->
+            <!-- <div class="formRightItem">
                 <div class="formRightChoiceLabel mx-auto">
                     <div
                         class="btn-group"
@@ -147,7 +147,6 @@
                             (click)="OnRadioClick(true)"
                             id="simpleradio"
                             autocomplete="off"
-                            checked
                         />
                         <label class="btn btn-outline-primary" for="simpleradio"
                             >Simple</label
@@ -168,8 +167,8 @@
                         >
                     </div>
                 </div>
-            </div>
-            <div class="formRightItem">
+            </div> -->
+            <!-- <div class="formRightItem">
                 <div class="formRightSpecialInput">
                     <div *ngIf="showBasic" class="simple">
                         <table class="table">
@@ -311,8 +310,9 @@
                         >
                     </div>
                 </div>
-            </div>
-            <div class="formRightItem">
+            </div> -->
+
+            <!-- <div class="formRightItem">
                 <div class="formRightChoiceLabel">Destination Path</div>
             </div>
             <div class="formRightItem">
@@ -389,7 +389,7 @@
                 </div>
             </div>
             <hr />
-            <div class="addNew">Add new</div>
+            <div class="addNew">Add new</div> -->
         </div>
 
         <div class="buttons">
@@ -404,6 +404,7 @@
                 type="button"
                 class="btn btn-success item"
                 routerLink="/configurations"
+                (click)="save()"
             >
                 Save
             </button>

@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Request } from 'src/app/models/Request';
-import { requestService } from 'src/app/services/request.service';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
+import { Computer } from 'src/app/models/Computer';
 
 @Component({
     selector: 'app-request-record',
@@ -9,9 +8,15 @@ import { requestService } from 'src/app/services/request.service';
 })
 export class RequestRecordComponent implements OnInit {
     @Input()
-    public requestData: Request[] = [];
+    public requests: Computer[];
 
-    public constructor(private service: requestService) {}
+    @Output()
+    public edited: EventEmitter<Computer> = new EventEmitter<Computer>();
+
+    @Output()
+    public deleted: EventEmitter<Computer> = new EventEmitter<Computer>();
+
+    public constructor() {}
 
     public ngOnInit(): void {}
 }

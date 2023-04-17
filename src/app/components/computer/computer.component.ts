@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
+import { Computer } from '../../models/Computer';
 
 @Component({
     selector: 'app-computer',
@@ -6,12 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
     styleUrls: ['./computer.component.scss'],
 })
 export class ComputerComponent implements OnInit {
-    @Input() name: string = '';
-    @Input() mac: string = '';
-    @Input() ip: string = '';
-    @Input() status: string = '';
+    @Input()
+    public computers: Computer[];
 
-    constructor() {}
+    @Output()
+    public deleted: EventEmitter<Computer> = new EventEmitter<Computer>();
 
-    ngOnInit(): void {}
+    @Output()
+    public edited: EventEmitter<Computer> = new EventEmitter<Computer>();
+
+    public constructor() {}
+
+    public ngOnInit(): void {}
 }

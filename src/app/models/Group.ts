@@ -1,4 +1,4 @@
-import { PC } from './PC';
+import { Computer } from './Computer';
 
 export class Group {
     public id: number;

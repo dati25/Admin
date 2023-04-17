@@ -1,23 +1,22 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { Config } from '../../models/Config';
-import { configService } from '../../services/config.service';
 
 @Component({
-    selector: 'app-users-list-page',
+    selector: 'app-configuration-record',
     templateUrl: './configuration-record.component.html',
     styleUrls: ['./configuration-record.component.scss'],
 })
 export class ConfigurationRecordComponent implements OnInit {
     @Input()
-    public configData: Config[] = [];
+    public configs: Config[];
 
-    public constructor(private service: configService) {}
+    @Output()
+    public deleted: EventEmitter<Config> = new EventEmitter<Config>();
+
+    @Output()
+    public edited: EventEmitter<Config> = new EventEmitter<Config>();
+
+    public constructor() {}
 
     public ngOnInit(): void {}
-
-    public deleteConfig(config: Config): void {
-        this.service.delete(config).subscribe();
-
-        location.reload();
-    }
 }

@@ -15,41 +15,9 @@
         </div>
     </div>
 
-    <div id="computers">
-        <app-computer
-            name="test"
-            mac="62:1F:22:46:13:B1"
-            ip="11.114.245.20"
-        ></app-computer>
-
-        <app-computer
-            name="jupiter"
-            mac="7A:E6:1C:0D:8F:BC"
-            ip="87.111.29.199"
-        ></app-computer>
-
-        <app-computer
-            name="zeus"
-            mac="F2:8D:5F:29:33:88"
-            ip="143.152.12.205"
-        ></app-computer>
-
-        <app-computer
-            name="athena"
-            mac="E3:6B:2D:47:8C:7E"
-            ip="61.55.176.85"
-        ></app-computer>
-
-        <app-computer
-            name="apollo"
-            mac="1D:99:49:9B:EF:11"
-            ip="192.168.1.43"
-        ></app-computer>
-
-        <app-computer
-            name="hera"
-            mac="42:FC:0C:71:2A:8F"
-            ip="202.101.184.131"
-        ></app-computer>
-    </div>
+    <app-computer
+        [computers]="computers"
+        (edited)="editComputer($event)"
+        (deleted)="deleteComputer($event)"
+    ></app-computer>
 </div>

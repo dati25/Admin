@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { groupService } from 'src/app/services/group.service';
+import { GroupService } from 'src/app/services/group.service';
 import { Group } from 'src/app/models/Group';
 
 @Component({
@@ -10,7 +10,7 @@ import { Group } from 'src/app/models/Group';
 export class GroupsComponent {
     public groupData: Group[] = [];
 
-    public constructor(private service: groupService) {}
+    public constructor(private service: GroupService) {}
 
     public ngOnInit(): void {
         this.service.findAll().subscribe((result) => (this.groupData = result));

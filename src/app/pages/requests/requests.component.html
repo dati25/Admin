@@ -1,22 +1,7 @@
-<table class="table mytable">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Mac address</th>
-            <th>IP Address</th>
-            <th>Status</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <ng-container *ngFor="let request of requestData">
-            <tr>
-                <td>{{ request.name }}</td>
-                <td>{{ request.macAddress }}</td>
-                <td>{{ request.ipAddress }}</td>
-                <td>{{ request.status }}</td>
-                <td><input type="checkbox" class="checkbox" /></td>
-            </tr>
-        </ng-container>
-    </tbody>
-</table>
+<div id="wrapper">
+    <app-request-record
+        [requests]="requests"
+        (deleted)="deleteComputer($event)"
+        (edited)="editComputer($event)"
+    ></app-request-record>
+</div>

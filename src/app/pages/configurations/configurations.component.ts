@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigService } from '../../services/config.service';
 import { Config } from '../../models/Config';
-import { configService } from '../../services/config.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-configurations',
@@ -8,13 +9,26 @@ import { configService } from '../../services/config.service';
     styleUrls: ['./configurations.component.scss'],
 })
 export class ConfigurationsComponent implements OnInit {
-    public configData: Config[] = [];
+    public data: Config[];
 
-    public constructor(private service: configService) {}
+    public constructor(
+        private service: ConfigService,
+        private router: Router
+    ) {}
 
     public ngOnInit(): void {
-        this.service
-            .findAll()
-            .subscribe((result) => (this.configData = result));
+        this.refresh();
+    }
+
+    public editConfig(config: Config): void {
+        this.router.navigate(['/configuration/edit', config.id]);
+    }
+
+    public deleteConfig(config: Config): void {
+        this.service.delete(config).subscribe(() => this.refresh());
+    }
+
+    private refresh(): void {
+        this.service.findAll().subscribe((result) => (this.data = result));
     }
 }

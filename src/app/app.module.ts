@@ -28,6 +28,7 @@ import { ConfigurationRecordComponent } from './components/configuration-record/
 import { GroupRecordComponent } from './components/group-record/group-record.component';
 import { RequestRecordComponent } from './components/request-record/request-record.component';
 import { ConfigurationFormComponent } from './components/configuration-form/configuration-form.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
 
 @NgModule({
     declarations: [
@@ -54,6 +55,7 @@ import { ConfigurationFormComponent } from './components/configuration-form/conf
         GroupRecordComponent,
         RequestRecordComponent,
         ConfigurationFormComponent,
+        UserFormComponent,
     ],
     imports: [
         BrowserModule,

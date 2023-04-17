@@ -3,7 +3,11 @@
     <input type="text" class="form-control textbox" />
 </div>
 
-<app-users-list-page [configData]="configData"></app-users-list-page>
+<app-configuration-record
+    [configs]="data"
+    (edited)="editConfig($event)"
+    (deleted)="deleteConfig($event)"
+></app-configuration-record>
 
 <div class="row ButtonArea">
     <div class="item">
