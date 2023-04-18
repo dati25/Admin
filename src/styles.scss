@@ -1,8 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Open+Sans&display=swap");
 
 html,
 body {
-    height: 100%;
-    margin: 0px;
-    font-family: sans-serif;
+  height: 100%;
+  margin: 0px;
+  font-family: "Open sans", sans-serif;
+  background-color: var(--bs-main) !important;
+  color: var(--bs-lightgrey);
+}
+
+:root {
+  --bs-main: #171520;
+  --bs-darkest: #0a0715;
+  --bs-darker: #110d1c;
+  --bs-lighter: #26242c;
+  --bs-lightest: #4e495b;
+  --bs-darkgreen: #023020;
+  --bs-darkred: #8b0000;
+  --bs-lightgrey: #c8c8c8;
 }

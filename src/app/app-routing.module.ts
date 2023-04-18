@@ -1,40 +1,37 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminAddComponent } from './pages/admin-add/admin-add.component';
-import { ConfigurationEditComponent } from './pages/configuration-edit/configuration-edit.component';
-import { ConfigurationUsersEditComponent } from './pages/configuration-users-edit/configuration-users-edit.component';
-import { ConfigurationsComponent } from './pages/configurations/configurations.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { GroupEditComponent } from './pages/group-edit/group-edit.component';
-import { GroupsComponent } from './pages/groups/groups.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RequestsComponent } from './pages/requests/requests.component';
-import { SettingsComponent } from './pages/settings/settings.component';
-import { UserEditComponent } from './pages/user-edit/user-edit.component';
-import { UserInfoComponent } from './pages/user-info/user-info.component';
-import { UsersComponent } from './pages/users/users.component';
+
+import { AdminsCreatePageComponent } from './pages/admins-create-page/admins-create-page.component';
+import { ConfigsCreatePageComponent } from './pages/configs-create-page/configs-create-page.component';
+import { ConfigsEditPageComponent } from './pages/configs-edit-page/configs-edit-page.component';
+import { ConfigsListPageComponent } from './pages/configs-list-page/configs-list-page.component';
+import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { GroupsCreatePageComponent } from './pages/groups-create-page/groups-create-page.component';
+import { GroupsEditPageComponent } from './pages/groups-edit-page/groups-edit-page.component';
+import { GroupsListPageComponent } from './pages/groups-list-page/groups-list-page.component';
+import { RequestsListPageComponent } from './pages/requests-list-page/requests-list-page.component';
+import { UsersEditPageComponent } from './pages/users-edit-page/users-edit-page.component';
+import { UsersListPageComponent } from './pages/users-list-page/users-list-page.component';
+import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
 
 const routes: Routes = [
-    { path: '', component: LoginComponent },
-    { path: 'dashboard', component: DashboardComponent },
-    { path: 'users', component: UsersComponent },
-    { path: 'user/edit/:id', component: UserEditComponent },
-    { path: 'user/info', component: UserInfoComponent },
-    { path: 'requests', component: RequestsComponent },
-    { path: 'groups', component: GroupsComponent },
-    { path: 'group/edit/:id', component: GroupEditComponent },
-    { path: 'configurations', component: ConfigurationsComponent },
-    { path: 'configuration/edit/:id', component: ConfigurationEditComponent },
-    {
-        path: 'configuration/users',
-        component: ConfigurationUsersEditComponent,
-    },
-    { path: 'settings', component: SettingsComponent },
-    { path: 'admin/add', component: AdminAddComponent },
+  { path: '', component: DashboardPageComponent },
+  { path: 'dashboard', component: DashboardPageComponent },
+  { path: 'admins/create', component: AdminsCreatePageComponent },
+  { path: 'configs/create', component: ConfigsCreatePageComponent },
+  { path: 'configs/edit/:id', component: ConfigsEditPageComponent },
+  { path: 'configs/list', component: ConfigsListPageComponent },
+  { path: 'groups/create', component: GroupsCreatePageComponent },
+  { path: 'groups/edit/:id', component: GroupsEditPageComponent },
+  { path: 'groups/list', component: GroupsListPageComponent },
+  { path: 'requests/list', component: RequestsListPageComponent },
+  { path: 'users/edit/:id', component: UsersEditPageComponent },
+  { path: 'users/list', component: UsersListPageComponent },
+  { path: 'settings', component: SettingsPageComponent },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

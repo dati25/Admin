@@ -1,0 +1,129 @@
+form {
+  color: var(--bs-lightgrey);
+
+  #form {
+    padding: 0.75rem;
+    border: 2px solid var(--bs-lighter);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+    p {
+      margin: 1rem;
+      font-size: 1.05rem;
+    }
+
+    hr {
+      width: 97.5%;
+      margin-left: 1.25%;
+    }
+
+    #input-text {
+      display: flex;
+      align-content: space-between;
+      justify-content: center;
+      align-items: center;
+
+      margin: 1.5rem 1rem;
+
+      #label {
+        flex: 2;
+
+        height: 2rem;
+        font-size: 1.1rem;
+
+        margin-right: 5rem;
+      }
+
+      #input {
+        flex: 4;
+
+        #input-field {
+          height: 2rem;
+          background-color: var(--bs-lighter);
+          border: 1px solid var(--bs-lightest);
+          color: var(--bs-lightgrey);
+        }
+      }
+    }
+
+    #switch {
+      display: flex;
+      align-content: space-between;
+      justify-content: center;
+      align-items: center;
+
+      margin: 1.5rem 1rem;
+
+      #label {
+        flex: 2;
+
+        height: 2rem;
+        font-size: 1.1rem;
+
+        margin-right: 5rem;
+      }
+
+      #input {
+        flex: 4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        #input-field {
+          .btn-check {
+            height: 2rem;
+          }
+
+          .btn {
+            height: 2rem;
+            font-size: 1rem;
+            line-height: 1.25rem;
+            border: 1px solid var(--bs-lightest);
+          }
+
+          #btnradio1:checked + .btn {
+            background-color: var(--bs-darkred);
+          }
+
+          #btnradio2:checked + .btn {
+            background-color: var(--bs-darkgreen);
+          }
+        }
+      }
+    }
+  }
+
+  #buttons {
+    display: flex;
+    justify-content: space-around;
+
+    margin: 3rem;
+
+    button {
+      width: 10rem;
+      height: 3rem;
+      font-size: 1.2rem;
+      border-radius: 0.5rem;
+      border: 2px solid var(--bs-lightest);
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-outline-danger {
+      color: var(--bs-darkred);
+    }
+
+    .btn-outline-danger:hover {
+      background-color: var(--bs-darkred);
+      color: var(--bs-lightgrey);
+    }
+
+    .btn-outline-success {
+      color: var(--bs-darkgreen);
+    }
+
+    .btn-outline-success:hover {
+      background-color: var(--bs-darkgreen);
+      color: var(--bs-lightgrey);
+    }
+  }
+}

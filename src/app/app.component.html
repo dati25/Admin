@@ -1,13 +1,9 @@
-<div *ngIf="isLoggedIn()" class="wrapper">
-    <app-sidebar></app-sidebar>
+<div id="wrapper">
+  <app-header></app-header>
 
-    <app-header></app-header>
+  <app-sidebar></app-sidebar>
 
-    <div class="content">
-        <router-outlet></router-outlet>
-    </div>
-</div>
-
-<div *ngIf="!isLoggedIn()" class="logoutContent">
+  <div id="content">
     <router-outlet></router-outlet>
+  </div>
 </div>
