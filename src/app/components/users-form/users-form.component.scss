@@ -1,20 +1,15 @@
 form {
-  color: var(--bs-lightgrey);
+  color: var(--text);
 
   #form {
     padding: 0.75rem;
-    border: 2px solid var(--bs-lighter);
+    border: 2px solid var(--lighter);
     border-radius: 0.5rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
     p {
       margin: 1rem;
       font-size: 1.05rem;
-    }
-
-    hr {
-      width: 97.5%;
-      margin-left: 1.25%;
     }
 
     #input-text {
@@ -39,9 +34,9 @@ form {
 
         #input-field {
           height: 2rem;
-          background-color: var(--bs-lighter);
-          border: 1px solid var(--bs-lightest);
-          color: var(--bs-lightgrey);
+          background-color: var(--lighter);
+          border: 1px solid var(--lightest);
+          color: var(--text);
         }
       }
     }
@@ -78,15 +73,15 @@ form {
             height: 2rem;
             font-size: 1rem;
             line-height: 1.25rem;
-            border: 1px solid var(--bs-lightest);
+            border: 1px solid var(--lightest);
           }
 
           #btnradio1:checked + .btn {
-            background-color: var(--bs-darkred);
+            background-color: var(--danger);
           }
 
           #btnradio2:checked + .btn {
-            background-color: var(--bs-darkgreen);
+            background-color: var(--success);
           }
         }
       }
@@ -102,28 +97,29 @@ form {
     button {
       width: 10rem;
       height: 3rem;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      font-weight: 600;
       border-radius: 0.5rem;
-      border: 2px solid var(--bs-lightest);
+      border: 2px solid var(--lightest);
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     }
 
     .btn-outline-danger {
-      color: var(--bs-darkred);
+      color: var(--danger);
     }
 
     .btn-outline-danger:hover {
-      background-color: var(--bs-darkred);
-      color: var(--bs-lightgrey);
+      background-color: var(--danger);
+      color: var(--text);
     }
 
     .btn-outline-success {
-      color: var(--bs-darkgreen);
+      color: var(--success);
     }
 
     .btn-outline-success:hover {
-      background-color: var(--bs-darkgreen);
-      color: var(--bs-lightgrey);
+      background-color: var(--success);
+      color: var(--text);
     }
   }
 }

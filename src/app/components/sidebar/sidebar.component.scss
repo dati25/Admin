@@ -6,11 +6,11 @@
   margin-top: 5rem;
   font-size: 1.5rem;
 
-  background-color: var(--bs-darkest);
+  background-color: var(--darkest);
 
   a {
     text-decoration: none;
-    color: var(--bs-lightgrey);
+    color: var(--text);
   }
 
   ul {
@@ -23,7 +23,7 @@
 
     li {
       padding: 1.25rem 2rem;
-      border-top: 1px solid var(--bs-lighter);
+      border-top: 1px solid var(--lighter);
 
       a {
         width: 100%;
@@ -32,11 +32,11 @@
     }
 
     li:hover {
-      background-color: var(--bs-darker);
+      background-color: var(--darker);
     }
 
     a:last-child {
-      border-bottom: 1px solid var(--bs-lighter);
+      border-bottom: 1px solid var(--lighter);
     }
   }
 }
