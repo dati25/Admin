@@ -1,1 +1,7 @@
-<p>groups-list-page works!</p>
+<div id="wrapper">
+  <app-groups-table
+    [groups]="groups"
+    (edited)="editGroup($event)"
+    (deleted)="deleteGroup($event)"
+  ></app-groups-table>
+</div>

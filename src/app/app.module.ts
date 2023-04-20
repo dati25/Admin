@@ -21,6 +21,7 @@ import { ConfigsCreatePageComponent } from './pages/configs-create-page/configs-
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { UsersTableComponent } from './components/users-table/users-table.component';
 import { UsersFormComponent } from './components/users-form/users-form.component';
+import { GroupsTableComponent } from './components/groups-table/groups-table.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { UsersFormComponent } from './components/users-form/users-form.component
     DashboardPageComponent,
     UsersTableComponent,
     UsersFormComponent,
+    GroupsTableComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Members</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let group of groups">
+      <td>{{ group.name }}</td>
+      <td>
+        <p *ngFor="let c of group.computers">{{ c.idPc }},<span> </span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
