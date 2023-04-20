@@ -6,17 +6,17 @@ body {
   height: 100%;
   margin: 0px;
   font-family: "Open sans", sans-serif;
-  background-color: var(--bs-main) !important;
-  color: var(--bs-lightgrey);
+  background-color: var(--main) !important;
+  color: var(--text);
 }
 
 :root {
-  --bs-main: #171520;
-  --bs-darkest: #0a0715;
-  --bs-darker: #110d1c;
-  --bs-lighter: #26242c;
-  --bs-lightest: #4e495b;
-  --bs-darkgreen: #023020;
-  --bs-darkred: #8b0000;
-  --bs-lightgrey: #c8c8c8;
+  --main: #171520;
+  --darkest: #0a0715;
+  --darker: #110d1c;
+  --lighter: #26242c;
+  --lightest: #4e495b;
+  --success: #004F00;
+  --danger: #8b0000;
+  --text: #c8c8c8;
 }
