@@ -1,5 +1,5 @@
-import { Sources } from './Sources';
-import { Destinations } from './Destination';
+import { Source } from './Source';
+import { Destination } from './Destination';
 
 export class Configs {
   public id: number;
@@ -11,8 +11,8 @@ export class Configs {
   public retention: number;
   public packagesize: number;
   public status: boolean;
-  public sources: Sources[];
-  public destinations: Destinations[];
+  public sources: Source[];
+  public destinations: Destination[];
 
   public constructor(
     id: number,
@@ -24,8 +24,8 @@ export class Configs {
     retention: number,
     packagesize: number,
     status: boolean,
-    sources: Sources[],
-    destinations: Destinations[]
+    sources: Source[],
+    destinations: Destination[]
   ) {
     this.id = id;
     this.name = name;
