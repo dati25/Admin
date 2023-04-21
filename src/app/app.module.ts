@@ -22,6 +22,8 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 import { UsersTableComponent } from './components/users-table/users-table.component';
 import { UsersFormComponent } from './components/users-form/users-form.component';
 import { GroupsTableComponent } from './components/groups-table/groups-table.component';
+import { SettingsFormComponent } from './components/settings-form/settings-form.component';
+import { SettingsReportFormComponent } from './components/settings-report-form/settings-report-form.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { GroupsTableComponent } from './components/groups-table/groups-table.com
     UsersTableComponent,
     UsersFormComponent,
     GroupsTableComponent,
+    SettingsFormComponent,
+    SettingsReportFormComponent,
   ],
   imports: [
     BrowserModule,

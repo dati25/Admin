@@ -1,1 +1,10 @@
-<p>settings-page works!</p>
+<div id="wrapper">
+  <app-settings-form
+    [form]="form"
+    (saved)="saveAdmin($event)"
+    *ngIf="form"
+  ></app-settings-form>
+  <app-settings-report-form>
+    [form]="formRight" (saved)="saveEmail($event)" *ngIf="formRight"
+  </app-settings-report-form>
+</div>
