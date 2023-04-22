@@ -8,17 +8,11 @@ import { Admin } from '../../models/Admin';
   styleUrls: ['./settings-form.component.scss'],
 })
 export class SettingsFormComponent {
-  public showBasic: boolean = true;
-
   @Input()
   form: FormGroup;
 
   @Output()
   saved: EventEmitter<any> = new EventEmitter<any>();
-
-  public OnRadioClick(input: boolean) {
-    this.showBasic = input;
-  }
 
   public static createForm(fb: FormBuilder, admin: Admin): FormGroup {
     return fb.group({
