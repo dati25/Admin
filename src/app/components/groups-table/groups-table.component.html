@@ -3,14 +3,42 @@
     <tr>
       <th>Name</th>
       <th>Members</th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <tr *ngFor="let group of groups">
-      <td>{{ group.name }}</td>
-      <td>
-        <p *ngFor="let c of group.computers">{{ c.idPc }},<span> </span></p>
+      <td id="name">{{ group.name }}</td>
+      <td id="users">
+        <p
+          *ngFor="let computer of group.pcGroups | slice : 0 : 5; let i = index"
+        >
+          <a routerLink="/users/edit/{{ computer.idPc }}"
+            ><p id="link">{{ computer.name }}</p></a
+          ><span
+            *ngIf="
+              computer.idPc != group.pcGroups[group.pcGroups.length - 1].idPc &&
+              i < 4
+            "
+            >,
+          </span>
+          <span
+            *ngIf="
+              computer.idPc != group.pcGroups[group.pcGroups.length - 1].idPc &&
+              i > 3
+            "
+            >...</span
+          >
+        </p>
+      </td>
+      <td id="buttons">
+        <a id="edit-link" routerLink="" (click)="edited.emit(group)"
+          ><i id="edit" class="bi bi-pencil-square"></i
+        ></a>
+        <a id="delete-link" routerLink="" (click)="deleted.emit(group)">
+          <i id="delete" class="bi bi-trash-fill"></i>
+        </a>
       </td>
     </tr>
   </tbody>

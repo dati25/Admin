@@ -40,10 +40,6 @@
       justify-content: space-between;
       align-items: center;
 
-      a {
-        color: var(--lightest);
-      }
-
       #status {
         display: flex;
         flex-direction: column;
@@ -64,6 +60,14 @@
           background-color: var(--danger);
           border-color: var(--danger);
         }
+      }
+
+      #edit-link {
+        color: var(--lightest);
+      }
+
+      #delete-link {
+        color: var(--danger);
       }
     }
   }

@@ -1,0 +1,28 @@
+<div id="container">
+  <div id="users">
+    <div id="label">Users</div>
+
+    <div id="grid">
+      <div id="item" *ngFor="let computer of group?.pcGroups">
+        <a (click)="removeUser(computer)"
+          ><i id="delete" class="bi bi-x-circle"></i
+        ></a>
+        <div id="user">{{ computer.name }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="add">
+    <div id="label">Add user</div>
+
+    <div id="add-user">
+      <i id="edit" class="bi bi-plus-circle" (click)="addUser(select)"></i>
+
+      <select id="select" #select>
+        <option *ngFor="let item of users" [value]="item.id">
+          {{ item.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>

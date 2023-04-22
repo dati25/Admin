@@ -1,17 +1,17 @@
 <div id="computers">
-  <div id="loop" *ngFor="let item of users">
-    <div id="computer" *ngIf="item.status != 'q'">
+  <div id="loop" *ngFor="let user of users">
+    <div id="computer" *ngIf="user.status != 'q'">
       <div id="left">
-        <span id="name">{{ item.name }}</span>
+        <span id="name">{{ user.name }}</span>
 
         <div id="mac">
           <label for="mac-address">MAC</label>
-          <span class="value"> : {{ item.macAddress }}</span>
+          <span class="value"> : {{ user.macAddress }}</span>
         </div>
 
         <div id="ip">
           <label for="ip-address">IP</label>
-          <span class="value"> : {{ item.ipAddress }}</span>
+          <span class="value"> : {{ user.ipAddress }}</span>
         </div>
       </div>
 
@@ -23,19 +23,19 @@
             role="switch"
             id="switch status-switch"
             disabled
-            [checked]="item.status === 't' ? true : false"
+            [checked]="user.status === 't' ? true : false"
           />
         </div>
 
-        <div id="delete">
-          <a href="/users" (click)="deleted.emit(item)"
-            ><i class="bi bi-trash-fill deleteicon"></i
+        <div id="edit">
+          <a id="edit-link" routerLink="" (click)="edited.emit(user)"
+            ><i class="bi bi-pencil-square editicon"></i
           ></a>
         </div>
 
-        <div id="edit">
-          <a routerLink="/users/edit" (click)="edited.emit(item)"
-            ><i class="bi bi-pencil-square editicon"></i
+        <div id="delete">
+          <a id="delete-link" routerLink="" (click)="deleted.emit(user)"
+            ><i class="bi bi-trash-fill deleteicon"></i
           ></a>
         </div>
       </div>

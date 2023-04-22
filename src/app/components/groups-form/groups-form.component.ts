@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { User } from '../../models/User';
+import { Group } from '../../models/Group';
 
 @Component({
-  selector: 'app-users-form',
-  templateUrl: './users-form.component.html',
-  styleUrls: ['./users-form.component.scss'],
+  selector: 'app-groups-form',
+  templateUrl: './groups-form.component.html',
+  styleUrls: ['./groups-form.component.scss'],
 })
-export class UsersFormComponent {
+export class GroupsFormComponent {
   constructor() {}
 
   @Input()
@@ -16,12 +16,9 @@ export class UsersFormComponent {
   @Output()
   saved: EventEmitter<any> = new EventEmitter<any>();
 
-  public static createForm(fb: FormBuilder, user: User): FormGroup {
+  public static createForm(fb: FormBuilder, group: Group): FormGroup {
     return fb.group({
-      name: user.name,
-      macAddress: user.macAddress,
-      ipAddress: user.ipAddress,
-      status: user.status,
+      name: group.name,
     });
   }
 

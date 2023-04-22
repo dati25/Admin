@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
-import { UserService } from '../../services/user.service';
 import { Group } from '../../models/Group';
 
 @Component({
@@ -8,8 +7,6 @@ import { Group } from '../../models/Group';
   styleUrls: ['./groups-table.component.scss'],
 })
 export class GroupsTableComponent implements OnInit {
-  service: UserService;
-
   @Input()
   public groups: Group[];
 
@@ -19,9 +16,7 @@ export class GroupsTableComponent implements OnInit {
   @Output()
   public edited: EventEmitter<Group> = new EventEmitter<Group>();
 
-  public constructor(service: UserService) {
-    this.service = service;
-  }
+  public constructor() {}
 
   public ngOnInit(): void {}
 }

@@ -7,7 +7,39 @@ body {
   margin: 0px;
   font-family: "Open sans", sans-serif;
   background-color: var(--main) !important;
-  color: var(--text);
+  color: var(--text) !important;
+
+  a {
+    text-decoration: none;
+  }
+
+  #delete {
+    color: var(--danger);
+  }
+
+  #delete:hover {
+    color: var(--danger-dark);
+    cursor: pointer;
+  }
+
+  #edit {
+    color: var(--text);
+  }
+
+  #edit:hover {
+    color: var(--text-dark);
+    cursor: pointer;
+  }
+
+  #link {
+    color: var(--text);
+    text-decoration: underline;
+  }
+
+  #link:hover {
+    color: var(--text-dark);
+    cursor: pointer;
+  }
 }
 
 :root {
@@ -16,7 +48,12 @@ body {
   --darker: #110d1c;
   --lighter: #26242c;
   --lightest: #4e495b;
-  --success: #004F00;
-  --danger: #8b0000;
+
+  --success: #004f00;
+
+  --danger: #660000;
+  --danger-dark: #440000;
+
   --text: #c8c8c8;
+  --text-dark: #6a6a6a;
 }

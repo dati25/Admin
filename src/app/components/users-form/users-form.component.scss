@@ -50,7 +50,7 @@ form {
       margin: 1.5rem 1rem;
 
       #label {
-        flex: 2;
+        flex: 4;
 
         height: 2rem;
         font-size: 1.1rem;
@@ -59,7 +59,7 @@ form {
       }
 
       #input {
-        flex: 4;
+        flex: 5;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -95,7 +95,7 @@ form {
     margin: 3rem;
 
     button {
-      width: 10rem;
+      width: 8rem;
       height: 3rem;
       font-size: 1.25rem;
       font-weight: 600;

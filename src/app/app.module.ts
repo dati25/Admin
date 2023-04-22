@@ -24,6 +24,8 @@ import { UsersFormComponent } from './components/users-form/users-form.component
 import { GroupsTableComponent } from './components/groups-table/groups-table.component';
 import { SettingsFormComponent } from './components/settings-form/settings-form.component';
 import { SettingsReportFormComponent } from './components/settings-report-form/settings-report-form.component';
+import { GroupsFormComponent } from './components/groups-form/groups-form.component';
+import { GroupsUsersComponent } from './components/groups-users/groups-users.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { SettingsReportFormComponent } from './components/settings-report-form/s
     GroupsTableComponent,
     SettingsFormComponent,
     SettingsReportFormComponent,
+    GroupsFormComponent,
+    GroupsUsersComponent,
   ],
   imports: [
     BrowserModule,

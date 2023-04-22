@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Group } from '../models/Group';
-import { User } from '../models/User';
-import { GroupUsers } from '../models/GroupUsers';
+import { Computer } from '../models/Computer';
 
 @Injectable({
   providedIn: 'root',
@@ -24,9 +23,12 @@ export class GroupService {
   }
 
   public update(group: Group): Observable<Group> {
+    const updatedGroup = { ...group };
+    delete updatedGroup.id;
+
     return this.http.put<Group>(
       'http://localhost:5105/api/Group/' + group.id,
-      group
+      updatedGroup
     );
   }
 
@@ -36,9 +38,9 @@ export class GroupService {
     );
   }
 
-  public deleteUser(group: Group, user: User): Observable<Group> {
+  public deleteUser(group: Group, computer: Computer): Observable<Group> {
     return this.http.delete<Group>(
-      'http://localhost:5105/api/Group/' + group.id + '/' + user.id
+      'http://localhost:5105/api/Group/' + group.id + '/' + computer.idPc
     );
   }
 }

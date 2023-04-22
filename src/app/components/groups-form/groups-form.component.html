@@ -1,0 +1,24 @@
+<form [formGroup]="form">
+  <div id="form">
+    <div id="input-text">
+      <div id="label">Name</div>
+      <div id="input">
+        <input
+          type="text"
+          id="input-field"
+          class="form-control"
+          formControlName="name"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div id="buttons">
+    <button type="button" class="btn btn-outline-danger" (click)="goBack()">
+      Cancel
+    </button>
+    <button type="button" class="btn btn-outline-success" (click)="save()">
+      Save
+    </button>
+  </div>
+</form>
