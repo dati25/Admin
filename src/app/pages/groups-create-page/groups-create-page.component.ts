@@ -38,7 +38,6 @@ export class GroupsCreatePageComponent implements OnInit {
   }
 
   public saveGroup(values: any): void {
-    console.log(values);
     this.service
       .insert(values)
       .subscribe(() => this.router.navigate(['/groups/list']));

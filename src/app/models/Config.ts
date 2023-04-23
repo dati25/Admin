@@ -1,7 +1,8 @@
 import { Source } from './Source';
 import { Destination } from './Destination';
+import { Task } from './Task';
 
-export class Configs {
+export class Config {
   public id: number;
   public name: string;
   public type: string;
@@ -14,6 +15,7 @@ export class Configs {
   public status: boolean;
   public sources: Source[];
   public destinations: Destination[];
+  public tasks: Task[];
 
   public constructor(
     id: number,
@@ -27,7 +29,8 @@ export class Configs {
     createdBy: number,
     status: boolean,
     sources: Source[],
-    destinations: Destination[]
+    destinations: Destination[],
+    tasks: Task[]
   ) {
     this.id = id;
     this.name = name;
@@ -41,5 +44,6 @@ export class Configs {
     this.status = status;
     this.sources = sources;
     this.destinations = destinations;
+    this.tasks = tasks;
   }
 }

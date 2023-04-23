@@ -28,8 +28,6 @@ export class GroupsListPageComponent implements OnInit {
   }
 
   private refresh(): void {
-    this.service.findAll().subscribe((result) => {
-      this.groups = result;
-    });
+    this.service.findAll().subscribe((result) => (this.groups = result));
   }
 }

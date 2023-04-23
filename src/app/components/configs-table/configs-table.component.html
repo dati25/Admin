@@ -1,0 +1,42 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Repeat Period</th>
+      <th>Expiration Date</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let config of configs">
+      <td id="name">{{ config.name }}</td>
+      <td id="type">{{ config.type }}</td>
+      <td id="repeat">{{ config.repeatPeriod }}</td>
+      <td id="expiration">{{ config.expirationDate }}</td>
+      <td id="status">{{ config.status == true ? "ON" : "OFF" }}</td>
+
+      <td id="buttons">
+        <i
+          (click)="edited.emit(config)"
+          id="edit"
+          class="bi bi-pencil-square"
+        ></i>
+
+        <i
+          (click)="deleted.emit(config)"
+          id="delete"
+          class="bi bi-trash-fill"
+        ></i>
+      </td>
+    </tr>
+
+    <td colspan="6">
+      <div id="add-div">
+        <i routerLink="/configs/create" id="add" class="bi bi-plus-circle"></i>
+      </div>
+    </td>
+  </tbody>
+</table>

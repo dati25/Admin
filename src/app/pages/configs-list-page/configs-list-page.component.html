@@ -1,1 +1,7 @@
-<p>configs-list-page works!</p>
+<div id="wrapper">
+  <app-configs-table
+    [configs]="configs"
+    (edited)="editConfig($event)"
+    (deleted)="deleteConfig($event)"
+  ></app-configs-table>
+</div>

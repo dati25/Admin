@@ -23,12 +23,9 @@ export class GroupService {
   }
 
   public update(group: Group): Observable<Group> {
-    const updatedGroup = { ...group };
-    delete updatedGroup.id;
-
     return this.http.put<Group>(
       'http://localhost:5105/api/Group/' + group.id,
-      updatedGroup
+      group
     );
   }
 

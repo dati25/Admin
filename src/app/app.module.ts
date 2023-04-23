@@ -27,6 +27,8 @@ import { SettingsReportFormComponent } from './components/settings-report-form/s
 import { GroupsFormComponent } from './components/groups-form/groups-form.component';
 import { GroupsUsersComponent } from './components/groups-users/groups-users.component';
 import { RequestsTableComponent } from './components/requests-table/requests-table.component';
+import { ConfigsTableComponent } from './components/configs-table/configs-table.component';
+import { ConfigsFormComponent } from './components/configs-form/configs-form.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LoginPageComponentComponent } from './components/login-page-component/login-page-component.component';
 
@@ -55,6 +57,8 @@ import { LoginPageComponentComponent } from './components/login-page-component/l
     GroupsFormComponent,
     GroupsUsersComponent,
     RequestsTableComponent,
+    ConfigsTableComponent,
+    ConfigsFormComponent,
     LoginPageComponent,
     LoginPageComponentComponent,
   ],
