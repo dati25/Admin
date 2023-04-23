@@ -7,7 +7,9 @@
         <a (click)="removeUser(computer)"
           ><i id="delete" class="bi bi-x-circle"></i
         ></a>
-        <div id="user">{{ computer.name }}</div>
+        <a routerLink="/users/edit/{{ computer.idPc }}">
+          <div id="edit">{{ computer.name }}</div>
+        </a>
       </div>
     </div>
   </div>

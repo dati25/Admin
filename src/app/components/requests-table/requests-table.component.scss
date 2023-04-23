@@ -1,0 +1,26 @@
+table {
+  color: var(--text);
+  width: 75%;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  border-color: var(--lightest);
+
+  th {
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 1.15rem;
+  }
+
+  p {
+    display: inline;
+  }
+
+  #buttons {
+    text-align: right;
+    padding-right: 3rem;
+
+    i {
+      margin: 0 2rem;
+    }
+  }
+}

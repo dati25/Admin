@@ -32,11 +32,12 @@
           >
         </p>
       </td>
+
       <td id="buttons">
-        <a id="edit-link" routerLink="" (click)="edited.emit(group)"
+        <a id="edit-link" (click)="edited.emit(group)"
           ><i id="edit" class="bi bi-pencil-square"></i
         ></a>
-        <a id="delete-link" routerLink="" (click)="deleted.emit(group)">
+        <a id="delete-link" (click)="deleted.emit(group)">
           <i id="delete" class="bi bi-trash-fill"></i>
         </a>
       </td>

@@ -1,0 +1,27 @@
+<table class="table">
+  <thead class="">
+    <tr>
+      <th>Name</th>
+      <th>Mac Address</th>
+      <th>IP Address</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody *ngFor="let item of requests" class="">
+    <tr *ngIf="item.status == 'q'">
+      <td>{{ item.name }}</td>
+      <td>{{ item.macAddress }}</td>
+      <td>{{ item.ipAddress }}</td>
+      <td id="buttons">
+        <a id="edit-link" (click)="edited.emit(item)"
+          ><i id="edit" class="bi bi-plus-circle"></i
+        ></a>
+
+        <a id="delete-link" (click)="deleted.emit(item)">
+          <i id="delete" class="bi bi-trash-fill"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

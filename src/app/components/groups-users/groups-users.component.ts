@@ -41,8 +41,6 @@ export class GroupsUsersComponent {
       updatedGroup.pcGroups.push(new Computer(user.id, user.name));
       delete updatedGroup.pcGroups[0].name;
 
-      console.log(updatedGroup);
-
       this.service.update(updatedGroup).subscribe(() => {
         this.refresh();
       });
