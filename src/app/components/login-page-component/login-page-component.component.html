@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 id="logo-text">foobakcup</h1>
+
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input type="text" class="form-control" formControlName="username" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="password" />
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" [defaultChecked]="true" />
+      <label class="form-check-label" for="exampleCheck1">Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="save()">
+      Log in
+    </button>
+  </form>
+</div>

@@ -8,7 +8,7 @@ import { Admin } from '../../models/Admin';
   styleUrls: ['./settings-report-form.component.scss'],
 })
 export class SettingsReportFormComponent {
-  public showBasic: boolean = true;
+  public showBasic: boolean = false;
   public cron: string[] = ['', '', '', '', ''];
   public basic: string[] = ['', '', '', '', ''];
   public numeros: number[] = [0, 0, 0, 0, 0, 0, 0];
@@ -22,10 +22,11 @@ export class SettingsReportFormComponent {
   public OnRadioClick(input: boolean) {
     this.showBasic = input;
   }
+  public ngOnInit(): void {
+    this.getCron();
+  }
 
   public static createForm(fb: FormBuilder, admin: Admin): FormGroup {
-    console.log('jsem tady');
-
     return fb.group({
       username: admin.username,
       email: admin.email,
@@ -35,6 +36,11 @@ export class SettingsReportFormComponent {
 
   public save(): void {
     this.saved.emit(this.form.value);
+  }
+
+  public hideBar(): boolean {
+    const radioBtn = document.getElementById('btnradio2') as HTMLInputElement;
+    return radioBtn.checked;
   }
 
   public updateCron(index: number, event: any): void {
@@ -52,20 +58,25 @@ export class SettingsReportFormComponent {
 
     this.form.controls['repeatPeriod'].setValue(finalCron);
   }
+  public getCron() {
+    for (let index = 0; index <= 5; index++) {
+      this.cron[index] = this.form.value.repeatPeriod.split(' ')[index];
+    }
+  }
   public updateBasic(numero: string): void {
-    if (this.basic[2].includes(numero) && this.basic[2].length < 2) {
-      this.basic[2] = this.basic[2].replace(numero, '');
+    if (this.basic[4].includes(numero) && this.basic[4].length < 2) {
+      this.basic[4] = this.basic[4].replace(numero, '');
     } else if (
-      this.basic[2].includes(numero) &&
-      this.basic[2].lastIndexOf(numero) == 0
+      this.basic[4].includes(numero) &&
+      this.basic[4].lastIndexOf(numero) == 0
     ) {
-      this.basic[2] = this.basic[2].replace(numero + ',', '');
-    } else if (this.basic[2].includes(numero)) {
-      this.basic[2] = this.basic[2].replace(',' + numero, '');
-    } else if (this.basic[2] != '') {
-      this.basic[2] = this.basic[2] + ',' + numero;
+      this.basic[4] = this.basic[4].replace(numero + ',', '');
+    } else if (this.basic[4].includes(numero)) {
+      this.basic[4] = this.basic[4].replace(',' + numero, '');
+    } else if (this.basic[4] != '') {
+      this.basic[4] = this.basic[4] + ',' + numero;
     } else {
-      this.basic[2] = numero;
+      this.basic[4] = numero;
     }
     console.log(this.basic);
 
@@ -81,7 +92,7 @@ export class SettingsReportFormComponent {
 
   public finalCronBasic(): void {
     var finalCron =
-      this.basic[0] + ' ' + this.basic[1] + ' ' + this.basic[2] + ' *  *';
+      this.basic[0] + ' ' + this.basic[1] + ' * ' + '* ' + this.basic[4];
 
     this.form.controls['repeatPeriod'].setValue(finalCron);
   }

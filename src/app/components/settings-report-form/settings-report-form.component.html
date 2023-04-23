@@ -30,6 +30,7 @@
               id="btnradio2"
               autocomplete="on"
               [checked]="form.controls['email'].value != ''"
+              (change)="this.hideBar()"
             />
             <label class="btn btn-outline-secondary" for="btnradio2">On</label>
           </div>
@@ -37,205 +38,207 @@
       </div>
     </div>
 
-    <div id="input-text">
-      <div id="label">Email</div>
-      <input
-        type="text"
-        class="form-control"
-        formControlName="email"
-        id="input-field"
-      />
-    </div>
+    <div *ngIf="hideBar()">
+      <div id="input-text">
+        <div id="label">Email</div>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="email"
+          id="input-field"
+        />
+      </div>
 
-    <div class="formRightItem">
-      <div class="formRightChoiceLabel mx-auto">
-        <div
-          class="btn-group"
-          role="group"
-          aria-label="Basic radio toggle button group"
-        >
-          <input
-            type="radio"
-            class="btn-check"
-            name="btnradio2"
-            (click)="OnRadioClick(true)"
-            id="simpleradio"
-            autocomplete="off"
-            checked
-          />
-          <label class="btn btn-outline-primary" for="simpleradio"
-            >Simple</label
+      <div class="formRightItem">
+        <div class="formRightChoiceLabel mx-auto">
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic radio toggle button group"
           >
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio2"
+              (click)="OnRadioClick(true)"
+              id="simpleradio"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="simpleradio"
+              >Simple</label
+            >
 
-          <input
-            type="radio"
-            class="btn-check"
-            name="btnradio2"
-            (click)="OnRadioClick(false)"
-            id="advancedradio"
-            autocomplete="off"
-          />
-          <label class="btn btn-outline-primary" for="advancedradio"
-            >Advanced</label
-          >
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio2"
+              (click)="OnRadioClick(false)"
+              id="advancedradio"
+              autocomplete="off"
+              checked
+            />
+            <label class="btn btn-outline-primary" for="advancedradio"
+              >Advanced</label
+            >
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="formRightItem">
-      <div class="formRightSpecialInput">
-        <div *ngIf="showBasic" class="simple">
-          <table class="table">
-            <tbody>
-              <td>
-                <tr>
-                  <input
-                    type="checkbox"
-                    id="Monday"
-                    name="Monday"
-                    [value]="numeros[0]"
-                    (change)="updateBasic('1')"
-                  />
-                  <span>Monday</span>
-                </tr>
-                <tr>
-                  <input
-                    type="checkbox"
-                    id="Tuesday"
-                    name="Tuesday"
-                    [value]="numeros[1]"
-                    (change)="updateBasic('2')"
-                  />
-                  <span>Tuesday</span>
-                </tr>
-                <tr>
-                  <input
-                    type="checkbox"
-                    id="Wednesday"
-                    name="Wednesday"
-                    [value]="numeros[2]"
-                    (change)="updateBasic('3')"
-                  />
-                  <span>Wednesday</span>
-                </tr>
-                <tr>
-                  <input
-                    type="checkbox"
-                    id="Thursday"
-                    name="Thursday"
-                    [value]="numeros[3]"
-                    (change)="updateBasic('4')"
-                  />
-                  <span>Thursday</span>
-                </tr>
-              </td>
-
-              <td>
-                <tr>
-                  <input
-                    type="checkbox"
-                    id="Friday"
-                    name="Friday"
-                    [value]="numeros[4]"
-                    (change)="updateBasic('5')"
-                  />
-                  <span>Friday</span>
-                </tr>
-                <tr>
-                  <input
-                    type="checkbox"
-                    id="Saturday"
-                    name="Saturday"
-                    [value]="numeros[5]"
-                    (change)="updateBasic('6')"
-                  />
-                  <span>Saturday</span>
-                </tr>
-                <tr>
-                  <input
-                    type="checkbox"
-                    id="Sunday"
-                    name="Sunday"
-                    [value]="numeros[6]"
-                    (change)="updateBasic('7')"
-                  />
-                  <span>Sunday</span>
-                </tr>
-                <tr>
-                  <div class="time">
-                    <label>TIME</label
-                    ><input
-                      type="text"
-                      class="form-control"
-                      placeholder="18:00"
-                      (input)="updateBasicTime($event)"
-                    />
-                  </div>
-                </tr>
-              </td>
-            </tbody>
-          </table>
-        </div>
-
-        <div *ngIf="!showBasic" class="advanced">
-          <div class="advancedTable">
-            <table>
+      <div class="formRightItem">
+        <div class="formRightSpecialInput">
+          <div *ngIf="showBasic" class="simple">
+            <table class="table">
               <tbody>
-                <tr>
-                  <td>
+                <td>
+                  <tr>
                     <input
-                      type="text"
-                      class="form-control"
-                      [value]="cron[0]"
-                      (input)="updateCron(0, $event)"
+                      type="checkbox"
+                      id="Monday"
+                      name="Monday"
+                      [value]="numeros[0]"
+                      (change)="updateBasic('1')"
                     />
-                  </td>
-                  <td>
+                    <span>Monday</span>
+                  </tr>
+                  <tr>
                     <input
-                      type="text"
-                      class="form-control"
-                      [value]="cron[1]"
-                      (input)="updateCron(1, $event)"
+                      type="checkbox"
+                      id="Tuesday"
+                      name="Tuesday"
+                      [value]="numeros[1]"
+                      (change)="updateBasic('2')"
                     />
-                  </td>
-                  <td>
+                    <span>Tuesday</span>
+                  </tr>
+                  <tr>
                     <input
-                      type="text"
-                      class="form-control"
-                      [value]="cron[2]"
-                      (input)="updateCron(2, $event)"
+                      type="checkbox"
+                      id="Wednesday"
+                      name="Wednesday"
+                      [value]="numeros[2]"
+                      (change)="updateBasic('3')"
                     />
-                  </td>
-                  <td>
+                    <span>Wednesday</span>
+                  </tr>
+                  <tr>
                     <input
-                      type="text"
-                      class="form-control"
-                      [value]="cron[3]"
-                      (input)="updateCron(3, $event)"
+                      type="checkbox"
+                      id="Thursday"
+                      name="Thursday"
+                      [value]="numeros[3]"
+                      (change)="updateBasic('4')"
                     />
-                  </td>
-                  <td>
+                    <span>Thursday</span>
+                  </tr>
+                </td>
+
+                <td>
+                  <tr>
                     <input
-                      type="text"
-                      class="form-control"
-                      [value]="cron[4]"
-                      (input)="updateCron(4, $event)"
+                      type="checkbox"
+                      id="Friday"
+                      name="Friday"
+                      [value]="numeros[4]"
+                      (change)="updateBasic('5')"
                     />
-                  </td>
-                </tr>
-                <tr>
-                  <td>minute</td>
-                  <td>hour</td>
-                  <td>day (month)</td>
-                  <td>month</td>
-                  <td>day (week)</td>
-                </tr>
+                    <span>Friday</span>
+                  </tr>
+                  <tr>
+                    <input
+                      type="checkbox"
+                      id="Saturday"
+                      name="Saturday"
+                      [value]="numeros[5]"
+                      (change)="updateBasic('6')"
+                    />
+                    <span>Saturday</span>
+                  </tr>
+                  <tr>
+                    <input
+                      type="checkbox"
+                      id="Sunday"
+                      name="Sunday"
+                      [value]="numeros[6]"
+                      (change)="updateBasic('7')"
+                    />
+                    <span>Sunday</span>
+                  </tr>
+                  <tr>
+                    <div class="time">
+                      <label>TIME</label
+                      ><input
+                        type="text"
+                        class="form-control"
+                        placeholder="18:00"
+                        (input)="updateBasicTime($event)"
+                      />
+                    </div>
+                  </tr>
+                </td>
               </tbody>
             </table>
           </div>
-          <a href="https://crontab.guru/" style="text-align: center"
-            >Click here to see how cron works</a
-          >
+
+          <div *ngIf="!showBasic" class="advanced">
+            <div class="advancedTable">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        [value]="cron[0]"
+                        (input)="updateCron(0, $event)"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        [value]="cron[1]"
+                        (input)="updateCron(1, $event)"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        [value]="cron[2]"
+                        (input)="updateCron(2, $event)"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        [value]="cron[3]"
+                        (input)="updateCron(3, $event)"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        class="form-control"
+                        [value]="cron[4]"
+                        (input)="updateCron(4, $event)"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>minute</td>
+                    <td>hour</td>
+                    <td>day (month)</td>
+                    <td>month</td>
+                    <td>day (week)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <a href="https://crontab.guru/" style="text-align: center"
+              >Click here to see how cron works</a
+            >
+          </div>
         </div>
       </div>
     </div>

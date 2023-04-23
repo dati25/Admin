@@ -13,6 +13,7 @@ import { RequestsListPageComponent } from './pages/requests-list-page/requests-l
 import { UsersEditPageComponent } from './pages/users-edit-page/users-edit-page.component';
 import { UsersListPageComponent } from './pages/users-list-page/users-list-page.component';
 import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 const routes: Routes = [
   { path: '', component: DashboardPageComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'users/edit/:id', component: UsersEditPageComponent },
   { path: 'users/list', component: UsersListPageComponent },
   { path: 'settings', component: SettingsPageComponent },
+  { path: 'login', component: LoginPageComponent },
 ];
 
 @NgModule({
