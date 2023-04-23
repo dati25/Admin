@@ -34,12 +34,17 @@
       </td>
 
       <td id="buttons">
-        <a id="edit-link" (click)="edited.emit(group)"
-          ><i id="edit" class="bi bi-pencil-square"></i
-        ></a>
-        <a id="delete-link" (click)="deleted.emit(group)">
-          <i id="delete" class="bi bi-trash-fill"></i>
-        </a>
+        <i
+          (click)="edited.emit(group)"
+          id="edit"
+          class="bi bi-pencil-square"
+        ></i>
+
+        <i
+          (click)="deleted.emit(group)"
+          id="delete"
+          class="bi bi-trash-fill"
+        ></i>
       </td>
     </tr>
   </tbody>

@@ -28,15 +28,19 @@
         </div>
 
         <div id="edit-div">
-          <a id="edit-link" (click)="edited.emit(user)"
-            ><i id="edit" class="bi bi-pencil-square editicon"></i
-          ></a>
+          <i
+            (click)="edited.emit(user)"
+            id="edit"
+            class="bi bi-pencil-square editicon"
+          ></i>
         </div>
 
         <div id="delete-div">
-          <a id="delete-link" (click)="deleted.emit(user)"
-            ><i id="delete" class="bi bi-trash-fill deleteicon"></i
-          ></a>
+          <i
+            (click)="deleted.emit(user)"
+            id="delete"
+            class="bi bi-trash-fill deleteicon"
+          ></i>
         </div>
       </div>
     </div>

@@ -4,9 +4,11 @@
 
     <div id="grid">
       <div id="item" *ngFor="let computer of group?.pcGroups">
-        <a (click)="removeUser(computer)"
-          ><i id="delete" class="bi bi-x-circle"></i
-        ></a>
+        <i
+          (click)="removeUser(computer)"
+          id="delete"
+          class="bi bi-x-circle"
+        ></i>
         <a routerLink="/users/edit/{{ computer.idPc }}">
           <div id="edit">{{ computer.name }}</div>
         </a>

@@ -14,13 +14,13 @@
       <td>{{ item.macAddress }}</td>
       <td>{{ item.ipAddress }}</td>
       <td id="buttons">
-        <a id="edit-link" (click)="edited.emit(item)"
-          ><i id="edit" class="bi bi-plus-circle"></i
-        ></a>
+        <i (click)="edited.emit(item)" id="edit" class="bi bi-plus-circle"></i>
 
-        <a id="delete-link" (click)="deleted.emit(item)">
-          <i id="delete" class="bi bi-trash-fill"></i>
-        </a>
+        <i
+          (click)="deleted.emit(item)"
+          id="delete"
+          class="bi bi-trash-fill"
+        ></i>
       </td>
     </tr>
   </tbody>
