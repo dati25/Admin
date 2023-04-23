@@ -1,12 +1,24 @@
 #sidebar {
   width: 15.5rem;
-  height: 100%;
+  height: calc(100% - 5rem);
   position: fixed;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 
   margin-top: 5rem;
   font-size: 1.5rem;
 
   background-color: var(--darkest);
+
+  #edit-link {
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    margin: 2rem;
+  }
 
   a {
     text-decoration: none;

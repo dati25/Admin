@@ -27,15 +27,15 @@
           />
         </div>
 
-        <div id="edit">
+        <div id="edit-div">
           <a id="edit-link" routerLink="" (click)="edited.emit(user)"
-            ><i class="bi bi-pencil-square editicon"></i
+            ><i id="edit" class="bi bi-pencil-square editicon"></i
           ></a>
         </div>
 
-        <div id="delete">
+        <div id="delete-div">
           <a id="delete-link" routerLink="" (click)="deleted.emit(user)"
-            ><i class="bi bi-trash-fill deleteicon"></i
+            ><i id="delete" class="bi bi-trash-fill deleteicon"></i
           ></a>
         </div>
       </div>
