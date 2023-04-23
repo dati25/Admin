@@ -26,6 +26,7 @@ import { SettingsFormComponent } from './components/settings-form/settings-form.
 import { SettingsReportFormComponent } from './components/settings-report-form/settings-report-form.component';
 import { GroupsFormComponent } from './components/groups-form/groups-form.component';
 import { GroupsUsersComponent } from './components/groups-users/groups-users.component';
+import { RequestsTableComponent } from './components/requests-table/requests-table.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { GroupsUsersComponent } from './components/groups-users/groups-users.com
     SettingsReportFormComponent,
     GroupsFormComponent,
     GroupsUsersComponent,
+    RequestsTableComponent,
   ],
   imports: [
     BrowserModule,

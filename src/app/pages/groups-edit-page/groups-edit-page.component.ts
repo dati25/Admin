@@ -35,8 +35,6 @@ export class GroupsEditPageComponent implements OnInit {
 
     this.service.findById(id).subscribe((group) => {
       this.group = group;
-      console.log(group);
-      console.log(this.group);
       this.form = GroupsFormComponent.createForm(this.fb, group);
     });
   }

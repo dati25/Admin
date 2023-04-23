@@ -1,1 +1,7 @@
-<p>requests-list-page works!</p>
+<div id="wrapper">
+  <app-requests-table
+    [requests]="requests"
+    (deleted)="deleteUser($event)"
+    (edited)="editUser($event)"
+  ></app-requests-table>
+</div>
