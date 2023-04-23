@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { GroupService } from '../../services/group.service';
-import { ActivatedRoute } from '@angular/router';
+import { Computer } from '../../models/Computer';
 import { Group } from '../../models/Group';
+import { User } from '../../models/User';
+import { Router } from '@angular/router';
+import { GroupService } from '../../services/group.service';
+import { UserService } from '../../services/user.service';
 import { GroupsFormComponent } from '../../components/groups-form/groups-form.component';
 
 @Component({
@@ -11,26 +14,33 @@ import { GroupsFormComponent } from '../../components/groups-form/groups-form.co
   styleUrls: ['./groups-create-page.component.scss'],
 })
 export class GroupsCreatePageComponent implements OnInit {
-  form: FormGroup;
+  public users: User[];
 
+  form: FormGroup;
   group: Group;
 
   public constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private service: GroupService
-  ) {}
-
-  public ngOnInit(): void {
-    // const id = +this.route.snapshot.paramMap.get('id');
-    // this.service.findById(id).subscribe((group) => {
-    //   this.group = group;
-    //   this.form = GroupsFormComponent.createForm(this.fb, group);
-    // }
+    private router: Router,
+    private service: GroupService,
+    private userService: UserService
+  ) {
+    this.userService.findAll().subscribe((result) => {
+      this.users = result;
+    });
   }
 
-  // public saveGroup(values: any): void {
-  //   Object.assign(this.group, values);
-  //   this.service.update(this.group).subscribe(() => window.history.back());
-  // }
+  public ngOnInit(): void {
+    this.form = GroupsFormComponent.createForm(
+      this.fb,
+      new Group(0, '', new Array<Computer>())
+    );
+  }
+
+  public saveGroup(values: any): void {
+    console.log(values);
+    this.service
+      .insert(values)
+      .subscribe(() => this.router.navigate(['/groups/list']));
+  }
 }

@@ -1,42 +1,45 @@
-// import { Sources } from './Sources';
-// import { Destinations } from './Destination';
+import { Source } from './Source';
+import { Destination } from './Destination';
 
-// export class Configs {
-//   public id: number;
-//   public name: string;
-//   public type: string;
-//   public repeatPeriod: string;
-//   public expirationdate: Date;
-//   public comprime: boolean;
-//   public retention: number;
-//   public packagesize: number;
-//   public status: boolean;
-//   public sources: Sources[];
-//   public destinations: Destinations[];
+export class Configs {
+  public id: number;
+  public name: string;
+  public type: string;
+  public repeatPeriod: string;
+  public expirationDate: string;
+  public compress: boolean;
+  public retention: number;
+  public packageSize: number;
+  public createdBy: number;
+  public status: boolean;
+  public sources: Source[];
+  public destinations: Destination[];
 
-//   public constructor(
-//     id: number,
-//     name: string,
-//     type: string,
-//     repeatPeriod: string,
-//     expirationdate: Date,
-//     comprime: boolean,
-//     retention: number,
-//     packagesize: number,
-//     status: boolean,
-//     sources: Sources[],
-//     destinations: Destinations[]
-//   ) {
-//     this.id = id;
-//     this.name = name;
-//     this.type = type;
-//     this.repeatPeriod = repeatPeriod;
-//     this.expirationdate = expirationdate;
-//     this.comprime = comprime;
-//     this.retention = retention;
-//     this.packagesize = packagesize;
-//     this.status = status;
-//     this.sources = sources;
-//     this.destinations = destinations;
-//   }
-// }
+  public constructor(
+    id: number,
+    name: string,
+    type: string,
+    repeatPeriod: string,
+    expirationDate: string,
+    compress: boolean,
+    retention: number,
+    packageSize: number,
+    createdBy: number,
+    status: boolean,
+    sources: Source[],
+    destinations: Destination[]
+  ) {
+    this.id = id;
+    this.name = name;
+    this.type = type;
+    this.repeatPeriod = repeatPeriod;
+    this.expirationDate = expirationDate;
+    this.compress = compress;
+    this.retention = retention;
+    this.packageSize = packageSize;
+    this.createdBy = createdBy;
+    this.status = status;
+    this.sources = sources;
+    this.destinations = destinations;
+  }
+}
