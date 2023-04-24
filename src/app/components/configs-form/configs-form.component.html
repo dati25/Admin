@@ -158,6 +158,22 @@
         </div>
       </div>
     </div>
+
+    <div id="sources-div" formArrayName="sources">
+      <div id="sources" *ngFor="let source of sources.controls; let i = index">
+        <div id="input-text" [formGroupName]="i">
+          <div id="label">Package Size</div>
+          <div id="input">
+            <input
+              type="text"
+              id="input-field"
+              class="form-control"
+              formControlName="packageSize"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="buttons">

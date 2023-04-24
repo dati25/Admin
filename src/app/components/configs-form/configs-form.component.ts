@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, FormArray } from '@angular/forms';
 import { Config } from '../../models/Config';
+import { Source } from '../../models/Source';
 
 @Component({
   selector: 'app-configs-form',
@@ -9,6 +10,11 @@ import { Config } from '../../models/Config';
 })
 export class ConfigsFormComponent {
   constructor() {}
+
+  get sources() {
+    console.log(this.form.get('sources') as FormArray);
+    return this.form.get('sources') as FormArray;
+  }
 
   @Input()
   form: FormGroup;
@@ -27,6 +33,14 @@ export class ConfigsFormComponent {
       packageSize: config.packageSize,
       createdBy: config.createdBy,
       status: config.status,
+      sources: fb.array(
+        config.sources.map((source: Source) =>
+          fb.group({
+            id: source.id,
+            path: source.path,
+          })
+        )
+      ),
     });
   }
 
