@@ -2,11 +2,8 @@
   padding: 0.75rem;
   border: 2px solid var(--lighter);
   border-radius: 0.5rem;
-  border-bottom: none;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  margin-bottom: 0;
-  box-shadow: 0 -10px 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 3rem;
 
   #users {
     display: flex;
