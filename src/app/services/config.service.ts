@@ -5,6 +5,7 @@ import { Config } from '../models/Config';
 import { Computer } from '../models/Computer';
 import { Source } from '../models/Source';
 import { Destination } from '../models/Destination';
+import { Group } from '../models/Group';
 
 @Injectable({
   providedIn: 'root',
@@ -37,9 +38,21 @@ export class ConfigService {
     );
   }
 
-  public deleteUser(config: Config, computer: Computer): Observable<Config> {
+  public deleteSource(source: Source): Observable<Source> {
+    return this.http.delete<Source>(
+      'http://localhost:5105/api/sources/' + source.id
+    );
+  }
+
+  public deleteDest(dest: Destination): Observable<Destination> {
+    return this.http.delete<Destination>(
+      'http://localhost:5105/api/destinations/' + dest.id
+    );
+  }
+
+  public deleteGroup(config: Config, group: Group): Observable<Config> {
     return this.http.delete<Config>(
-      'http://localhost:5105/api/Config/' + config.id + '/' + computer.idPc
+      'http://localhost:5105/api/Config/' + config.id + '/' + group.id
     );
   }
 }

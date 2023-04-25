@@ -1,13 +1,8 @@
-#wrapper {
-  #content {
-    top: 5rem;
-    left: 15.5rem;
-    width: calc(100% - 15.5rem);
-    height: calc(100% - 5rem);
-
-    padding: 3rem 5rem;
-
-    position: relative;
-    overflow-y: auto;
-  }
+#content {
+  top: 5rem;
+  left: 15.5rem;
+  width: calc(100% - 15.5rem);
+  height: calc(100% - 5rem);
+  position: relative;
+  overflow-y: auto;
 }

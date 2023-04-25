@@ -1,0 +1,203 @@
+<form [formGroup]="form">
+  <div id="form">
+    <div id="input-text">
+      <div id="label">Name</div>
+      <div id="input">
+        <input
+          type="text"
+          id="input-field"
+          class="form-control"
+          formControlName="name"
+        />
+      </div>
+    </div>
+
+    <div id="radio-buttons">
+      <div id="label">Backup Type</div>
+      <div id="input-field">
+        <div
+          id="input"
+          class="btn-group"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio1"
+            autocomplete="off"
+            [checked]="form.controls['type'].value == 'full'"
+            (change)="form.controls['type'].setValue('full')"
+          />
+          <label class="btn btn-outline-primary" for="btnradio1">Full</label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio2"
+            autocomplete="off"
+            [checked]="form.controls['type'].value == 'diff'"
+            (change)="form.controls['type'].setValue('diff')"
+          />
+          <label class="btn btn-outline-primary" for="btnradio2">Diff</label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio"
+            id="btnradio3"
+            autocomplete="off"
+            [checked]="form.controls['type'].value == 'incr'"
+            (change)="form.controls['type'].setValue('incr')"
+          />
+          <label class="btn btn-outline-primary" for="btnradio3">Incr</label>
+        </div>
+      </div>
+    </div>
+
+    <div id="input-text">
+      <div id="label">Repeat Period</div>
+      <div id="input">
+        <input
+          type="text"
+          id="input-field"
+          class="form-control"
+          formControlName="repeatPeriod"
+        />
+      </div>
+    </div>
+
+    <div id="switch">
+      <div id="label">Compress</div>
+
+      <div id="input">
+        <div
+          class="btn-group"
+          role="group"
+          aria-label="Basic radio toggle button group"
+          id="input-field"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio1"
+            id="btnradio4"
+            [checked]="!form.controls['compress'].value"
+            (change)="form.controls['compress'].setValue(false)"
+          />
+          <label class="btn btn-outline-secondary" for="btnradio4">Off</label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio1"
+            id="btnradio5"
+            [checked]="form.controls['compress'].value"
+            (change)="form.controls['compress'].setValue(true)"
+          />
+          <label class="btn btn-outline-secondary" for="btnradio5">On</label>
+        </div>
+      </div>
+    </div>
+
+    <div id="input-number">
+      <div id="label">Retention</div>
+      <div id="input">
+        <input
+          type="number"
+          id="input-field"
+          class="form-control"
+          formControlName="retention"
+        />
+      </div>
+    </div>
+
+    <div id="input-number">
+      <div id="label">Package Size</div>
+      <div id="input">
+        <input
+          type="number"
+          id="input-field"
+          class="form-control"
+          formControlName="packageSize"
+        />
+      </div>
+    </div>
+
+    <div id="switch">
+      <div id="label">Status</div>
+
+      <div id="input">
+        <div
+          class="btn-group"
+          role="group"
+          aria-label="Basic radio toggle button group"
+          id="input-field"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio2"
+            id="btnradio6"
+            [checked]="!form.controls['status'].value"
+            (change)="form.controls['status'].setValue(false)"
+          />
+          <label class="btn btn-outline-secondary" for="btnradio6">Off</label>
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="btnradio2"
+            id="btnradio7"
+            [checked]="form.controls['status'].value"
+            (change)="form.controls['status'].setValue(true)"
+          />
+          <label class="btn btn-outline-secondary" for="btnradio7">On</label>
+        </div>
+      </div>
+    </div>
+
+    <div id="sources-div" formArrayName="sources">
+      <div id="sources" *ngFor="let source of sources.controls; let i = index">
+        <div id="input-text" [formGroupName]="i">
+          <div id="label">Path</div>
+          <div id="input">
+            <input
+              type="text"
+              id="input-field"
+              class="form-control"
+              formControlName="path"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dests-div" formArrayName="destinations">
+      <div id="dests" *ngFor="let dest of destinations.controls; let i = index">
+        <div id="input-text" [formGroupName]="i">
+          <div id="label">DestPath</div>
+          <div id="input">
+            <input
+              type="text"
+              id="input-field"
+              class="form-control"
+              formControlName="path"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="buttons">
+    <button type="button" class="btn btn-outline-danger" (click)="goBack()">
+      Cancel
+    </button>
+    <button type="button" class="btn btn-outline-success" (click)="save()">
+      Save
+    </button>
+  </div>
+</form>

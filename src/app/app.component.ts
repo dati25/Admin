@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,32 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'admin';
-
+  title = 'Admin';
   isDarkMode = true;
 
-  constructor() {
-    this.detectColorScheme();
-  }
-
-  detectColorScheme() {
-    if (
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    ) {
-      this.isDarkMode = true;
-    }
-    document.documentElement.setAttribute(
-      'data-theme',
-      this.isDarkMode ? 'dark' : 'light'
-    );
-  }
+  constructor(private renderer: Renderer2) {}
 
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
-    document.documentElement.setAttribute(
-      'data-theme',
-      this.isDarkMode ? 'dark' : 'light'
-    );
+    const theme = this.isDarkMode ? 'dark' : 'light';
+    this.renderer.setAttribute(document.documentElement, 'data-theme', theme);
   }
 }
