@@ -1,8 +1,8 @@
 <div class="computers">
   <div class="loop" *ngFor="let user of users">
-    <div class="computer" *ngIf="user.status != 'q'">
+    <div class="computer" (click)="edited.emit(user)">
       <div class="left">
-        <span class="name">{{ user.name }}</span>
+        <span class="name edit">{{ user.name }}</span>
 
         <div class="mac">
           <label for="mac-address">MAC</label>
@@ -27,16 +27,9 @@
           />
         </div>
 
-        <div class="edit-div">
-          <i
-            (click)="edited.emit(user)"
-            class="edit bi bi-pencil-square editicon"
-          ></i>
-        </div>
-
         <div class="delete-div">
           <i
-            (click)="deleted.emit(user)"
+            (click)="deleted.emit(user); $event.stopPropagation()"
             class="delete bi bi-trash-fill deleteicon"
           ></i>
         </div>

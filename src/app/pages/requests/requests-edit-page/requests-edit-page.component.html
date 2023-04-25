@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <app-requests-form
+    [form]="form"
+    (saved)="saveUser($event)"
+    *ngIf="form"
+  ></app-requests-form>
+</div>

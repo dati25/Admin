@@ -1,27 +1,17 @@
-<table class="table">
-  <thead class="">
-    <tr>
-      <th>Name</th>
-      <th>Mac Address</th>
-      <th>IP Address</th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="requests" *ngIf="requests">
+  <div class="request" *ngFor="let request of requests">
+    <div class="name">
+      <span class="edit" (click)="edited.emit(request)">{{
+        request.name
+      }}</span>
+    </div>
+    <div class="mac">{{ request.macAddress }}</div>
+    <div class="ip">{{ request.ipAddress }}</div>
 
-  <tbody *ngFor="let item of requests" class="">
-    <tr *ngIf="item.status == 'q'">
-      <td>{{ item.name }}</td>
-      <td>{{ item.macAddress }}</td>
-      <td>{{ item.ipAddress }}</td>
-      <td id="buttons">
-        <i (click)="edited.emit(item)" id="add" class="bi bi-plus-circle"></i>
+    <div class="buttons">
+      <i (click)="approved.emit(request)" class="add bi bi-plus-circle"></i>
 
-        <i
-          (click)="deleted.emit(item)"
-          id="delete"
-          class="bi bi-trash-fill"
-        ></i>
-      </td>
-    </tr>
-  </tbody>
-</table>
+      <i (click)="deleted.emit(request)" class="delete bi bi-trash-fill"></i>
+    </div>
+  </div>
+</div>

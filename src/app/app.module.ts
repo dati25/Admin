@@ -34,6 +34,8 @@ import { LoginPageComponentComponent } from './pages/login/login-page/components
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { InputSwitchComponent } from './components/input-switch/input-switch.component';
 import { FormButtonsComponent } from './components/form-buttons/form-buttons.component';
+import { RequestsEditPageComponent } from './pages/requests/requests-edit-page/requests-edit-page.component';
+import { RequestsFormComponent } from './pages/requests/components/requests-form/requests-form.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { FormButtonsComponent } from './components/form-buttons/form-buttons.com
     InputTextComponent,
     InputSwitchComponent,
     FormButtonsComponent,
+    RequestsEditPageComponent,
+    RequestsFormComponent,
   ],
   imports: [
     BrowserModule,

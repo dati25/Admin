@@ -16,6 +16,9 @@ export class RequestsTableComponent implements OnInit {
   @Output()
   public deleted: EventEmitter<User> = new EventEmitter<User>();
 
+  @Output()
+  public approved: EventEmitter<User> = new EventEmitter<User>();
+
   public constructor() {}
 
   public ngOnInit(): void {}

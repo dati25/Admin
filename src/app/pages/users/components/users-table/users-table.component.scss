@@ -3,6 +3,10 @@
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   color: var(--text);
 
+  .computer:hover {
+    background-color: var(--darkest);
+  }
+
   .computer {
     display: flex;
     justify-content: space-between;
@@ -36,6 +40,7 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      font-size: 1.25rem;
 
       .status {
         display: flex;
@@ -59,12 +64,8 @@
         }
       }
 
-      .edit-link {
-        color: var(--lightest);
-      }
-
-      .delete-link {
-        color: var(--danger);
+      .delete {
+        z-index: 1;
       }
     }
   }

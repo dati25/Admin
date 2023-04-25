@@ -29,7 +29,7 @@ export class UsersListPageComponent implements OnInit {
 
   private refresh(): void {
     this.service.findAll().subscribe((result) => {
-      this.users = result;
+      this.users = result.filter((x) => x.status !== 'q');
     });
   }
 }

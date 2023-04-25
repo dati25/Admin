@@ -10,6 +10,7 @@ import { GroupsCreatePageComponent } from './pages/groups/groups-create-page/gro
 import { GroupsEditPageComponent } from './pages/groups/groups-edit-page/groups-edit-page.component';
 import { GroupsListPageComponent } from './pages/groups/groups-list-page/groups-list-page.component';
 import { RequestsListPageComponent } from './pages/requests/requests-list-page/requests-list-page.component';
+import { RequestsEditPageComponent } from './pages/requests/requests-edit-page/requests-edit-page.component';
 import { UsersEditPageComponent } from './pages/users/users-edit-page/users-edit-page.component';
 import { UsersListPageComponent } from './pages/users/users-list-page/users-list-page.component';
 import { SettingsPageComponent } from './pages/settings/settings-page/settings-page.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'groups/edit/:id', component: GroupsEditPageComponent },
   { path: 'groups/list', component: GroupsListPageComponent },
   { path: 'requests/list', component: RequestsListPageComponent },
+  { path: 'requests/edit/:id', component: RequestsEditPageComponent },
   { path: 'users/edit/:id', component: UsersEditPageComponent },
   { path: 'users/list', component: UsersListPageComponent },
   { path: 'settings', component: SettingsPageComponent },
