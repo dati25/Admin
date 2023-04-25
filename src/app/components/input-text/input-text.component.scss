@@ -1,0 +1,25 @@
+.input-text {
+  display: flex;
+  align-content: space-between;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 1rem;
+
+  .label {
+    flex: 2;
+    height: 2rem;
+    font-size: 1.1rem;
+    margin-right: 5rem;
+  }
+
+  .input {
+    flex: 4;
+
+    .input-field {
+      height: 2rem;
+      background-color: var(--lighter);
+      border: 1px solid var(--lightest);
+      color: var(--text);
+    }
+  }
+}

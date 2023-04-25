@@ -12,7 +12,6 @@ import { UsersFormComponent } from '../components/users-form/users-form.componen
 })
 export class UsersEditPageComponent implements OnInit {
   form: FormGroup;
-
   user: User;
 
   public constructor(

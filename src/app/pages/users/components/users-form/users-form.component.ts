@@ -28,8 +28,4 @@ export class UsersFormComponent {
   public save(): void {
     this.saved.emit(this.form.value);
   }
-
-  public goBack(): void {
-    window.history.back();
-  }
 }

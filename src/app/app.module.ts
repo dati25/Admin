@@ -31,6 +31,9 @@ import { ConfigsTableComponent } from './pages/configs/components/configs-table/
 import { ConfigsFormComponent } from './pages/configs/components/configs-form/configs-form.component';
 import { LoginPageComponent } from './pages/login/login-page/login-page.component';
 import { LoginPageComponentComponent } from './pages/login/login-page/components/login-page-component/login-page-component.component';
+import { InputTextComponent } from './components/input-text/input-text.component';
+import { InputSwitchComponent } from './components/input-switch/input-switch.component';
+import { FormButtonsComponent } from './components/form-buttons/form-buttons.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,9 @@ import { LoginPageComponentComponent } from './pages/login/login-page/components
     ConfigsFormComponent,
     LoginPageComponent,
     LoginPageComponentComponent,
+    InputTextComponent,
+    InputSwitchComponent,
+    FormButtonsComponent,
   ],
   imports: [
     BrowserModule,

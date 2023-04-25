@@ -1,0 +1,39 @@
+.input-switch {
+  display: flex;
+  margin: 1.5rem 1rem;
+
+  .label {
+    flex: 2;
+    height: 2rem;
+    font-size: 1.1rem;
+    margin-right: 5rem;
+  }
+
+  .input-field {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .switch {
+      .btn-check {
+        height: 2rem;
+      }
+
+      .btn {
+        height: 2rem;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        border: 1px solid var(--lightest);
+      }
+
+      #btnradio1:checked + .btn {
+        background-color: var(--danger);
+      }
+
+      #btnradio2:checked + .btn {
+        background-color: var(--success);
+      }
+    }
+  }
+}

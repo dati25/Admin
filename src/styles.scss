@@ -1,51 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Open+Sans&display=swap");
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--lighter);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--darker);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--darkest);
+}
+
 html,
 body {
   height: 100%;
-  margin: 0px;
+  margin: 0;
   font-family: "Open sans", sans-serif;
   background-color: var(--main) !important;
   color: var(--text) !important;
+
+  .wrapper {
+    margin: 2rem;
+  }
 
   a {
     text-decoration: none;
   }
 
-  #delete {
+  .delete {
     color: var(--danger);
   }
 
-  #delete:hover {
+  .delete:hover {
     color: var(--danger-dark);
     cursor: pointer;
   }
 
-  #edit {
+  .edit {
     color: var(--text);
   }
 
-  #edit:hover {
+  .edit:hover {
     color: var(--text-dark);
     cursor: pointer;
   }
 
-  #add {
+  .add {
     color: var(--success);
   }
 
-  #add:hover {
+  .add:hover {
     color: var(--success-dark);
     cursor: pointer;
   }
 
-  #link {
+  .link {
     color: var(--text);
     text-decoration: underline;
   }
 
-  #link:hover {
+  .link:hover {
     color: var(--text-dark);
     cursor: pointer;
   }
