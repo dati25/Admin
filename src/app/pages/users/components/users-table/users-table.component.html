@@ -1,8 +1,11 @@
 <div class="computers">
   <div class="loop" *ngFor="let user of users">
-    <div class="computer" (click)="edited.emit(user)">
+    <div class="computer">
+      <!-- <div class="computer" (click)="edited.emit(user)">> -->
       <div class="left">
-        <span class="name edit">{{ user.name }}</span>
+        <span class="name edit" (click)="edited.emit(user)">{{
+          user.name
+        }}</span>
 
         <div class="mac">
           <label for="mac-address">MAC</label>
