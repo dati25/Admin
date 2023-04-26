@@ -1,30 +1,42 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Admin } from '../../../../../models/Admin';
+import { SessionsService } from '../../../../../services/sessions.service'
+import {Router} from "@angular/router";
+import {catchError, of} from "rxjs";
+
 
 @Component({
   selector: 'app-login-page-component',
   templateUrl: './login-page-component.component.html',
   styleUrls: ['./login-page-component.component.scss'],
 })
-export class LoginPageComponentComponent {
-  constructor() {}
+export class LoginPageComponentComponent implements OnInit {
 
-  @Input()
-  form: FormGroup;
+  public form: FormGroup;
+  public error: boolean = false;
 
-  @Output()
-  saved: EventEmitter<any> = new EventEmitter<any>();
+  public constructor(private fb: FormBuilder,
+                     private router: Router,
+                     private sessions: SessionsService) {
+  }
 
-  public static createForm(fb: FormBuilder, admin: Admin): FormGroup {
-    return fb.group({
-      username: admin.username,
-      password: admin.password,
+  public ngOnInit(): void {
+    this.form = this.fb.group({
+      username: '',
+      password: ''
     });
   }
 
-  public save(): void {
-    console.log(this.form);
-    this.saved.emit(this.form.value);
+  public login(): void {
+    this.sessions.login(this.form.value).pipe(
+      catchError(() => {
+        this.error = true;
+        return of(false);
+      })
+    ).subscribe(result => {
+      if (result) {
+        this.router.navigate(['/users/list'])
+      }
+    });
   }
 }

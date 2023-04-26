@@ -14,24 +14,28 @@ import { RequestsEditPageComponent } from './pages/requests/requests-edit-page/r
 import { UsersEditPageComponent } from './pages/users/users-edit-page/users-edit-page.component';
 import { UsersListPageComponent } from './pages/users/users-list-page/users-list-page.component';
 import { SettingsPageComponent } from './pages/settings/settings-page/settings-page.component';
-import { LoginPageComponent } from './pages/login/login-page/login-page.component';
+import { LoginPageComponentComponent } from './pages/login/login-page/components/login-page-component/login-page-component.component';
+
+import {AuthGuard} from "./services/auth.guard";
+
 
 const routes: Routes = [
-  { path: '', component: DashboardPageComponent },
-  { path: 'dashboard', component: DashboardPageComponent },
-  { path: 'admins/create', component: AdminsCreatePageComponent },
-  { path: 'configs/create', component: ConfigsCreatePageComponent },
-  { path: 'configs/edit/:id', component: ConfigsEditPageComponent },
-  { path: 'configs/list', component: ConfigsListPageComponent },
-  { path: 'groups/create', component: GroupsCreatePageComponent },
-  { path: 'groups/edit/:id', component: GroupsEditPageComponent },
-  { path: 'groups/list', component: GroupsListPageComponent },
-  { path: 'requests/list', component: RequestsListPageComponent },
-  { path: 'requests/edit/:id', component: RequestsEditPageComponent },
-  { path: 'users/edit/:id', component: UsersEditPageComponent },
-  { path: 'users/list', component: UsersListPageComponent },
-  { path: 'settings', component: SettingsPageComponent },
-  { path: 'login', component: LoginPageComponent },
+  { path: '', component: DashboardPageComponent, canActivate: [ AuthGuard ] },
+  { path: 'dashboard', component: DashboardPageComponent, canActivate: [ AuthGuard ] },
+  { path: 'admins/create', component: AdminsCreatePageComponent, canActivate: [ AuthGuard ] },
+  { path: 'configs/create', component: ConfigsCreatePageComponent, canActivate: [ AuthGuard ] },
+  { path: 'configs/edit/:id', component: ConfigsEditPageComponent, canActivate: [ AuthGuard ] },
+  { path: 'configs/list', component: ConfigsListPageComponent, canActivate: [ AuthGuard ] },
+  { path: 'groups/create', component: GroupsCreatePageComponent, canActivate: [ AuthGuard ] },
+  { path: 'groups/edit/:id', component: GroupsEditPageComponent, canActivate: [ AuthGuard ] },
+  { path: 'groups/list', component: GroupsListPageComponent, canActivate: [ AuthGuard ] },
+  { path: 'requests/list', component: RequestsListPageComponent, canActivate: [ AuthGuard ] },
+  { path: 'requests/edit/:id', component: RequestsEditPageComponent, canActivate: [ AuthGuard ] },
+  { path: 'users/edit/:id', component: UsersEditPageComponent, canActivate: [ AuthGuard ] },
+  { path: 'users/list', component: UsersListPageComponent, canActivate: [ AuthGuard ] },
+  { path: 'settings', component: SettingsPageComponent, canActivate: [ AuthGuard ] },
+
+  { path: 'login', component: LoginPageComponentComponent },
 ];
 
 @NgModule({

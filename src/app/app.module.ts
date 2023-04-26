@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {InterceptorService} from "./services/interceptor.service";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,7 +30,6 @@ import { GroupsUsersComponent } from './pages/groups/components/groups-users/gro
 import { RequestsTableComponent } from './pages/requests/components/requests-table/requests-table.component';
 import { ConfigsTableComponent } from './pages/configs/components/configs-table/configs-table.component';
 import { ConfigsFormComponent } from './pages/configs/components/configs-form/configs-form.component';
-import { LoginPageComponent } from './pages/login/login-page/login-page.component';
 import { LoginPageComponentComponent } from './pages/login/login-page/components/login-page-component/login-page-component.component';
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { InputSwitchComponent } from './components/input-switch/input-switch.component';
@@ -64,7 +64,6 @@ import { RequestsFormComponent } from './pages/requests/components/requests-form
     RequestsTableComponent,
     ConfigsTableComponent,
     ConfigsFormComponent,
-    LoginPageComponent,
     LoginPageComponentComponent,
     InputTextComponent,
     InputSwitchComponent,
@@ -79,7 +78,9 @@ import { RequestsFormComponent } from './pages/requests/components/requests-form
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
