@@ -17,5 +17,6 @@
     <button type="submit" class="btn btn-primary" (click)="login()">
       Log in
     </button>
+    <div class="alert alert-danger mt-3" *ngIf="error">Chybné jméno nebo heslo</div>
   </form>
 </div>
