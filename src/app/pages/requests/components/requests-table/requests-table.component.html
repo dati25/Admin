@@ -1,4 +1,10 @@
 <div class="requests" *ngIf="requests">
+  <div class="header">
+    <div class="name">Name</div>
+    <div class="mac">MAC Address</div>
+    <div class="ip">IP Address</div>
+    <div class="buttons">Actions</div>
+  </div>
   <div class="request" *ngFor="let request of requests">
     <div class="name">
       <span class="edit" (click)="edited.emit(request)">{{

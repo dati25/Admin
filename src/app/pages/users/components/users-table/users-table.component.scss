@@ -3,10 +3,6 @@
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   color: var(--text);
 
-  .computer:hover {
-    background-color: var(--darkest);
-  }
-
   .computer {
     display: flex;
     justify-content: space-between;
