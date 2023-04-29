@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ConfigService } from '../../../services/config.service';
-import { Config } from '../../../models/Config';
+import { ConfigService } from '../../../../services/config.service';
+import { Config } from '../../../../models/Config';
 
 @Component({
   selector: 'app-configs-list-page',

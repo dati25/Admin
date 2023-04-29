@@ -1,4 +1,4 @@
-<table class="table">
+<!-- <table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -39,4 +39,29 @@
       </div>
     </td>
   </tbody>
-</table>
+</table> -->
+
+<div class="configs" *ngIf="configs">
+  <div class="header">
+    <div>Name</div>
+    <div>Type</div>
+    <div>Compress</div>
+    <div>Retention</div>
+    <div>Package Size</div>
+    <div>Repeat Period</div>
+    <div>Expiration Date</div>
+    <!-- <div>Destinations</div>
+    <div>Sources</div>
+    <div>Computers</div>
+    <div>Groups</div> -->
+  </div>
+  <div class="config" *ngFor="let config of configs">
+    <div>{{ config.name }}</div>
+    <div>{{ config.type }}</div>
+    <div>{{ config.compress }}</div>
+    <div>{{ config.retention }}</div>
+    <div>{{ config.packageSize }}</div>
+    <div>{{ config.repeatPeriod }}</div>
+    <div>{{ config.expirationDate | date : "dd/MM/yyyy hh:mm" }}</div>
+  </div>
+</div>

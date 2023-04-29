@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { Config } from '../../../../models/Config';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-configs-table',
@@ -7,6 +8,8 @@ import { Config } from '../../../../models/Config';
   styleUrls: ['./configs-table.component.scss'],
 })
 export class ConfigsTableComponent implements OnInit {
+  public datePipe: DatePipe;
+
   @Input()
   public configs: Config[];
 

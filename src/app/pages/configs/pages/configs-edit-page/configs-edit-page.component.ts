@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ConfigService } from '../../../services/config.service';
+import { ConfigService } from '../../../../services/config.service';
 import { ActivatedRoute } from '@angular/router';
-import { Config } from '../../../models/Config';
-import { ConfigsFormComponent } from '../components/configs-form/configs-form.component';
+import { Config } from '../../../../models/Config';
+import { ConfigsFormComponent } from '../../components/configs-form/configs-form.component';
 
 @Component({
   selector: 'app-configs-edit-page',

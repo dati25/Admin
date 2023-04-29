@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { GroupService } from '../../../services/group.service';
-import { UserService } from '../../../services/user.service';
+import { GroupService } from '../../../../services/group.service';
+import { UserService } from '../../../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { Group } from '../../../models/Group';
-import { User } from '../../../models/User';
-import { Computer } from '../../../models/Computer';
-import { GroupsFormComponent } from '../components/groups-form/groups-form.component';
+import { Group } from '../../../../models/Group';
+import { User } from '../../../../models/User';
+import { Computer } from '../../../../models/Computer';
+import { GroupsFormComponent } from '../../components/groups-form/groups-form.component';
 
 @Component({
   selector: 'app-groups-edit-page',

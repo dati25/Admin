@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import {InterceptorService} from "./services/interceptor.service";
+import { InterceptorService } from './services/interceptor.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/main/components/header/header.component';
 import { SidebarComponent } from './pages/main/components/sidebar/sidebar.component';
-import { UsersListPageComponent } from './pages/users/users-list-page/users-list-page.component';
-import { UsersEditPageComponent } from './pages/users/users-edit-page/users-edit-page.component';
-import { GroupsListPageComponent } from './pages/groups/groups-list-page/groups-list-page.component';
-import { GroupsEditPageComponent } from './pages/groups/groups-edit-page/groups-edit-page.component';
-import { GroupsCreatePageComponent } from './pages/groups/groups-create-page/groups-create-page.component';
+import { UsersListPageComponent } from './pages/users/pages/users-list-page/users-list-page.component';
+import { UsersEditPageComponent } from './pages/users/pages/users-edit-page/users-edit-page.component';
+import { GroupsListPageComponent } from './pages/groups/pages/groups-list-page/groups-list-page.component';
+import { GroupsEditPageComponent } from './pages/groups/pages/groups-edit-page/groups-edit-page.component';
+import { GroupsCreatePageComponent } from './pages/groups/pages/groups-create-page/groups-create-page.component';
 import { SettingsPageComponent } from './pages/settings/settings-page/settings-page.component';
 import { AdminsCreatePageComponent } from './pages/admins/admins-create-page/admins-create-page.component';
-import { RequestsListPageComponent } from './pages/requests/requests-list-page/requests-list-page.component';
-import { ConfigsListPageComponent } from './pages/configs/configs-list-page/configs-list-page.component';
-import { ConfigsEditPageComponent } from './pages/configs/configs-edit-page/configs-edit-page.component';
-import { ConfigsCreatePageComponent } from './pages/configs/configs-create-page/configs-create-page.component';
+import { RequestsListPageComponent } from './pages/requests/pages/requests-list-page/requests-list-page.component';
+import { ConfigsListPageComponent } from './pages/configs/pages/configs-list-page/configs-list-page.component';
+import { ConfigsEditPageComponent } from './pages/configs/pages/configs-edit-page/configs-edit-page.component';
+import { ConfigsCreatePageComponent } from './pages/configs/pages/configs-create-page/configs-create-page.component';
 import { DashboardPageComponent } from './pages/main/dashboard-page/dashboard-page.component';
 import { UsersTableComponent } from './pages/users/components/users-table/users-table.component';
 import { UsersFormComponent } from './pages/users/components/users-form/users-form.component';
@@ -34,7 +34,7 @@ import { LoginPageComponentComponent } from './pages/login/login-page/components
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { InputSwitchComponent } from './components/input-switch/input-switch.component';
 import { FormButtonsComponent } from './components/form-buttons/form-buttons.component';
-import { RequestsEditPageComponent } from './pages/requests/requests-edit-page/requests-edit-page.component';
+import { RequestsEditPageComponent } from './pages/requests/pages/requests-edit-page/requests-edit-page.component';
 import { RequestsFormComponent } from './pages/requests/components/requests-form/requests-form.component';
 
 @NgModule({

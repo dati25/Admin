@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { UserService } from '../../../services/user.service';
+import { UserService } from '../../../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { User } from '../../../models/User';
-import { RequestsFormComponent } from '../components/requests-form/requests-form.component';
+import { User } from '../../../../models/User';
+import { RequestsFormComponent } from '../../components/requests-form/requests-form.component';
 
 @Component({
   selector: 'app-requests-edit-page',

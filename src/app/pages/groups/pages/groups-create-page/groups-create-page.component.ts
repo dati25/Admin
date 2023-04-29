@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Computer } from '../../../models/Computer';
-import { Group } from '../../../models/Group';
-import { User } from '../../../models/User';
+import { Computer } from '../../../../models/Computer';
+import { Group } from '../../../../models/Group';
+import { User } from '../../../../models/User';
 import { Router } from '@angular/router';
-import { GroupService } from '../../../services/group.service';
-import { UserService } from '../../../services/user.service';
-import { GroupsFormComponent } from '../components/groups-form/groups-form.component';
+import { GroupService } from '../../../../services/group.service';
+import { UserService } from '../../../../services/user.service';
+import { GroupsFormComponent } from '../../components/groups-form/groups-form.component';
 
 @Component({
   selector: 'app-groups-create-page',
