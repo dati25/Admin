@@ -1,3 +1,23 @@
+<div class="top">
+  <div class="search">
+    <i class="bi bi-search"></i>
+    <input type="text" class="input-field form-control" />
+  </div>
+
+  <div class="create">
+    <div></div>
+    <div>
+      <button
+        type="button"
+        class="add btn btn-outline-success"
+        routerLink="/groups/create"
+      >
+        Create Group
+      </button>
+    </div>
+  </div>
+</div>
+
 <div class="groups" *ngIf="groups">
   <div class="header">
     <div class="name">Name</div>
@@ -6,12 +26,28 @@
 
   <div class="group" *ngFor="let group of groups">
     <div class="name">{{ group.name }}</div>
-    <div class="computers">{{ group.pcGroups }}</div>
-    <div>
-      <i class="edit bi bi-pencil-square" (click)="edited.emit(group)"></i>
+    <div class="computers">
+      <span
+        class="computer edit"
+        *ngFor="let computer of group.pcGroups"
+        routerLink="/users/edit/{{ computer.idPc }}"
+        >{{ computer.name
+        }}<span
+          *ngIf="
+            computer.idPc != group.pcGroups[group.pcGroups.length - 1].idPc
+          "
+          >,
+        </span></span
+      >
     </div>
     <div>
-      <i class="delete bi bi-x-square" (click)="deleted.emit(group)"></i>
+      <i
+        class="action edit bi bi-pencil-square"
+        (click)="edited.emit(group)"
+      ></i>
+    </div>
+    <div>
+      <i class="action delete bi bi-x-square" (click)="deleted.emit(group)"></i>
     </div>
   </div>
 </div>

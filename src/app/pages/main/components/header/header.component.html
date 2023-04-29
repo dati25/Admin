@@ -1,10 +1,47 @@
-<div id="header">
-  <div id="logo">
-    <a routerLink="/dashboard"><h1 id="logo-text">foobakcup</h1></a>
+<div class="header">
+  <div class="logo">
+    <a routerLink="/dashboard"><h1 class="logo-text">foobakcup</h1></a>
   </div>
 
-  <div id="settings">
-    <p id="admin">Admin</p>
-    <i id="edit" routerLink="/settings" class="bi bi-gear"></i>
+  <div class="navbar">
+    <div class="tooltip-div">
+      <a routerLink="/dashboard">
+        <i class="edit bi bi-graph-up" routerLinkActive="active"></i>
+      </a>
+      <span class="tooltiptext">Dashboard</span>
+    </div>
+
+    <div class="tooltip-div">
+      <a routerLink="/requests/list"
+        ><i class="edit bi bi-person-plus" routerLinkActive="active"></i
+      ></a>
+      <span class="tooltiptext">Requests</span>
+    </div>
+
+    <div class="tooltip-div">
+      <a routerLink="/users/list"
+        ><i class="edit bi bi-person" routerLinkActive="active"></i>
+      </a>
+      <span class="tooltiptext">Users</span>
+    </div>
+
+    <div class="tooltip-div">
+      <a routerLink="/groups/list">
+        <i class="edit bi bi-people" routerLinkActive="active"></i>
+      </a>
+      <span class="tooltiptext">Groups</span>
+    </div>
+
+    <div class="tooltip-div">
+      <a routerLink="/configs/list">
+        <i class="edit bi bi-wrench" routerLinkActive="active"></i>
+      </a>
+      <span class="tooltiptext">Configs</span>
+    </div>
+  </div>
+
+  <div class="settings">
+    <p class="admin">Admin</p>
+    <i class="edit bi bi-gear" routerLink="/settings"></i>
   </div>
 </div>

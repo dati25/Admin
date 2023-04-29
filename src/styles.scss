@@ -36,39 +36,43 @@ body {
 
   .delete {
     color: var(--danger);
-  }
 
-  .delete:hover {
-    color: var(--danger-dark);
-    cursor: pointer;
+    &:hover {
+      color: var(--danger-dark);
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
   }
 
   .edit {
     color: var(--text);
-  }
 
-  .edit:hover {
-    color: var(--text-dark);
-    cursor: pointer;
+    &:hover {
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
   }
 
   .add {
     color: var(--success);
-  }
 
-  .add:hover {
-    color: var(--success-dark);
-    cursor: pointer;
+    &:hover {
+      color: var(--success-dark);
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
   }
 
   .link {
     color: var(--text);
     text-decoration: underline;
-  }
 
-  .link:hover {
-    color: var(--text-dark);
-    cursor: pointer;
+    &:hover {
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
   }
 }
 

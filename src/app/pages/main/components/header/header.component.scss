@@ -1,4 +1,4 @@
-#header {
+.header {
   height: 5rem;
   width: 100%;
   position: fixed;
@@ -13,33 +13,86 @@
     color: var(--text);
   }
 
-  #logo {
+  .logo {
     display: flex;
     align-items: center;
     justify-content: left;
+    margin: 1.5rem;
+    width: 20%;
 
-    #logo-text {
+    .logo-text {
       font-family: "Dongle", sans-serif;
       font-size: 4.5rem;
-      margin: 1.5rem;
+      margin: 1.5rem 0;
     }
   }
 
-  #settings {
+  .navbar {
+    width: 30%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-evenly;
+    margin: 0 2rem 0 2rem;
 
-    margin: 1.5rem;
-    margin-right: 2rem;
-
-    #admin {
-      font-size: 1.5rem;
-      height: 1.5rem;
-      margin-right: 1rem;
+    .edit {
+      font-size: 1.75rem;
     }
 
-    #edit {
+    .active {
+      color: var(--text-dark);
+    }
+
+    .tooltip-div {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted var(--darkest);
+    }
+
+    .tooltip-div .tooltiptext {
+      visibility: hidden;
+      width: 6rem;
+      background-color: var(--lighter);
+      color: var(--text);
+      text-align: center;
+      border-radius: 6px;
+      padding: 0.25rem;
+      position: absolute;
+      z-index: 1;
+      top: 100%;
+      left: 50%;
+      margin-left: -3rem;
+    }
+
+    .tooltip-div .tooltiptext::after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent var(--lighter) transparent;
+    }
+
+    .tooltip-div:hover .tooltiptext {
+      visibility: visible;
+    }
+  }
+
+  .settings {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: 1.5rem;
+    width: 20%;
+
+    .admin {
+      font-size: 1.5rem;
+      height: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    .edit {
       font-size: 1.5rem;
     }
   }
