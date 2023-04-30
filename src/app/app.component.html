@@ -1,9 +1,9 @@
-<div *ngIf="authenticated()">
+<div class="header" *ngIf="authenticated()">
   <app-header></app-header>
 
   <!-- <app-sidebar></app-sidebar> -->
 </div>
 
-<div id="content">
+<div class="content">
   <router-outlet></router-outlet>
 </div>

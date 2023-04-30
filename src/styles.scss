@@ -20,14 +20,13 @@
 
 html,
 body {
-  height: 100%;
   margin: 0;
   font-family: "Open sans", sans-serif;
   background-color: var(--main) !important;
   color: var(--text) !important;
 
   .wrapper {
-    margin: 3rem;
+    margin: 2.5%;
   }
 
   a {
@@ -40,7 +39,7 @@ body {
     &:hover {
       color: var(--danger-dark);
       cursor: pointer;
-      transition: all 0.2s ease-in-out;
+      transition: all 0.15s ease-in-out;
     }
   }
 
@@ -50,7 +49,7 @@ body {
     &:hover {
       color: var(--text-dark);
       cursor: pointer;
-      transition: all 0.2s ease-in-out;
+      transition: all 0.15s ease-in-out;
     }
   }
 
@@ -60,7 +59,7 @@ body {
     &:hover {
       color: var(--success-dark);
       cursor: pointer;
-      transition: all 0.2s ease-in-out;
+      transition: all 0.15s ease-in-out;
     }
   }
 
@@ -71,8 +70,18 @@ body {
     &:hover {
       color: var(--text-dark);
       cursor: pointer;
-      transition: all 0.2s ease-in-out;
+      transition: all 0.15s ease-in-out;
     }
+  }
+
+  .btn-outline-success {
+    color: var(--success);
+  }
+
+  .btn-outline-success:hover {
+    background-color: var(--success);
+    color: var(--text);
+    transition: all 0.15s ease-in-out;
   }
 }
 

@@ -1,24 +1,41 @@
 <form [formGroup]="form">
-  <div id="form">
-    <div id="input-text">
-      <div id="label">Name</div>
-      <div id="input">
-        <input
-          type="text"
-          id="input-field"
-          class="form-control"
-          formControlName="name"
-        />
+  <div class="form">
+    <app-input-text [form]="form" label="Name" name="name"></app-input-text>
+
+    <div class="users" formArrayName="pcGroups">
+      <div class="label">Users</div>
+
+      <div class="grid">
+        <div
+          class="user"
+          *ngFor="let computer of pcGroups.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <i
+            class="delete bi bi-x-circle"
+            (click)="removeUser(computer.value)"
+          ></i>
+          <a routerLink="/users/edit/{{ computer.value.idPc }}"
+            ><div class="edit">{{ computer.value.name }}</div></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="add-div">
+      <div class="label">Add user</div>
+
+      <div class="add-user">
+        <i class="add bi bi-plus-circle" (click)="addUser(select)"></i>
+
+        <select class="select" #select>
+          <option *ngFor="let item of users" [value]="item.id">
+            {{ item.name }}
+          </option>
+        </select>
       </div>
     </div>
   </div>
 
-  <div id="buttons">
-    <button type="button" class="btn btn-outline-danger" (click)="goBack()">
-      Cancel
-    </button>
-    <button type="button" class="btn btn-outline-success" (click)="save()">
-      Save
-    </button>
-  </div>
+  <app-form-buttons [form]="form" (saved)="save()"></app-form-buttons>
 </form>

@@ -5,7 +5,7 @@
   .label {
     flex: 2;
     height: 2rem;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     margin-right: 5rem;
   }
 
@@ -17,14 +17,25 @@
 
     .switch {
       .btn-check {
-        height: 2rem;
+        height: 2.25rem;
       }
 
       .btn {
-        height: 2rem;
-        font-size: 1rem;
+        height: 2.25rem;
         line-height: 1.25rem;
+        font-size: 1.05rem;
         border: 1px solid var(--lightest);
+        border-radius: 0.75rem;
+      }
+
+      #btn1 {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      #btn2 {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
       }
 
       #btnradio1:checked + .btn {

@@ -29,6 +29,13 @@
           />
         </div>
 
+        <div class="edit-div">
+          <i
+            (click)="edited.emit(user); $event.stopPropagation()"
+            class="edit bi bi-pencil-square editicon"
+          ></i>
+        </div>
+
         <div class="delete-div">
           <i
             (click)="deleted.emit(user); $event.stopPropagation()"

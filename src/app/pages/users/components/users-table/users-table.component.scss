@@ -36,7 +36,7 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
 
       .status {
         display: flex;
@@ -58,10 +58,6 @@
           background-color: var(--danger);
           border-color: var(--danger);
         }
-      }
-
-      .delete {
-        z-index: 1;
       }
     }
   }

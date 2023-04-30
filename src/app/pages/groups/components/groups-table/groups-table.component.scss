@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 4%;
+  margin: 3.5rem;
 
   .search {
     display: flex;
@@ -21,6 +21,7 @@
       background-color: var(--lighter);
       border: 1px solid var(--lightest);
       color: var(--text);
+      border-radius: 0.75rem;
     }
   }
 
@@ -34,16 +35,6 @@
       border-radius: 0.75rem;
       border: 1px solid var(--lightest);
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
-
-    .btn-outline-success {
-      color: var(--success);
-    }
-
-    .btn-outline-success:hover {
-      background-color: var(--success);
-      color: var(--text);
-      transition: all 0.2s ease-in-out;
     }
   }
 }
@@ -84,23 +75,12 @@
       font-weight: 500;
     }
 
-    .computers {
-      .computer {
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-          transform: scale(1.5);
-        }
-      }
-    }
-
     .action {
       font-size: 1.4rem;
       display: flex;
       justify-content: flex-start;
       align-items: center;
       cursor: pointer;
-      transition: all 0.2s ease-in-out;
     }
 
     .bi-x-square {

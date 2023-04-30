@@ -8,7 +8,7 @@
   .label {
     flex: 2;
     height: 2rem;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     margin-right: 5rem;
   }
 
@@ -16,10 +16,12 @@
     flex: 4;
 
     .input-field {
-      height: 2rem;
+      height: 2.25rem;
       background-color: var(--lighter);
       border: 1px solid var(--lightest);
       color: var(--text);
+      border-radius: 0.75rem;
+      font-size: 1.05rem;
     }
   }
 }

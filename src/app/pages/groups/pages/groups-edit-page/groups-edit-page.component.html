@@ -1,7 +1,6 @@
-<div id="wrapper">
-  <app-groups-users [users]="users" [group]="group"></app-groups-users>
-
+<div class="wrapper">
   <app-groups-form
+    [users]="users"
     [form]="form"
     (saved)="saveGroup($event)"
     *ngIf="form"

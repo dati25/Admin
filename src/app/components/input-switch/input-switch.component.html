@@ -15,7 +15,7 @@
         [checked]="form.controls['status'].value === 'f'"
         (change)="form.controls['status'].setValue('f')"
       />
-      <label class="btn btn-outline-secondary" for="btnradio1">{{
+      <label id="btn1" class="btn btn-outline-secondary" for="btnradio1">{{
         label1
       }}</label>
 
@@ -27,7 +27,7 @@
         [checked]="form.controls['status'].value === 't'"
         (change)="form.controls['status'].setValue('t')"
       />
-      <label class="btn btn-outline-secondary" for="btnradio2">{{
+      <label id="btn2" class="btn btn-outline-secondary" for="btnradio2">{{
         label2
       }}</label>
     </div>
