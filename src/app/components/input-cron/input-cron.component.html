@@ -1,1 +1,199 @@
-<div class="cron"></div>
+<div class="cron">
+  <div class="links">
+    <div>
+      <p
+        class="edit"
+        (click)="showSimple = true"
+        [ngClass]="{ active: showSimple }"
+      >
+        Simple
+      </p>
+    </div>
+    <div>
+      <p
+        class="edit"
+        (click)="showSimple = false"
+        [ngClass]="{ active: !showSimple }"
+      >
+        Advanced
+      </p>
+    </div>
+  </div>
+
+  <div class="advanced" *ngIf="!showSimple">
+    <div class="inputs">
+      <div class="input-text">
+        <div class="input">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cron1"
+            (change)="setCron()"
+          />
+        </div>
+
+        <div class="label">Minute</div>
+      </div>
+
+      <div class="input-text">
+        <div class="input">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cron2"
+            (change)="setCron()"
+          />
+        </div>
+
+        <div class="label">Hour</div>
+      </div>
+
+      <div class="input-text">
+        <div class="input">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cron3"
+            (change)="setCron()"
+          />
+        </div>
+
+        <div class="label">Day (Month)</div>
+      </div>
+
+      <div class="input-text">
+        <div class="input">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cron4"
+            (change)="setCron()"
+          />
+        </div>
+
+        <div class="label">Month</div>
+      </div>
+
+      <div class="input-text">
+        <div class="input">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cron5"
+            (change)="setCron()"
+          />
+        </div>
+
+        <div class="label">Day (week)</div>
+      </div>
+    </div>
+
+    <div class="link">
+      <a
+        href="https://crontab.guru/#30_10_*_*_3,6,0"
+        target="_blank"
+        class="edit"
+        >Click here to see how cron works</a
+      >
+    </div>
+  </div>
+
+  <div class="simple" *ngIf="showSimple">
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="monday"
+        [checked]="monday"
+        (change)="setCron()"
+        id="monday"
+      />
+      <label class="form-check-label" for="monday">Monday</label>
+    </div>
+
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="tuesday"
+        [checked]="tuesday"
+        (change)="setCron()"
+        id="tuesday"
+      />
+      <label class="form-check-label" for="tuesday">Tuesday</label>
+    </div>
+
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="wednesday"
+        [checked]="wednesday"
+        (change)="setCron()"
+        id="wednesday"
+      />
+      <label class="form-check-label" for="wednesday">Wednesday</label>
+    </div>
+
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="thursday"
+        [checked]="thursday"
+        (change)="setCron()"
+        id="thursday"
+      />
+      <label class="form-check-label" for="thursday">Thursday</label>
+    </div>
+
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="friday"
+        [checked]="friday"
+        (change)="setCron()"
+        id="friday"
+      />
+      <label class="form-check-label" for="friday">Friday</label>
+    </div>
+
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="saturday"
+        [checked]="saturday"
+        (change)="setCron()"
+        id="saturday"
+      />
+      <label class="form-check-label" for="saturday">Saturday</label>
+    </div>
+
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="sunday"
+        [checked]="sunday"
+        (change)="setCron()"
+        id="sunday"
+      />
+      <label class="form-check-label" for="sunday">Sunday</label>
+    </div>
+
+    <div class="input-text">
+      <div class="label">Time</div>
+
+      <div class="input">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="time"
+          (change)="setCron()"
+        />
+      </div>
+    </div>
+  </div>
+</div>

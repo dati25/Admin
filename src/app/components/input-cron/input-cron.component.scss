@@ -1,3 +1,66 @@
 .cron {
-  margin: 1.5rem 1rem;
+  .links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1rem 0;
+    font-size: 1.25rem;
+  }
+
+  .inputs {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    font-size: 1.1rem;
+    margin-top: 3.5rem;
+
+    div {
+      margin: 0.5rem 1rem;
+      text-align: center;
+
+      input {
+        text-align: center;
+        color: var(--text);
+        background-color: var(--lighter);
+        border: 1px solid var(--lightest);
+        border-radius: 0.75rem;
+      }
+    }
+  }
+
+  .link {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .simple {
+    margin: 1.5rem 1rem;
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1.25rem;
+
+    div {
+      margin: 0.5rem 1.5rem;
+    }
+
+    .input-text {
+      display: flex;
+      align-items: center;
+      margin-left: 0;
+
+      .input {
+        input {
+          height: 1.75rem;
+          width: 5rem;
+          font-size: 1.05rem;
+          text-align: center;
+          color: var(--text);
+          background-color: var(--lighter);
+          border: 1px solid var(--lightest);
+          border-radius: 0.75rem;
+        }
+      }
+    }
+  }
 }
