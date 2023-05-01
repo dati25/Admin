@@ -1,0 +1,43 @@
+<div class="radio-buttons">
+  <div class="label">Backup Type</div>
+  <div class="input-field">
+    <div
+      class="input btn-group"
+      role="group"
+      aria-label="Basic radio toggle button group"
+    >
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="btnradio1"
+        autocomplete="off"
+        [checked]="form.controls['type'].value == 'full'"
+        (change)="form.controls['type'].setValue('full')"
+      />
+      <label class="btn1 btn btn-outline-primary" for="btnradio1">Full</label>
+
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="btnradio2"
+        autocomplete="off"
+        [checked]="form.controls['type'].value == 'diff'"
+        (change)="form.controls['type'].setValue('diff')"
+      />
+      <label class="btn2 btn btn-outline-primary" for="btnradio2">Diff</label>
+
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="btnradio3"
+        autocomplete="off"
+        [checked]="form.controls['type'].value == 'incr'"
+        (change)="form.controls['type'].setValue('incr')"
+      />
+      <label class="btn3 btn btn-outline-primary" for="btnradio3">Incr</label>
+    </div>
+  </div>
+</div>

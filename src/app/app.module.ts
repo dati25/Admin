@@ -35,6 +35,10 @@ import { InputSwitchComponent } from './components/input-switch/input-switch.com
 import { FormButtonsComponent } from './components/form-buttons/form-buttons.component';
 import { RequestsEditPageComponent } from './pages/requests/pages/requests-edit-page/requests-edit-page.component';
 import { RequestsFormComponent } from './pages/requests/components/requests-form/requests-form.component';
+import { SearchCreateComponent } from './components/search-create/search-create.component';
+import { InputButtonGroupComponent } from './components/input-button-group/input-button-group.component';
+import { InputNumberComponent } from './components/input-number/input-number.component';
+import { InputCronComponent } from './components/input-cron/input-cron.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +72,10 @@ import { RequestsFormComponent } from './pages/requests/components/requests-form
     FormButtonsComponent,
     RequestsEditPageComponent,
     RequestsFormComponent,
+    SearchCreateComponent,
+    InputButtonGroupComponent,
+    InputNumberComponent,
+    InputCronComponent,
   ],
   imports: [
     BrowserModule,

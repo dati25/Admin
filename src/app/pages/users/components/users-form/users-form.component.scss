@@ -3,4 +3,55 @@
   border: 2px solid var(--lighter);
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  .input-switch {
+    display: flex;
+    margin: 1.5rem 1rem;
+
+    .label {
+      flex: 2;
+      height: 2rem;
+      font-size: 1.25rem;
+      margin-right: 5rem;
+    }
+
+    .field {
+      flex: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .switch {
+        .btn-check {
+          height: 2.25rem;
+        }
+
+        .btn {
+          height: 2.25rem;
+          line-height: 1.25rem;
+          font-size: 1.05rem;
+          border: 1px solid var(--lightest);
+          border-radius: 0.75rem;
+        }
+
+        #btn1 {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        #btn2 {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+
+        #btnradio1:checked + .btn {
+          background-color: var(--danger);
+        }
+
+        #btnradio2:checked + .btn {
+          background-color: var(--success);
+        }
+      }
+    }
+  }
 }

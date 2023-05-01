@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ConfigService } from '../../../../services/config.service';
+import { UserService } from '../../../../services/user.service';
+import { GroupService } from '../../../../services/group.service';
 import { ActivatedRoute } from '@angular/router';
 import { Config } from '../../../../models/Config';
+import { User } from '../../../../models/User';
+import { Group } from '../../../../models/Group';
 import { ConfigsFormComponent } from '../../components/configs-form/configs-form.component';
 
 @Component({
@@ -11,14 +15,18 @@ import { ConfigsFormComponent } from '../../components/configs-form/configs-form
   styleUrls: ['./configs-edit-page.component.scss'],
 })
 export class ConfigsEditPageComponent implements OnInit {
-  form: FormGroup;
+  public users: User[];
+  public groups: Group[];
 
+  form: FormGroup;
   config: Config;
 
   public constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private service: ConfigService
+    private service: ConfigService,
+    private userService: UserService,
+    private groupService: GroupService
   ) {}
 
   public ngOnInit(): void {
@@ -27,6 +35,14 @@ export class ConfigsEditPageComponent implements OnInit {
     this.service.findById(id).subscribe((config) => {
       this.config = config;
       this.form = ConfigsFormComponent.createForm(this.fb, config);
+
+      this.userService.findAll().subscribe((result) => {
+        this.users = result.filter((user) => user.status !== 'q');
+      });
+
+      this.groupService.findAll().subscribe((result) => {
+        this.groups = result;
+      });
     });
   }
 

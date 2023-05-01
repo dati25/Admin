@@ -10,6 +10,7 @@ import { User } from '../../../../models/User';
 export class UsersFormComponent {
   constructor() {}
 
+  test: boolean = true;
   @Input()
   form: FormGroup;
 

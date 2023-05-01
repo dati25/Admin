@@ -1,67 +1,60 @@
 .configs {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border: 2px solid var(--lighter);
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  font-size: 1.1rem;
 
+  .config,
   .header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 0.75fr repeat(3, 0.5fr) 2fr 1.5fr 0.5fr 0.5fr;
     width: 100%;
     border-bottom: 2px solid var(--lighter);
-    line-height: 1.75rem;
+    line-height: 1.7rem;
+  }
 
+  .header {
     div {
-      flex: 1;
       padding: 1.1rem 2rem;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       color: var(--text-dark);
+      min-width: 1rem;
     }
 
-    .name {
-      font-weight: bold;
-      font-size: 1.3rem;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
+    .center {
+      text-align: center;
     }
   }
 
   .config {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    border-bottom: 2px solid var(--lighter);
-    line-height: 1.75rem;
-
     div {
-      flex: 1;
       padding: 1.1rem 2rem;
+      overflow-wrap: break-word;
+      min-width: 1rem;
+      font-size: 1.05rem;
+    }
+
+    .center {
+      text-align: center;
     }
 
     .name {
       font-size: 1.25rem;
-      font-weight: bold;
+      font-weight: 500;
     }
 
-    .buttons {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
+    .action {
+      padding: 0.25rem;
       font-size: 1.3rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
     }
-  }
 
-  .config:hover {
-    background-color: var(--lighter);
+    .bi-x-square {
+      font-size: 1.25rem;
+      -webkit-text-stroke: 0.5px;
+    }
   }
 
   .config:last-child {

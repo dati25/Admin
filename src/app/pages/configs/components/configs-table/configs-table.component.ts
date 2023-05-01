@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { Config } from '../../../../models/Config';
 import { DatePipe } from '@angular/common';
+import cronstrue from 'cronstrue';
 
 @Component({
   selector: 'app-configs-table',
@@ -22,4 +23,8 @@ export class ConfigsTableComponent implements OnInit {
   public constructor() {}
 
   public ngOnInit(): void {}
+
+  public getCron(cron: string): string {
+    return cronstrue.toString(cron, { use24HourTimeFormat: true });
+  }
 }

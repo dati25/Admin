@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, FormControl, FormArray } from '@angular/forms';
 import { Config } from '../../../../models/Config';
 import { Source } from '../../../../models/Source';
 import { Destination } from '../../../../models/Destination';
+import { Group } from 'src/app/models/Group';
+import { User } from 'src/app/models/User';
 
 @Component({
   selector: 'app-configs-form',
@@ -22,6 +24,12 @@ export class ConfigsFormComponent {
 
   @Input()
   form: FormGroup;
+
+  @Input()
+  users: User[];
+
+  @Input()
+  groups: Group[];
 
   @Output()
   saved: EventEmitter<any> = new EventEmitter<any>();

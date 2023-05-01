@@ -1,5 +1,7 @@
-<div id="wrapper">
+<div class="wrapper">
   <app-configs-form
+    [users]="users"
+    [groups]="groups"
     [form]="form"
     (saved)="saveConfig($event)"
     *ngIf="form"

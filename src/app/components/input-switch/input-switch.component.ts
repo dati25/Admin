@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -11,10 +11,19 @@ export class InputSwitchComponent {
   form: FormGroup;
 
   @Input()
+  label: string;
+
+  @Input()
   label1: string;
 
   @Input()
   label2: string;
+
+  @Input()
+  id1: string;
+
+  @Input()
+  id2: string;
 
   @Input()
   name: string;

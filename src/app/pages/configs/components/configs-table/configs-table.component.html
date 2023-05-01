@@ -1,67 +1,50 @@
-<!-- <table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Repeat Period</th>
-      <th>Expiration Date</th>
-      <th>Status</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let config of configs">
-      <td id="name">{{ config.name }}</td>
-      <td id="type">{{ config.type }}</td>
-      <td id="repeat">{{ config.repeatPeriod }}</td>
-      <td id="expiration">{{ config.expirationDate }}</td>
-      <td id="status">{{ config.status == true ? "ON" : "OFF" }}</td>
-
-      <td id="buttons">
-        <i
-          (click)="edited.emit(config)"
-          id="edit"
-          class="bi bi-pencil-square"
-        ></i>
-
-        <i
-          (click)="deleted.emit(config)"
-          id="delete"
-          class="bi bi-trash-fill"
-        ></i>
-      </td>
-    </tr>
-
-    <td colspan="6">
-      <div id="add-div">
-        <i routerLink="/configs/create" id="add" class="bi bi-plus-circle"></i>
-      </div>
-    </td>
-  </tbody>
-</table> -->
+<app-search-create
+  button="Create Config"
+  link="/configs/create"
+></app-search-create>
 
 <div class="configs" *ngIf="configs">
   <div class="header">
     <div>Name</div>
-    <div>Type</div>
-    <div>Compress</div>
-    <div>Retention</div>
-    <div>Package Size</div>
+    <div class="center">Type</div>
+    <div class="center">
+      <i class="bi bi-file-earmark-zip" title="Compress"></i>
+    </div>
+    <div class="center">
+      <i class="bi bi-arrow-repeat" title="Retention"></i>
+    </div>
+    <div class="center">
+      <i class="bi bi-box-seam" title="Package Size"></i>
+    </div>
     <div>Repeat Period</div>
-    <div>Expiration Date</div>
-    <!-- <div>Destinations</div>
-    <div>Sources</div>
-    <div>Computers</div>
-    <div>Groups</div> -->
+    <div class="center">Expiration</div>
   </div>
+
   <div class="config" *ngFor="let config of configs">
     <div>{{ config.name }}</div>
-    <div>{{ config.type }}</div>
-    <div>{{ config.compress }}</div>
-    <div>{{ config.retention }}</div>
-    <div>{{ config.packageSize }}</div>
-    <div>{{ config.repeatPeriod }}</div>
-    <div>{{ config.expirationDate | date : "dd/MM/yyyy hh:mm" }}</div>
+    <div class="center">{{ config.type }}</div>
+    <div class="center">
+      <i class="bi bi-check-lg" *ngIf="config.compress"></i>
+      <i class="bi bi-x-lg" *ngIf="!config.compress"></i>
+    </div>
+    <div class="center">{{ config.retention }}</div>
+    <div class="center">{{ config.packageSize }}</div>
+    <div>{{ getCron(config.repeatPeriod) }}</div>
+    <div class="center">
+      {{ config.expirationDate | date : "dd.MM.yyyy hh:mm" }}
+    </div>
+
+    <div>
+      <i
+        class="action edit bi bi-pencil-square"
+        (click)="edited.emit(config)"
+      ></i>
+    </div>
+    <div>
+      <i
+        class="action delete bi bi-x-square"
+        (click)="deleted.emit(config)"
+      ></i>
+    </div>
   </div>
 </div>

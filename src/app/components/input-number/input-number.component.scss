@@ -1,4 +1,4 @@
-.input-text {
+.input-number {
   display: flex;
   align-content: space-between;
   justify-content: center;
@@ -14,11 +14,14 @@
 
   .input {
     flex: 4;
+    display: flex;
+    justify-content: center;
 
     .input-field {
       height: 2.25rem;
-      border-radius: 0.75rem;
+      width: 5rem;
       font-size: 1.05rem;
+      border-radius: 0.75rem;
       background-color: var(--lighter);
       border: 1px solid var(--lightest);
       color: var(--text);

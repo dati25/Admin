@@ -1,12 +1,15 @@
-.input-switch {
+.radio-buttons {
   display: flex;
+  align-content: space-between;
+  justify-content: center;
+  align-items: center;
   margin: 1.5rem 1rem;
 
   .label {
     flex: 2;
-    height: 2rem;
     font-size: 1.25rem;
     margin-right: 5rem;
+    height: 2.25rem;
   }
 
   .input-field {
@@ -14,36 +17,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.05rem;
 
-    .switch {
-      .btn-check {
-        height: 2.25rem;
-      }
-
+    .input {
       .btn {
-        height: 2.25rem;
-        line-height: 1.25rem;
-        font-size: 1.05rem;
-        border: 1px solid var(--lightest);
         border-radius: 0.75rem;
       }
 
-      .left {
+      .btn1 {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
       }
 
-      .right {
+      .btn2 {
+        border-radius: 0;
+      }
+
+      .btn3 {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
       }
 
-      .left-btn:checked + .btn {
-        background-color: var(--danger);
+      .btn-check:checked + .btn {
+        background-color: var(--lightest);
       }
 
-      .right-btn:checked + .btn {
-        background-color: var(--success);
+      .btn-outline-primary {
+        color: var(--text);
+        border-color: var(--lightest);
       }
     }
   }
