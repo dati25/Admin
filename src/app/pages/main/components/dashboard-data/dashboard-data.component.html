@@ -1,0 +1,25 @@
+<div class="top">
+  <div class="search">
+    <i class="bi bi-search"></i>
+    <input type="text" class="input-field form-control" />
+  </div>
+</div>
+
+<div class="groups" *ngIf="reports">
+  <div class="header">
+    <div>Name</div>
+    <div>Report Time</div>
+    <div>Status</div>
+    <div>Description</div>
+  </div>
+
+  <div class="group" *ngFor="let report of reports">
+    <div class="name">{{ report.idPc }}</div>
+    <div class="name">{{ report.reportTime }}</div>
+    <div class="center">
+      <i class="bi bi-check-lg" *ngIf="report.status"></i>
+      <i class="bi bi-x-lg" *ngIf="!report.status"></i>
+    </div>
+    <div class="name">{{ report.description }}</div>
+  </div>
+</div>

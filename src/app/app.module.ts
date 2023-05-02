@@ -39,6 +39,7 @@ import { SearchCreateComponent } from './components/search-create/search-create.
 import { InputButtonGroupComponent } from './components/input-button-group/input-button-group.component';
 import { InputNumberComponent } from './components/input-number/input-number.component';
 import { InputCronComponent } from './components/input-cron/input-cron.component';
+import { DashboardDataComponent } from './pages/main/components/dashboard-data/dashboard-data.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { InputCronComponent } from './components/input-cron/input-cron.component
     InputButtonGroupComponent,
     InputNumberComponent,
     InputCronComponent,
+    DashboardDataComponent,
   ],
   imports: [
     BrowserModule,
