@@ -1,9 +1,15 @@
 #wrapper {
   width: 40%;
-  margin: 2rem auto;
+  margin: 2rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   app-settings-form {
+    width: 50%;
     margin-right: 10rem;
+  }
+  app-settings-report-form {
+    width: 50%;
   }
 }

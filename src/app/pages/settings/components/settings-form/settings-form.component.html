@@ -1,39 +1,37 @@
 <form [formGroup]="form">
-  <div class="formLeft">
-    <div class="formLeftItem">
-      <div class="formLeftItemLabel">Username</div>
-      <div class="formLeftItemInput">
-        <input
-          type="text"
-          id="input-text"
-          class="form-control"
-          formControlName="username"
-        />
-      </div>
+  <div id="input-text">
+    <div id="label">Username</div>
+    <div id="input">
+      <input
+        type="text"
+        id="input-field"
+        class="form-control"
+        formControlName="username"
+      />
     </div>
-    <div class="formLeftItem">
-      <div class="formLeftItemLabel">Old Password</div>
-      <div class="formLeftItemInput">
-        <input type="password" class="form-control" />
-      </div>
+  </div>
+  <div id="input-text">
+    <div id="label">Old Password</div>
+    <div id="input">
+      <input type="password" class="form-control" id="input-field" />
     </div>
-    <div class="formLeftItem">
-      <div class="formLeftItemLabel">New Password</div>
-      <div class="formLeftItemInput">
-        <input type="password" class="form-control" />
-      </div>
+  </div>
+  <div id="input-text">
+    <div id="label">New Password</div>
+    <div id="input">
+      <input type="password" class="form-control" id="input-field" />
     </div>
-    <div class="formLeftItem">
-      <div class="formLeftItemLabel">Repeat Password</div>
-      <div class="formLeftItemInput">
-        <input type="password" class="form-control" />
-      </div>
+  </div>
+  <div id="input-text">
+    <div id="label">Repeat Password</div>
+    <div id="input">
+      <input type="password" class="form-control" id="input-field" />
     </div>
+  </div>
 
-    <div class="formLeftItem">
-      <div class="formLeftItemLabel add">
-        <a routerLink="/admin">Add new</a>
-      </div>
+  <div id="input-text">
+    <div class="add" id="input">
+      <a routerLink="/admin">Add new</a>
     </div>
   </div>
 </form>
