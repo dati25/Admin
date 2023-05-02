@@ -1,1 +1,9 @@
-<p>configs-create-page works!</p>
+<div class="wrapper">
+  <app-configs-form
+    [allUsers]="users"
+    [allGroups]="groups"
+    [form]="form"
+    (saved)="saveConfig($event)"
+    *ngIf="form"
+  ></app-configs-form>
+</div>
