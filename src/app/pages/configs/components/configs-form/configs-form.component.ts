@@ -5,6 +5,8 @@ import { Source } from '../../../../models/Source';
 import { Destination } from '../../../../models/Destination';
 import { Group } from 'src/app/models/Group';
 import { User } from 'src/app/models/User';
+import { Computer } from 'src/app/models/Computer';
+import { Task } from 'src/app/models/Task';
 
 @Component({
   selector: 'app-configs-form',
@@ -12,7 +14,7 @@ import { User } from 'src/app/models/User';
   styleUrls: ['./configs-form.component.scss'],
 })
 export class ConfigsFormComponent {
-  constructor() {}
+  constructor(private fb: FormBuilder) {}
 
   get sources() {
     return this.form.get('sources') as FormArray;
@@ -22,20 +24,50 @@ export class ConfigsFormComponent {
     return this.form.get('destinations') as FormArray;
   }
 
+  get computers() {
+    return this.form.get('computers') as FormArray;
+  }
+
+  get groups() {
+    return this.form.get('groups') as FormArray;
+  }
+
   @Input()
   form: FormGroup;
 
   @Input()
-  users: User[];
+  allUsers: User[];
 
   @Input()
-  groups: Group[];
+  allGroups: Group[];
 
   @Output()
   saved: EventEmitter<any> = new EventEmitter<any>();
 
   public static createForm(fb: FormBuilder, config: Config): FormGroup {
+    const computersInput = config.tasks
+      .map((task) => task.computer)
+      .filter((computer) => computer !== undefined)
+      .map((computer) => {
+        return fb.group({
+          idPc: computer.idPc,
+          name: computer.name,
+        });
+      });
+
+    const groupsInput = config.tasks
+      .map((task) => task.group)
+      .filter((group) => group !== undefined)
+      .map((group) => {
+        return fb.group({
+          idGroup: group.id,
+          name: group.name,
+          pcGroups: group.pcGroups,
+        });
+      });
+
     return fb.group({
+      id: config.id,
       name: config.name,
       type: config.type,
       repeatPeriod: config.repeatPeriod,
@@ -60,14 +92,100 @@ export class ConfigsFormComponent {
           })
         )
       ),
+      computers: fb.array(computersInput),
+      groups: fb.array(groupsInput),
     });
   }
 
   public save(): void {
+    console.log(this.form.value);
+
     this.saved.emit(this.form.value);
   }
 
   public goBack(): void {
     window.history.back();
+  }
+
+  public addSource(): void {
+    this.sources.push(this.addSourceControl());
+  }
+
+  public addSourceControl(): FormGroup {
+    return new FormGroup({
+      path: new FormControl(),
+    });
+  }
+
+  public removeSource(index: number): void {
+    this.sources.removeAt(index);
+  }
+
+  public addDest(): void {
+    this.destinations.push(this.addDestControl());
+  }
+
+  public addDestControl(): FormGroup {
+    return new FormGroup({
+      type: new FormControl(false),
+      path: new FormControl(),
+    });
+  }
+
+  public removeDest(index: number): void {
+    this.destinations.removeAt(index);
+  }
+
+  public removeUser(index: number): void {
+    this.computers.removeAt(index);
+  }
+
+  public removeGroup(index: number): void {
+    this.groups.removeAt(index);
+  }
+
+  public addUser(select: HTMLSelectElement): void {
+    const addedUser = this.allUsers.find(
+      (user) => user.id === parseInt(select.value)
+    );
+    const computers = this.form.get('computers') as FormArray;
+    computers.push(
+      this.fb.group({
+        idPc: addedUser.id,
+        name: addedUser.name,
+      })
+    );
+
+    const userIndex = this.allUsers.findIndex(
+      (user) => user.id === parseInt(select.value)
+    );
+
+    this.allUsers.splice(userIndex, 1);
+
+    this.form.patchValue({ computers: computers.value });
+  }
+
+  public addGroup(select: HTMLSelectElement): void {
+    console.log(this.allGroups);
+
+    const addedGroup = this.allGroups.find(
+      (group) => group.id === parseInt(select.value)
+    );
+    const groups = this.form.get('groups') as FormArray;
+    groups.push(
+      this.fb.group({
+        idGroup: addedGroup.id,
+        name: addedGroup.name,
+        pcGroups: addedGroup.pcGroups,
+      })
+    );
+
+    const groupIndex = this.allGroups.findIndex(
+      (group) => group.id === parseInt(select.value)
+    );
+
+    this.allUsers.splice(groupIndex, 1);
+
+    this.form.patchValue({ groups: groups.value });
   }
 }

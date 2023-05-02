@@ -3,14 +3,119 @@
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 
-  .left {
-    border-right: 1px solid var(--lighter);
+  .config,
+  .paths,
+  .tasks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .left {
+      border-right: 1px solid var(--lighter);
+    }
+
+    .right {
+      border-left: 1px solid var(--lighter);
+    }
   }
 
-  .right {
-    border-left: 1px solid var(--lighter);
+  .paths {
+    .label {
+      height: 2rem;
+      font-size: 1.25rem;
+      margin: 1.5rem 1rem;
+    }
+
+    .input-text {
+      display: flex;
+      align-content: space-between;
+      justify-content: center;
+      align-items: center;
+      margin: 1.5rem 1rem;
+
+      .input {
+        flex: 10;
+
+        .input-field {
+          height: 2.25rem;
+          border-radius: 0.75rem;
+          font-size: 1.05rem;
+          background-color: var(--lighter);
+          border: 1px solid var(--lightest);
+          color: var(--text);
+        }
+      }
+
+      .delete {
+        flex: 1;
+        text-align: center;
+        font-size: 1.35rem;
+      }
+    }
+
+    .create {
+      text-align: center;
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .tasks {
+    .label {
+      height: 2rem;
+      font-size: 1.25rem;
+      margin: 1.5rem 1rem;
+    }
+
+    .grid {
+      margin: 1.5rem 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      font-size: 1.05rem;
+
+      .item {
+        display: flex;
+        align-content: center;
+
+        .delete {
+          font-size: 1.15rem;
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .add-div {
+      display: flex;
+      align-content: flex-start;
+      margin: 3rem 1rem;
+
+      .label {
+        flex: 2;
+        height: 2rem;
+        font-size: 1.25rem;
+        margin: 0;
+      }
+
+      .add-user {
+        flex: 4;
+
+        .add {
+          font-size: 1.25rem;
+          margin-left: 0.25rem;
+        }
+
+        .select {
+          margin-left: 0.75rem;
+          height: 2rem;
+          padding: 0.25rem;
+          border-radius: 0.5rem;
+          background-color: var(--lighter);
+          border: 1px solid var(--lightest);
+          color: var(--text);
+        }
+      }
+    }
   }
 }

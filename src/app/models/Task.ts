@@ -1,12 +1,12 @@
 import { Group } from './Group';
-import { User } from './User';
+import { Computer } from './Computer';
 
 export class Task {
-  public group: Group[];
-  public user: User[];
+  public computer: Computer;
+  public group: Group;
 
-  public constructor(group: Group[], user: User[]) {
+  public constructor(computer: Computer, group: Group) {
+    this.computer = computer;
     this.group = group;
-    this.user = user;
   }
 }

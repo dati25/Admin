@@ -1,51 +1,175 @@
 <form [formGroup]="form">
   <div class="form">
-    <div class="left">
-      <app-input-text [form]="form" label="Name" name="name"></app-input-text>
+    <div class="config">
+      <div class="left">
+        <app-input-text [form]="form" label="Name" name="name"></app-input-text>
 
-      <app-input-text
-        [form]="form"
-        label="Expiration Date"
-        name="expirationDate"
-      ></app-input-text>
+        <app-input-text
+          [form]="form"
+          label="Expiration Date"
+          name="expirationDate"
+        ></app-input-text>
 
-      <app-input-button-group [form]="form"></app-input-button-group>
+        <app-input-button-group [form]="form"></app-input-button-group>
 
-      <app-input-switch
-        [form]="form"
-        label="Compress"
-        label1="Off"
-        label2="On"
-        id1="4"
-        id2="5"
-        name="compress"
-      ></app-input-switch>
+        <app-input-switch
+          [form]="form"
+          label="Compress"
+          label1="Off"
+          label2="On"
+          id1="4"
+          id2="5"
+          name="compress"
+        ></app-input-switch>
 
-      <app-input-switch
-        [form]="form"
-        label="Status"
-        label1="Off"
-        label2="On"
-        id1="6"
-        id2="7"
-        name="status"
-      ></app-input-switch>
+        <app-input-switch
+          [form]="form"
+          label="Status"
+          label1="Off"
+          label2="On"
+          id1="6"
+          id2="7"
+          name="status"
+        ></app-input-switch>
 
-      <app-input-number
-        [form]="form"
-        label="Retention"
-        name="retention"
-      ></app-input-number>
+        <app-input-number
+          [form]="form"
+          label="Retention"
+          name="retention"
+        ></app-input-number>
 
-      <app-input-number
-        [form]="form"
-        label="Package Size"
-        name="packageSize"
-      ></app-input-number>
+        <app-input-number
+          [form]="form"
+          label="Package Size"
+          name="packageSize"
+        ></app-input-number>
+      </div>
+
+      <div class="right">
+        <app-input-cron [form]="form" name="repeatPeriod"></app-input-cron>
+      </div>
     </div>
 
-    <div class="right">
-      <app-input-cron [form]="form" name="repeatPeriod"></app-input-cron>
+    <div class="paths">
+      <div class="left">
+        <div class="sources-div" formArrayName="sources">
+          <div class="label">Sources</div>
+
+          <div
+            class="sources"
+            *ngFor="let source of sources.controls; let i = index"
+          >
+            <div class="input-text" [formGroupName]="i">
+              <div class="input">
+                <input
+                  type="text"
+                  class="input-field form-control"
+                  formControlName="path"
+                />
+              </div>
+
+              <i class="delete bi bi-x-circle" (click)="removeSource(i)"></i>
+            </div>
+          </div>
+
+          <div class="create">
+            <i class="add bi bi-plus-circle" (click)="addSource()"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="destinations-div" formArrayName="destinations">
+          <div class="label">Destinations</div>
+
+          <div
+            class="destinations"
+            *ngFor="let destination of destinations.controls; let i = index"
+          >
+            <div class="input-text" [formGroupName]="i">
+              <div class="input">
+                <input
+                  type="text"
+                  class="input-field form-control"
+                  formControlName="path"
+                />
+              </div>
+
+              <i class="delete bi bi-x-circle" (click)="removeDest(i)"></i>
+            </div>
+          </div>
+
+          <div class="create">
+            <i class="add bi bi-plus-circle" (click)="addDest()"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tasks">
+      <div class="left">
+        <div class="computers-div" formArrayName="computers">
+          <div class="label">Computers</div>
+
+          <div class="grid computers">
+            <div
+              class="item computer"
+              *ngFor="let computer of computers.controls; let i = index"
+              [formGroupName]="i"
+            >
+              <div>{{ computer.value.name }}</div>
+
+              <i class="delete bi bi-x-circle" (click)="removeUser(i)"></i>
+            </div>
+          </div>
+
+          <div class="add-div">
+            <div class="label">Add user</div>
+
+            <div class="add-user">
+              <i class="add bi bi-plus-circle" (click)="addUser(select)"></i>
+
+              <select class="select" #select>
+                <option *ngFor="let item of allUsers" [value]="item.id">
+                  {{ item.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="groups-div" formArrayName="groups">
+          <div class="label">Groups</div>
+
+          <div class="grid groups">
+            <div
+              class="item group"
+              *ngFor="let group of groups.controls; let i = index"
+              [formGroupName]="i"
+            >
+              <div>{{ group.value.name }}</div>
+
+              <i class="delete bi bi-x-circle" (click)="removeGroup(i)"></i>
+            </div>
+          </div>
+
+          <div class="add-div">
+            <div class="label">Add user</div>
+
+            <div class="add-user">
+              <i class="add bi bi-plus-circle" (click)="addGroup(select1)"></i>
+
+              <select class="select" #select1>
+                <option *ngFor="let item of allGroups" [value]="item.id">
+                  {{ item.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
