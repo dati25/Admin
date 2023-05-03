@@ -111,7 +111,7 @@
   .dropdown-menu {
     background-color: var(--darkest);
     border: none;
-    color: white;
+    color: var(--lightest);
     font-size: 1.5em;
     align-items: center;
     display: none;
@@ -120,7 +120,7 @@
 
     .dropdown-item {
       width: 100%;
-      color: white;
+      color: var(--text);
       font-size: 1em;
       margin-top: 10px;
       user-select: none;
@@ -142,14 +142,10 @@
     flex-basis: 5%;
     align-items: center;
     text-align: center;
-    color: white;
+    color: var(--text);
     border: none;
     font-size: 2em;
-    margin-top: 15px;
-    margin-top: 10px;
-    padding-right: 10px;
-    transition: transform 0.3s ease-in-out;
-    transform-origin: 15px 23px;
+    margin: 0 auto;
   }
 
 }
