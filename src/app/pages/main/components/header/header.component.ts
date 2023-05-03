@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SessionsService } from '../../../../services/sessions.service'
+import { AppComponent } from '../../../../app.component'
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,13 @@ import { SessionsService } from '../../../../services/sessions.service'
 })
 export class HeaderComponent {
 
-  public constructor (private session: SessionsService){}
+  public constructor (private session: SessionsService, private appcomp: AppComponent){}
 
   public onLogout(): void {
     this.session.logout();
+  }
+
+  public changeTheme(): void{
+    this.appcomp.toggleTheme();
   }
 }
