@@ -96,5 +96,60 @@
     .edit {
       font-size: 1.5rem;
     }
+
+    
   }
+  .dropdown-toggle {
+    background-color: var(--darkest);
+
+    border: none;
+  }
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  .dropdown-menu {
+    background-color: var(--darkest);
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    align-items: center;
+    display: none;
+    right: 0;
+    left: auto;
+
+    .dropdown-item {
+      width: 100%;
+      color: white;
+      font-size: 1em;
+      margin-top: 10px;
+      user-select: none;
+      cursor: pointer;
+      background-color: var(--darkest);
+
+    }
+    .dropdown-item:hover {
+      background-color: var(--lighter);
+    }
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .mygear {
+    display: inline-block;
+    flex-basis: 5%;
+    align-items: center;
+    text-align: center;
+    color: white;
+    border: none;
+    font-size: 2em;
+    margin-top: 15px;
+    margin-top: 10px;
+    padding-right: 10px;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: 15px 23px;
+  }
+
 }
