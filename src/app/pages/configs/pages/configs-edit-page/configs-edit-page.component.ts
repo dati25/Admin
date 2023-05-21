@@ -55,6 +55,22 @@ export class ConfigsEditPageComponent implements OnInit {
       this.service.deleteDest(dest).subscribe(() => {});
     });
 
+    this.config.tasks.forEach((task) => {
+      if (task.group) {
+        this.service
+          .deleteObject(this.config, task.group.id, 't')
+          .subscribe(() => {});
+      }
+    });
+
+    this.config.tasks.forEach((task) => {
+      if (task.computer) {
+        this.service
+          .deleteObject(this.config, task.computer.idPc, 'f')
+          .subscribe(() => {});
+      }
+    });
+
     Object.assign(this.config, values);
     this.service.update(this.config).subscribe(() => window.history.back());
   }

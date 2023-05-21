@@ -50,9 +50,13 @@ export class ConfigService {
     );
   }
 
-  public deleteObject(config: Config, id: number, type: string): Observable<Config> {
+  public deleteObject(
+    config: Config,
+    id: number,
+    type: string
+  ): Observable<Config> {
     return this.http.delete<Config>(
-      'http://localhost:5105/api/Config/' + config.id + '/' + id + '/' + type
+      'http://localhost:5105/api/' + config.id + '/' + id + '/' + type
     );
   }
 }
