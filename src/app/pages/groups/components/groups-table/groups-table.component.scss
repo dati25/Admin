@@ -1,54 +1,6 @@
-.groups {
-  border: 2px solid var(--lighter);
-  border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-  .group,
+.table-component {
+  .component,
   .header {
-    display: grid;
-    grid-template-columns: 1fr 2.5fr 0.25fr 0.25fr;
-    width: 100%;
-    border-bottom: 2px solid var(--lighter);
-    line-height: 1.7rem;
-  }
-
-  .header {
-    div {
-      padding: 1.1rem 2rem;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: var(--text-dark);
-    }
-  }
-
-  .group {
-    div {
-      padding: 1.1rem 2rem;
-      overflow-wrap: break-word;
-      font-size: 1.2rem;
-    }
-
-    .name {
-      font-size: 1.25rem;
-      min-width: 1rem;
-      font-weight: 500;
-    }
-
-    .bi {
-      font-size: 1.4rem;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    .bi-x-square {
-      -webkit-text-stroke: 0.5px;
-    }
-  }
-
-  .group:last-child {
-    border-bottom: none;
-    border-bottom-left-radius: 0.75rem;
-    border-bottom-right-radius: 0.75rem;
+    grid-template-columns: 1fr 2.5fr 0.3fr 0.3fr;
   }
 }

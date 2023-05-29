@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Open+Sans&display=swap");
 
+// scrollbar styling
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -25,10 +26,80 @@ body {
   background-color: var(--main) !important;
   color: var(--text) !important;
 
+  // table styling
+  .table-component {
+    border: 2px solid var(--lighter);
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    .component,
+    .header {
+      display: grid;
+      width: 100%;
+      border-bottom: 2px solid var(--lighter);
+      line-height: 1.7rem;
+    }
+
+    .header {
+      div {
+        padding: 1.1rem 2rem;
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: var(--text-dark);
+        min-width: 1rem;
+      }
+
+      .center {
+        text-align: center;
+      }
+    }
+
+    .component {
+      div {
+        padding: 1.1rem 2rem;
+        overflow-wrap: break-word;
+        min-width: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .name {
+        font-size: 1.25rem;
+        font-weight: 500;
+      }
+
+      .bi {
+        font-size: 1.4rem;
+        height: 100%;
+      }
+
+      .bi-check-lg,
+      .bi-x-lg {
+        font-size: 1rem;
+      }
+
+      .bi-x-square,
+      .bi-plus-square {
+        -webkit-text-stroke: 0.5px;
+      }
+    }
+
+    .component:last-child {
+      border-bottom: none;
+      border-bottom-left-radius: 0.75rem;
+      border-bottom-right-radius: 0.75rem;
+    }
+  }
+
+  // wrapper for all pages
   .wrapper {
     margin: 2.5%;
   }
 
+  // links styling
   a {
     text-decoration: none;
   }
@@ -74,6 +145,7 @@ body {
     }
   }
 
+  // buttons styling
   .btn-outline-success {
     color: var(--success);
   }
@@ -85,6 +157,7 @@ body {
   }
 }
 
+// root colors
 :root {
   --main: #171520;
   --darkest: #0a0715;

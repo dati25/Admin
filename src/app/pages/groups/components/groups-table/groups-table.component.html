@@ -3,13 +3,13 @@
   link="/groups/create"
 ></app-search-create>
 
-<div class="groups" *ngIf="groups">
+<div class="table-component" *ngIf="groups">
   <div class="header">
     <div>Name</div>
     <div>Computers</div>
   </div>
 
-  <div class="group" *ngFor="let group of groups">
+  <div class="component" *ngFor="let group of groups">
     <div class="name">{{ group.name }}</div>
 
     <div class="computers">
