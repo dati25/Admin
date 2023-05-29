@@ -1,22 +1,7 @@
-<div class="top">
-  <div class="search">
-    <i class="bi bi-search"></i>
-    <input type="text" class="input-field form-control" />
-  </div>
-
-  <div class="create">
-    <div></div>
-    <div>
-      <button
-        type="button"
-        class="add btn btn-outline-success"
-        routerLink="/groups/create"
-      >
-        Create Group
-      </button>
-    </div>
-  </div>
-</div>
+<app-search-create
+  button="Create Group"
+  link="/groups/create"
+></app-search-create>
 
 <div class="groups" *ngIf="groups">
   <div class="header">
@@ -26,6 +11,7 @@
 
   <div class="group" *ngFor="let group of groups">
     <div class="name">{{ group.name }}</div>
+
     <div class="computers">
       <span
         class="computer edit"
@@ -40,12 +26,14 @@
         </span></span
       >
     </div>
+
     <div>
       <i
         class="action edit bi bi-pencil-square"
         (click)="edited.emit(group)"
       ></i>
     </div>
+
     <div>
       <i class="action delete bi bi-x-square" (click)="deleted.emit(group)"></i>
     </div>

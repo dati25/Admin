@@ -3,21 +3,23 @@
     <div class="name">Name</div>
     <div class="mac">MAC Address</div>
     <div class="ip">IP Address</div>
-    <div class="buttons">Actions</div>
   </div>
+
   <div class="request" *ngFor="let request of requests">
-    <div class="name">
-      <span class="edit" (click)="edited.emit(request)">{{
-        request.name
-      }}</span>
-    </div>
+    <div class="name">{{ request.name }}</div>
     <div class="mac">{{ request.macAddress }}</div>
     <div class="ip">{{ request.ipAddress }}</div>
 
-    <div class="buttons">
-      <i (click)="approved.emit(request)" class="add bi bi-plus-circle"></i>
+    <div>
+      <i class="edit bi bi-pencil-square" (click)="edited.emit(request)"></i>
+    </div>
 
-      <i (click)="deleted.emit(request)" class="delete bi bi-trash-fill"></i>
+    <div>
+      <i class="add bi bi-plus-square" (click)="approved.emit(request)"></i>
+    </div>
+
+    <div>
+      <i class="delete bi bi-x-square" (click)="deleted.emit(request)"></i>
     </div>
   </div>
 </div>
