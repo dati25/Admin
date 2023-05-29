@@ -12,8 +12,8 @@
         class="left-btn btn-check"
         name="{{ name }}"
         id="btnradio{{ id1 }}"
-        [checked]="form.controls[name].value"
-        (change)="form.controls[name].setValue(true)"
+        [checked]="!form.controls[name].value"
+        (change)="form.controls[name].setValue(false)"
       />
       <label class="left btn btn-outline-secondary" for="btnradio{{ id1 }}">{{
         label1
@@ -24,8 +24,8 @@
         class="right-btn btn-check"
         name="{{ name }}"
         id="btnradio{{ id2 }}"
-        [checked]="!form.controls[name].value"
-        (change)="form.controls[name].setValue(false)"
+        [checked]="form.controls[name].value"
+        (change)="form.controls[name].setValue(true)"
       />
       <label class="right btn btn-outline-secondary" for="btnradio{{ id2 }}">{{
         label2
