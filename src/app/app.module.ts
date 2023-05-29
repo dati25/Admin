@@ -39,7 +39,7 @@ import { SearchCreateComponent } from './components/search-create/search-create.
 import { InputButtonGroupComponent } from './components/input-button-group/input-button-group.component';
 import { InputNumberComponent } from './components/input-number/input-number.component';
 import { InputCronComponent } from './components/input-cron/input-cron.component';
-import { DashboardDataComponent } from './pages/main/components/dashboard-data/dashboard-data.component';
+import { ReportsTableComponent } from './pages/main/components/reports-table/reports-table.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +77,7 @@ import { DashboardDataComponent } from './pages/main/components/dashboard-data/d
     InputButtonGroupComponent,
     InputNumberComponent,
     InputCronComponent,
-    DashboardDataComponent,
+    ReportsTableComponent,
   ],
   imports: [
     BrowserModule,

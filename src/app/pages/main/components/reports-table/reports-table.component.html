@@ -1,0 +1,25 @@
+<div class="table-component" *ngIf="reports">
+  <div class="header">
+    <div>User</div>
+    <div>Config</div>
+    <div>Status</div>
+    <div>Report Time</div>
+    <div>Description</div>
+  </div>
+
+  <div class="component" *ngFor="let report of reports">
+    <div>{{ report.idPc }}</div>
+
+    <div>{{ report.idConfig }}</div>
+
+    <div class="center">
+      <i class="t bi bi-check-lg" *ngIf="report.status === 't'"></i>
+      <i class="w bi bi-exclamation-lg" *ngIf="report.status === 'w'"></i>
+      <i class="f bi bi-x-lg" *ngIf="report.status === 'f'"></i>
+    </div>
+
+    <div>{{ report.reportTime }}</div>
+
+    <div>{{ report.description }}</div>
+  </div>
+</div>
