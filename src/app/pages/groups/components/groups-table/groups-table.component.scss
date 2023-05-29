@@ -25,16 +25,16 @@
     div {
       padding: 1.1rem 2rem;
       overflow-wrap: break-word;
-      font-size: 1.05rem;
+      font-size: 1.2rem;
     }
 
     .name {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       min-width: 1rem;
       font-weight: 500;
     }
 
-    .action {
+    .bi {
       font-size: 1.4rem;
       display: flex;
       justify-content: flex-start;
@@ -42,7 +42,6 @@
     }
 
     .bi-x-square {
-      font-size: 1.35rem;
       -webkit-text-stroke: 0.5px;
     }
   }

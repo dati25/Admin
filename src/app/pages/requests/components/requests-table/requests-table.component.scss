@@ -18,6 +18,7 @@
       font-weight: 700;
       font-size: 1.3rem;
       color: var(--text-dark);
+      min-width: 1rem;
     }
   }
 
@@ -25,31 +26,33 @@
     div {
       padding: 1.1rem 2rem;
       overflow-wrap: break-word;
-      font-size: 1.05rem;
+      min-width: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .center {
+      text-align: center;
     }
 
     .name {
-      font-size: 1.2rem;
-      min-width: 1rem;
+      font-size: 1.25rem;
       font-weight: 500;
     }
 
-    .add,
-    .edit,
-    .delete {
+    .bi {
       font-size: 1.4rem;
       display: flex;
       justify-content: flex-start;
       align-items: center;
     }
 
-    .bi-x-square {
-      font-size: 1.35rem;
+    .bi-x-square,
+    .bi-plus-square {
       -webkit-text-stroke: 0.5px;
     }
   }
 
-  .group:last-child {
+  .request:last-child {
     border-bottom: none;
     border-bottom-left-radius: 0.75rem;
     border-bottom-right-radius: 0.75rem;

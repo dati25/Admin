@@ -31,7 +31,7 @@
       padding: 1.1rem 2rem;
       overflow-wrap: break-word;
       min-width: 1rem;
-      font-size: 1.05rem;
+      font-size: 1.2rem;
     }
 
     .center {
@@ -43,16 +43,14 @@
       font-weight: 500;
     }
 
-    .action {
-      padding: 0.25rem;
-      font-size: 1.3rem;
+    .bi {
+      font-size: 1.4rem;
       display: flex;
       justify-content: flex-start;
       align-items: center;
     }
 
     .bi-x-square {
-      font-size: 1.25rem;
       -webkit-text-stroke: 0.5px;
     }
   }

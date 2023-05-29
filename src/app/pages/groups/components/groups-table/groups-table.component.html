@@ -28,14 +28,11 @@
     </div>
 
     <div>
-      <i
-        class="action edit bi bi-pencil-square"
-        (click)="edited.emit(group)"
-      ></i>
+      <i class="edit bi bi-pencil-square" (click)="edited.emit(group)"></i>
     </div>
 
     <div>
-      <i class="action delete bi bi-x-square" (click)="deleted.emit(group)"></i>
+      <i class="delete bi bi-x-square" (click)="deleted.emit(group)"></i>
     </div>
   </div>
 </div>
