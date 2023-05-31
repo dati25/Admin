@@ -146,7 +146,7 @@ export class ConfigsFormComponent {
 
   public addUser(select: HTMLSelectElement): void {
     const addedUser = this.allUsers.find(
-      (user) => user.id === parseInt(select.value)
+      (user) => user.id === select.value
     );
     const computers = this.form.get('computers') as FormArray;
     computers.push(
@@ -157,7 +157,7 @@ export class ConfigsFormComponent {
     );
 
     const userIndex = this.allUsers.findIndex(
-      (user) => user.id === parseInt(select.value)
+      (user) => user.id === select.value
     );
 
     this.allUsers.splice(userIndex, 1);

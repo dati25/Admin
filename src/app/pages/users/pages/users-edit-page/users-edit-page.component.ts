@@ -21,7 +21,7 @@ export class UsersEditPageComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
 
     this.service.findById(id).subscribe((user) => {
       this.user = user;

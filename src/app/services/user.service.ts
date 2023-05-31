@@ -13,7 +13,7 @@ export class UserService {
     return this.http.get<User[]>('http://localhost:5105/api/Computer');
   }
 
-  public findById(id: number): Observable<User> {
+  public findById(id: string): Observable<User> {
     return this.http.get<User>('http://localhost:5105/api/Computer/' + id);
   }
 

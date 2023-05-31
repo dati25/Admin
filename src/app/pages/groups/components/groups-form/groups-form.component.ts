@@ -49,7 +49,7 @@ export class GroupsFormComponent {
 
   public addUser(select: HTMLSelectElement): void {
     const addedUser = this.users.find(
-      (user) => user.id === parseInt(select.value)
+      (user) => user.id === select.value
     );
     const pcGroups = this.form.get('pcGroups') as FormArray;
     pcGroups.push(
@@ -60,7 +60,7 @@ export class GroupsFormComponent {
     );
 
     const userIndex = this.users.findIndex(
-      (user) => user.id === parseInt(select.value)
+      (user) => user.id === select.value
     );
 
     this.users.splice(userIndex, 1);

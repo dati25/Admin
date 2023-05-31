@@ -1,6 +1,6 @@
 export class Report {
   public id: number;
-  public idPc: number;
+  public idPc: string;
   public idConfig: number;
   public status: string;
   public reportTime: Date;
@@ -8,7 +8,7 @@ export class Report {
 
   public constructor(
     id: number,
-    idPc: number,
+    idPc: string,
     idConfig: number,
     status: string,
     reportTime: Date,

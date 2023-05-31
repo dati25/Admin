@@ -52,7 +52,7 @@ export class ConfigService {
 
   public deleteObject(
     config: Config,
-    id: number,
+    id: string,
     type: string
   ): Observable<Config> {
     return this.http.delete<Config>(

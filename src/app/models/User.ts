@@ -1,12 +1,12 @@
 export class User {
-  public id: number;
+  public id: string;
   public name: string;
   public macAddress: string;
   public ipAddress: string;
   public status: string;
 
   public constructor(
-    id: number,
+    id: string,
     name: string,
     macAddress: string,
     ipAddress: string,
