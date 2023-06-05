@@ -1,9 +1,10 @@
-<div id="wrapper">
+<div class="wrapper">
   <app-settings-form
     [form]="form"
     (saved)="saveAdmin($event)"
     *ngIf="form"
   ></app-settings-form>
+
   <app-settings-report-form
     [form]="formRight"
     (saved)="saveEmail($event)"

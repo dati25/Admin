@@ -1,15 +1,7 @@
-#wrapper {
-  width: 40%;
-  margin: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  app-settings-form {
-    width: 50%;
-    margin-right: 10rem;
-  }
-  app-settings-report-form {
-    width: 50%;
-  }
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 7.5rem auto;
+  min-width: 60rem;
+  max-width: 60%;
 }

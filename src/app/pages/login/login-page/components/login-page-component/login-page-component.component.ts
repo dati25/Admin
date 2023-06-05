@@ -36,8 +36,6 @@ export class LoginPageComponentComponent implements OnInit {
         })
       )
       .subscribe((result) => {
-        localStorage.setItem('username', this.form.value.username);
-
         if (result) {
           this.router.navigate(['/users/list']);
         }

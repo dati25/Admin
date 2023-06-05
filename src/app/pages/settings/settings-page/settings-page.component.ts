@@ -23,13 +23,13 @@ export class SettingsPageComponent implements OnInit {
   public constructor(private fb: FormBuilder, private service: AdminService) {}
 
   public ngOnInit(): void {
-    // const id = +this.route.snapshot.paramMap.get('id');
-
-    this.service.findById(1).subscribe((admin) => {
-      this.admin = admin;
-      this.form = SettingsFormComponent.createForm(this.fb, admin);
-      this.formRight = SettingsReportFormComponent.createForm(this.fb, admin);
-    });
+    this.service
+      .findById(parseInt(localStorage.getItem('id')))
+      .subscribe((admin) => {
+        this.admin = admin;
+        this.form = SettingsFormComponent.createForm(this.fb, admin);
+        this.formRight = SettingsReportFormComponent.createForm(this.fb, admin);
+      });
   }
 
   public saveAdmin(values: any): void {
