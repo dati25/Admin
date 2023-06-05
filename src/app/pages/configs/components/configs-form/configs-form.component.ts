@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, FormArray } from '@angular/forms';
 import { Config } from '../../../../models/Config';
 import { Source } from '../../../../models/Source';
@@ -11,8 +19,58 @@ import { User } from 'src/app/models/User';
   templateUrl: './configs-form.component.html',
   styleUrls: ['./configs-form.component.scss'],
 })
-export class ConfigsFormComponent {
+export class ConfigsFormComponent implements OnInit {
+  @ViewChild('usernameInput') usernameInput: ElementRef;
+  @ViewChild('passwordInput') passwordInput: ElementRef;
+  @ViewChild('ipInput') ipInput: ElementRef;
+  @ViewChild('portInput') portInput: ElementRef;
+  @ViewChild('pathInput') pathInput: ElementRef;
+
+  username: string = '';
+  password: string = '';
+  ip: string = '';
+  port: string = '';
+  path: string = '';
+
   constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.username = this.form.value.destinations[0].path
+      .split('/')[2]
+      .split(':')[0];
+    this.password = this.form.value.destinations[0].path
+      .split('/')[2]
+      .split(':')[1]
+      .split('@')[0];
+    this.ip = this.form.value.destinations[0].path
+      .split('/')[2]
+      .split(':')[1]
+      .split('@')[1]
+      .split(':')[0];
+    this.port = this.form.value.destinations[0].path
+      .split('/')[2]
+      .split(':')[2];
+    const pathSegments = this.form.value.destinations[0].path.split('/');
+    this.path = pathSegments.slice(5).join('/');
+  }
+
+  public getValueFromInputField(inputField: ElementRef): string {
+    return inputField.nativeElement.value;
+  }
+
+  public logInputValues(i: number): void {
+    this.username = this.getValueFromInputField(this.usernameInput);
+    this.password = this.getValueFromInputField(this.passwordInput);
+    this.ip = this.getValueFromInputField(this.ipInput);
+    this.port = this.getValueFromInputField(this.portInput);
+    this.path = this.getValueFromInputField(this.pathInput);
+
+    const formatted = `ftp://${this.username}:${this.password}@${this.ip}:${this.port}//${this.path}`;
+
+    this.form.value.destinations[i].path = formatted;
+
+    console.log(this.form.value.destinations[i].path);
+  }
 
   get sources() {
     return this.form.get('sources') as FormArray;
@@ -128,6 +186,17 @@ export class ConfigsFormComponent {
   public addDestControl(): FormGroup {
     return new FormGroup({
       type: new FormControl(false),
+      path: new FormControl(),
+    });
+  }
+
+  public addFtpDest(): void {
+    this.destinations.push(this.addFtpDestControl());
+  }
+
+  public addFtpDestControl(): FormGroup {
+    return new FormGroup({
+      type: new FormControl(true),
       path: new FormControl(),
     });
   }

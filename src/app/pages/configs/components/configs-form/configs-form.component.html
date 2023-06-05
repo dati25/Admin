@@ -71,16 +71,23 @@
             class="sources"
             *ngFor="let source of sources.controls; let i = index"
           >
-            <div class="input-text" [formGroupName]="i">
-              <div class="input">
-                <input
-                  type="text"
-                  class="input-field form-control"
-                  formControlName="path"
-                />
-              </div>
+            <div [formGroupName]="i">
+              <div class="input-text">
+                <div class="input">
+                  <input
+                    type="text"
+                    class="input-field form-control"
+                    formControlName="path"
+                  />
+                </div>
 
-              <i class="delete bi bi-x-circle" (click)="removeSource(i)"></i>
+                <div>
+                  <i
+                    class="delete bi bi-x-circle"
+                    (click)="removeSource(i)"
+                  ></i>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -98,21 +105,94 @@
             class="destinations"
             *ngFor="let destination of destinations.controls; let i = index"
           >
-            <div class="input-text" [formGroupName]="i">
-              <div class="input">
-                <input
-                  type="text"
-                  class="input-field form-control"
-                  formControlName="path"
-                />
-              </div>
+            <div [formGroupName]="i">
+              <div class="input-ftp" *ngIf="destination.value.type">
+                <div class="text">ftp://</div>
+                <div>
+                  <input
+                    #usernameInput
+                    class="username form-control"
+                    type="text"
+                    [defaultValue]="this.username"
+                    placeholder="Username"
+                    (input)="logInputValues(i)"
+                  />
+                </div>
 
-              <i class="delete bi bi-x-circle" (click)="removeDest(i)"></i>
+                <div class="text">:</div>
+                <div>
+                  <input
+                    #passwordInput
+                    class="password form-control"
+                    type="password"
+                    [defaultValue]="this.password"
+                    placeholder="Password"
+                    (input)="logInputValues(i)"
+                  />
+                </div>
+
+                <div class="text">@</div>
+                <div>
+                  <input
+                    #ipInput
+                    class="ip form-control"
+                    type="text"
+                    [defaultValue]="this.ip"
+                    placeholder="IP Address"
+                    (input)="logInputValues(i)"
+                  />
+                </div>
+
+                <div class="text">:</div>
+                <div>
+                  <input
+                    #portInput
+                    class="port form-control"
+                    type="text"
+                    [defaultValue]="this.port"
+                    placeholder="Port"
+                    (input)="logInputValues(i)"
+                  />
+                </div>
+
+                <div class="text">//</div>
+                <div>
+                  <input
+                    #pathInput
+                    class="path form-control"
+                    type="text"
+                    [defaultValue]="this.path"
+                    placeholder="Path"
+                    (input)="logInputValues(i)"
+                  />
+                </div>
+
+                <div class="remove">
+                  <i class="delete bi bi-x-circle" (click)="removeDest(i)"></i>
+                </div>
+              </div>
+              <div class="input-local" *ngIf="!destination.value.type">
+                <div class="input">
+                  <input
+                    type="text"
+                    class="input-field form-control"
+                    formControlName="path"
+                  />
+                </div>
+
+                <div>
+                  <i class="delete bi bi-x-circle" (click)="removeDest(i)"></i>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="create">
             <i class="add bi bi-plus-circle" (click)="addDest()"></i>
+            <i
+              class="edit add-ftp bi bi-plus-circle"
+              (click)="addFtpDest()"
+            ></i>
           </div>
         </div>
       </div>
@@ -168,7 +248,7 @@
           </div>
 
           <div class="add-div">
-            <div class="label">Add user</div>
+            <div class="label">Add group</div>
 
             <div class="add-user">
               <i class="add bi bi-plus-circle" (click)="addGroup(select1)"></i>
