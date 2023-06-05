@@ -1,1 +1,26 @@
-<p>admins-create-page works!</p>
+<form [formGroup]="form">
+  <div class="form">
+    <app-error-message
+      (closed)="closeError()"
+      [errorMessage]="errorMessage"
+      *ngIf="hasError"
+    ></app-error-message>
+
+    <app-input-text
+      [form]="form"
+      label="Username"
+      name="username"
+    ></app-input-text>
+
+    <app-input-text [form]="form" label="Email" name="email"></app-input-text>
+
+    <app-input-text
+      [form]="form"
+      label="Password"
+      name="password"
+      type="password"
+    ></app-input-text>
+
+    <app-form-buttons [form]="form" (saved)="create()"></app-form-buttons>
+  </div>
+</form>

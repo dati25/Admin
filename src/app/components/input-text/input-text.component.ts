@@ -15,4 +15,7 @@ export class InputTextComponent {
 
   @Input()
   name: string;
+
+  @Input()
+  type: string = 'text';
 }

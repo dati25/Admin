@@ -113,7 +113,7 @@
                     #usernameInput
                     class="username form-control"
                     type="text"
-                    [defaultValue]="this.username"
+                    [defaultValue]="this.usernames[i]"
                     placeholder="Username"
                     (input)="logInputValues(i)"
                   />
@@ -125,7 +125,7 @@
                     #passwordInput
                     class="password form-control"
                     type="password"
-                    [defaultValue]="this.password"
+                    [defaultValue]="this.passwords[i]"
                     placeholder="Password"
                     (input)="logInputValues(i)"
                   />
@@ -137,7 +137,7 @@
                     #ipInput
                     class="ip form-control"
                     type="text"
-                    [defaultValue]="this.ip"
+                    [defaultValue]="this.ips[i]"
                     placeholder="IP Address"
                     (input)="logInputValues(i)"
                   />
@@ -149,7 +149,7 @@
                     #portInput
                     class="port form-control"
                     type="text"
-                    [defaultValue]="this.port"
+                    [defaultValue]="this.ports[i]"
                     placeholder="Port"
                     (input)="logInputValues(i)"
                   />
@@ -161,7 +161,7 @@
                     #pathInput
                     class="path form-control"
                     type="text"
-                    [defaultValue]="this.path"
+                    [defaultValue]="this.paths[i]"
                     placeholder="Path"
                     (input)="logInputValues(i)"
                   />

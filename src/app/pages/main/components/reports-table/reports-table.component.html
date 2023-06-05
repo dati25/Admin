@@ -8,9 +8,13 @@
   </div>
 
   <div class="component" *ngFor="let report of reports">
-    <div>{{ report.idPc }}</div>
+    <div class="edit" routerLink="/users/edit/{{ report.idPc }}">
+      {{ report.idPc }}
+    </div>
 
-    <div>{{ report.idConfig }}</div>
+    <div class="edit" routerLink="/configs/edit/{{ report.idConfig }}">
+      {{ report.idConfig }}
+    </div>
 
     <div class="center">
       <i class="t bi bi-check-lg" *ngIf="report.status === 't'"></i>

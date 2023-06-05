@@ -32,26 +32,50 @@ export class ConfigsFormComponent implements OnInit {
   port: string = '';
   path: string = '';
 
+  usernames: string[] = [];
+  passwords: string[] = [];
+  ips: string[] = [];
+  ports: string[] = [];
+  paths: string[] = [];
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.username = this.form.value.destinations[0].path
-      .split('/')[2]
-      .split(':')[0];
-    this.password = this.form.value.destinations[0].path
-      .split('/')[2]
-      .split(':')[1]
-      .split('@')[0];
-    this.ip = this.form.value.destinations[0].path
-      .split('/')[2]
-      .split(':')[1]
-      .split('@')[1]
-      .split(':')[0];
-    this.port = this.form.value.destinations[0].path
-      .split('/')[2]
-      .split(':')[2];
-    const pathSegments = this.form.value.destinations[0].path.split('/');
-    this.path = pathSegments.slice(5).join('/');
+    for (let i = 0; i < this.form.value.destinations.length; i++) {
+      if (this.form.value.destinations[i].type) {
+        this.username = this.form.value.destinations[i].path
+          .split('/')[2]
+          .split(':')[0];
+        this.password = this.form.value.destinations[i].path
+          .split('/')[2]
+          .split(':')[1]
+          .split('@')[0];
+        this.ip = this.form.value.destinations[i].path
+          .split('/')[2]
+          .split(':')[1]
+          .split('@')[1]
+          .split(':')[0];
+        this.port = this.form.value.destinations[i].path
+          .split('/')[2]
+          .split(':')[2];
+        this.path = this.form.value.destinations[i].path
+          .split('/')
+          .slice(5)
+          .join('/');
+
+        this.usernames.push(this.username);
+        this.passwords.push(this.password);
+        this.ips.push(this.ip);
+        this.ports.push(this.port);
+        this.paths.push(this.path);
+      } else {
+        this.usernames.push('');
+        this.passwords.push('');
+        this.ips.push('');
+        this.ports.push('');
+        this.paths.push('');
+      }
+    }
   }
 
   public getValueFromInputField(inputField: ElementRef): string {
@@ -192,6 +216,11 @@ export class ConfigsFormComponent implements OnInit {
 
   public addFtpDest(): void {
     this.destinations.push(this.addFtpDestControl());
+    this.usernames.push('');
+    this.passwords.push('');
+    this.ips.push('');
+    this.ports.push('');
+    this.paths.push('');
   }
 
   public addFtpDestControl(): FormGroup {
@@ -203,6 +232,11 @@ export class ConfigsFormComponent implements OnInit {
 
   public removeDest(index: number): void {
     this.destinations.removeAt(index);
+    this.usernames.splice(index, 1);
+    this.passwords.splice(index, 1);
+    this.ips.splice(index, 1);
+    this.ports.splice(index, 1);
+    this.paths.splice(index, 1);
   }
 
   public removeUser(index: number): void {

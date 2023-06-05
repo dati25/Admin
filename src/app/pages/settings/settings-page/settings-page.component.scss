@@ -3,5 +3,9 @@
   grid-template-columns: 1fr 1fr;
   margin: 7.5rem auto;
   min-width: 60rem;
-  max-width: 60%;
+  max-width: 75%;
+  border: 2px solid var(--lighter);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem;
 }
