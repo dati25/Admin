@@ -7,7 +7,6 @@ import { InterceptorService } from './services/interceptor.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/main/components/header/header.component';
-import { SidebarComponent } from './pages/main/components/sidebar/sidebar.component';
 import { UsersListPageComponent } from './pages/users/pages/users-list-page/users-list-page.component';
 import { UsersEditPageComponent } from './pages/users/pages/users-edit-page/users-edit-page.component';
 import { GroupsListPageComponent } from './pages/groups/pages/groups-list-page/groups-list-page.component';
@@ -40,12 +39,12 @@ import { InputButtonGroupComponent } from './components/input-button-group/input
 import { InputNumberComponent } from './components/input-number/input-number.component';
 import { InputCronComponent } from './components/input-cron/input-cron.component';
 import { ReportsTableComponent } from './pages/main/components/reports-table/reports-table.component';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidebarComponent,
     UsersListPageComponent,
     UsersEditPageComponent,
     GroupsListPageComponent,
@@ -78,6 +77,7 @@ import { ReportsTableComponent } from './pages/main/components/reports-table/rep
     InputNumberComponent,
     InputCronComponent,
     ReportsTableComponent,
+    ErrorMessageComponent,
   ],
   imports: [
     BrowserModule,

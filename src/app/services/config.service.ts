@@ -2,10 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Config } from '../models/Config';
-import { Computer } from '../models/Computer';
 import { Source } from '../models/Source';
 import { Destination } from '../models/Destination';
-import { Group } from '../models/Group';
 
 @Injectable({
   providedIn: 'root',

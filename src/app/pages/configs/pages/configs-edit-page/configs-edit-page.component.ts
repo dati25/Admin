@@ -8,6 +8,7 @@ import { Config } from '../../../../models/Config';
 import { User } from '../../../../models/User';
 import { Group } from '../../../../models/Group';
 import { ConfigsFormComponent } from '../../components/configs-form/configs-form.component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-configs-edit-page',
@@ -15,6 +16,9 @@ import { ConfigsFormComponent } from '../../components/configs-form/configs-form
   styleUrls: ['./configs-edit-page.component.scss'],
 })
 export class ConfigsEditPageComponent implements OnInit {
+  hasError: boolean;
+  errorMessage: string = '';
+
   public users: User[];
   public groups: Group[];
 
@@ -72,6 +76,20 @@ export class ConfigsEditPageComponent implements OnInit {
     });
 
     Object.assign(this.config, values);
-    this.service.update(this.config).subscribe(() => window.history.back());
+    this.service.update(this.config).subscribe(
+      () => window.history.back(),
+      (error: HttpErrorResponse) => {
+        this.hasError = true;
+
+        for (let m in error.error) {
+          this.errorMessage = this.errorMessage.concat(`${error.error[m]}<br>`);
+        }
+      }
+    );
+  }
+
+  public closeError(): void {
+    this.hasError = false;
+    this.errorMessage = '';
   }
 }

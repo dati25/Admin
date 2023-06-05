@@ -1,4 +1,10 @@
 <div class="wrapper">
+  <app-error-message
+    (closed)="closeError()"
+    [errorMessage]="errorMessage"
+    *ngIf="hasError"
+  ></app-error-message>
+
   <app-users-form
     [form]="form"
     (saved)="saveUser($event)"

@@ -4,6 +4,7 @@ import { UserService } from '../../../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../../../../models/User';
 import { UsersFormComponent } from '../../components/users-form/users-form.component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-users-edit-page',
@@ -11,6 +12,9 @@ import { UsersFormComponent } from '../../components/users-form/users-form.compo
   styleUrls: ['./users-edit-page.component.scss'],
 })
 export class UsersEditPageComponent implements OnInit {
+  hasError: boolean;
+  errorMessage: string = '';
+
   form: FormGroup;
   user: User;
 
@@ -31,6 +35,20 @@ export class UsersEditPageComponent implements OnInit {
 
   public saveUser(values: any): void {
     Object.assign(this.user, values);
-    this.service.update(this.user).subscribe(() => window.history.back());
+    this.service.update(this.user).subscribe(
+      () => window.history.back(),
+      (error: HttpErrorResponse) => {
+        this.hasError = true;
+
+        for (let m in error.error) {
+          this.errorMessage = this.errorMessage.concat(`${error.error[m]}<br>`);
+        }
+      }
+    );
+  }
+
+  public closeError() {
+    this.hasError = false;
+    this.errorMessage = '';
   }
 }

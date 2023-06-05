@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Group } from '../../../../models/Group';
 import { User } from '../../../../models/User';
 import { GroupsFormComponent } from '../../components/groups-form/groups-form.component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-groups-edit-page',
@@ -13,6 +14,9 @@ import { GroupsFormComponent } from '../../components/groups-form/groups-form.co
   styleUrls: ['./groups-edit-page.component.scss'],
 })
 export class GroupsEditPageComponent implements OnInit {
+  hasError: boolean;
+  errorMessage: string = '';
+
   public users: User[];
 
   form: FormGroup;
@@ -51,6 +55,20 @@ export class GroupsEditPageComponent implements OnInit {
     }
 
     Object.assign(this.group, values);
-    this.service.update(this.group).subscribe(() => window.history.back());
+    this.service.update(this.group).subscribe(
+      () => window.history.back(),
+      (error: HttpErrorResponse) => {
+        this.hasError = true;
+
+        for (let m in error.error) {
+          this.errorMessage = this.errorMessage.concat(`${error.error[m]}<br>`);
+        }
+      }
+    );
+  }
+
+  public closeError() {
+    this.hasError = false;
+    this.errorMessage = '';
   }
 }

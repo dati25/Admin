@@ -5,8 +5,6 @@ import { Source } from '../../../../models/Source';
 import { Destination } from '../../../../models/Destination';
 import { Group } from 'src/app/models/Group';
 import { User } from 'src/app/models/User';
-import { Computer } from 'src/app/models/Computer';
-import { Task } from 'src/app/models/Task';
 
 @Component({
   selector: 'app-configs-form',
@@ -71,7 +69,9 @@ export class ConfigsFormComponent {
       name: config.name,
       type: config.type,
       repeatPeriod: config.repeatPeriod,
-      expirationDate: config.expirationDate,
+      expirationDate: new Date(config.expirationDate)
+        .toISOString()
+        .split('T')[0],
       compress: config.compress,
       retention: config.retention,
       packageSize: config.packageSize,
@@ -184,7 +184,7 @@ export class ConfigsFormComponent {
       (group) => group.id === parseInt(select.value)
     );
 
-    this.allUsers.splice(groupIndex, 1);
+    this.allGroups.splice(groupIndex, 1);
 
     this.form.patchValue({ groups: groups.value });
   }

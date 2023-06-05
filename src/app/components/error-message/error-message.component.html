@@ -1,0 +1,15 @@
+<div class="error-message-overlay">
+  <div class="error-message">
+    <div>
+      <h4>Error</h4>
+    </div>
+
+    <div class="msg" [innerHTML]="errorMessage"></div>
+
+    <div>
+      <button class="btn btn-outline-danger" (click)="closeError()">
+        Close
+      </button>
+    </div>
+  </div>
+</div>

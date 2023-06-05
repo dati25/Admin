@@ -4,11 +4,23 @@
       <div class="left">
         <app-input-text [form]="form" label="Name" name="name"></app-input-text>
 
-        <app-input-text
+        <!-- <app-input-text
           [form]="form"
           label="Expiration Date"
           name="expirationDate"
-        ></app-input-text>
+        ></app-input-text> -->
+
+        <div class="input-date">
+          <div class="label">Expiration Date</div>
+
+          <div class="input">
+            <input
+              type="date"
+              class="input-field form-control"
+              formControlName="expirationDate"
+            />
+          </div>
+        </div>
 
         <app-input-button-group [form]="form"></app-input-button-group>
 

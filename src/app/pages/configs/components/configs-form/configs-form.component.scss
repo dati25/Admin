@@ -4,6 +4,34 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 1rem;
 
+  .input-date {
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 1rem;
+
+    .label {
+      flex: 2;
+      height: 2rem;
+      font-size: 1.25rem;
+      margin-right: 5rem;
+    }
+
+    .input {
+      flex: 4;
+
+      .input-field {
+        height: 2.25rem;
+        border-radius: 0.75rem;
+        font-size: 1.05rem;
+        background-color: var(--lighter);
+        border: 1px solid var(--lightest);
+        color: var(--text);
+      }
+    }
+  }
+
   .config,
   .paths,
   .tasks {

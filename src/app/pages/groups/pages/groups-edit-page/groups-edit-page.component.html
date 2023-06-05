@@ -1,4 +1,10 @@
 <div class="wrapper">
+  <app-error-message
+    (closed)="closeError()"
+    [errorMessage]="errorMessage"
+    *ngIf="hasError"
+  ></app-error-message>
+
   <app-groups-form
     [users]="users"
     [form]="form"
